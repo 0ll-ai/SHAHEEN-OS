@@ -5,7 +5,7 @@ import debug from 'debug';
 import { AgentOperationModel } from '@/database/models/agentOperation';
 import { VerifyCheckResultModel } from '@/database/models/verifyCheckResult';
 import { VerifyRunModel } from '@/database/models/verifyRun';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { finalizeVerifyRun, VerifyStatusService } from '@/server/services/verify';
 
 import type { ServerRuntimeRegistration } from './types';
@@ -14,7 +14,7 @@ const log = debug('lobe-server:verify-result-runtime');
 
 interface VerifyResultRuntimeContext {
   operationId?: string;
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   userId: string;
   workspaceId?: string;
 }
@@ -27,7 +27,7 @@ interface VerifyResultRuntimeContext {
  */
 class VerifyResultExecutionRuntime {
   private operationId?: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private userId: string;
   private workspaceId?: string;
 

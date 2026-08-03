@@ -3,12 +3,12 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { messages, sessions, topics, users } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { TopicModel } from '../../topic';
 
 const userId = 'topic-update-user';
 const sessionId = 'topic-update-session';
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 const topicModel = new TopicModel(serverDB, userId);
 
 describe('TopicModel - Update', () => {

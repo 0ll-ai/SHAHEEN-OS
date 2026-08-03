@@ -15,7 +15,7 @@ import { FileService } from '@/server/services/file';
 import type { NewFile } from '../schemas';
 import type { GenerationItem, GenerationWithAsyncTask, NewGeneration } from '../schemas/generation';
 import { generationBatches, generations, generationTopics } from '../schemas/generation';
-import type { LobeChatDatabase, Transaction } from '../type';
+import type { SHAHEEN OSDatabase, Transaction } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 import { FileModel } from './file';
 
@@ -23,13 +23,13 @@ import { FileModel } from './file';
 const log = debug('lobe-image:generation-model');
 
 export class GenerationModel {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private userId: string;
   private workspaceId?: string;
   private fileModel: FileModel;
   private fileService: FileService;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

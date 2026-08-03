@@ -1,5 +1,5 @@
 import { ENABLE_BUSINESS_FEATURES } from '@lobechat/business-const';
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 
 import { initNewUserForBusiness } from '@/business/server/user';
 import { UserModel } from '@/database/models/user';
@@ -18,9 +18,9 @@ type CreatedUser = {
 };
 
 export class UserService {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase) {
+  constructor(db: SHAHEEN OSDatabase) {
     this.db = db;
   }
 

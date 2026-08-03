@@ -9,11 +9,11 @@ import {
   AgentQuotaWindowModel,
 } from '@/database/models/agentQuota';
 import { users } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { AgentQuotaService } from '../index';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'agent-quota-service-user';
 const identity = { email: 'a@example.com', externalAccountId: 'acc-uuid-1' };

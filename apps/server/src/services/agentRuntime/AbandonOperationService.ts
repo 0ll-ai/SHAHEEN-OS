@@ -10,7 +10,7 @@ import { MessageModel } from '@/database/models/message';
 import { ThreadModel } from '@/database/models/thread';
 import { TopicModel } from '@/database/models/topic';
 import { agentOperations, messages } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 // Direct file import (not the barrel) to avoid pulling in RuntimeExecutors and
 // its workspace-package transitive deps in the unit-test environment.
 import { AgentRuntimeCoordinator } from '@/server/modules/AgentRuntime/AgentRuntimeCoordinator';
@@ -80,7 +80,7 @@ export class AbandonOperationService {
   private readonly traceRecorder: OperationTraceRecorder;
 
   constructor(
-    private readonly db: LobeChatDatabase,
+    private readonly db: SHAHEEN OSDatabase,
     options?: AbandonOperationOptions,
   ) {
     this.coordinator = options?.coordinator ?? new AgentRuntimeCoordinator();

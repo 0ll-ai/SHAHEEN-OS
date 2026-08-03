@@ -8,7 +8,7 @@ import {
   DEFAULT_USER_MEMORY_EMBEDDING_MODEL_ITEM,
   MEMORY_SEARCH_TOP_K_LIMITS,
 } from '@lobechat/const';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import type {
   ActivityMemoryItemSchema,
   AddIdentityActionSchema,
@@ -88,7 +88,7 @@ const applySearchLimitsByEffort = (
 };
 
 const getEmbeddingRuntime = async (
-  serverDB: LobeChatDatabase,
+  serverDB: SHAHEEN OSDatabase,
   userId: string,
   workspaceId?: string,
 ) => {
@@ -131,7 +131,7 @@ class MemoryServerRuntimeService implements MemoryRuntimeService {
   private messageId?: string;
   private memoryModel: UserMemoryModel;
   private operationId?: string;
-  private serverDB: LobeChatDatabase;
+  private serverDB: SHAHEEN OSDatabase;
   private taskId?: string;
   private toolCallId?: string;
   private topicId?: string;
@@ -148,7 +148,7 @@ class MemoryServerRuntimeService implements MemoryRuntimeService {
     memoryEmbeddingRuntime?: ToolExecutionMemoryEmbeddingRuntime;
     memoryModel: UserMemoryModel;
     operationId?: string;
-    serverDB: LobeChatDatabase;
+    serverDB: SHAHEEN OSDatabase;
     taskId?: string;
     toolCallId?: string;
     topicId?: string;

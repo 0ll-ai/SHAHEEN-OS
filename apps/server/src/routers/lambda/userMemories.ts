@@ -4,7 +4,7 @@ import {
   DEFAULT_USER_MEMORY_EMBEDDING_MODEL_ITEM,
   MEMORY_SEARCH_TOP_K_LIMITS,
 } from '@lobechat/const';
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   ActivityMemoryItemSchema,
   AddIdentityActionSchema,
@@ -83,7 +83,7 @@ const EMPTY_TAXONOMY_RESULT: QueryTaxonomyOptionsResult = {
 type MemorySearchContext = {
   memoryModel: UserMemoryModel;
   memoryEffort: MemoryEffort;
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   userId: string;
 };
 
@@ -161,7 +161,7 @@ const searchUserMemories = async (
   ) as Promise<SearchMemoryResult>;
 };
 
-const getEmbeddingRuntime = async (serverDB: LobeChatDatabase, userId: string) => {
+const getEmbeddingRuntime = async (serverDB: SHAHEEN OSDatabase, userId: string) => {
   const { provider, model: embeddingModel } =
     getServerDefaultFilesConfig().embeddingModel || DEFAULT_USER_MEMORY_EMBEDDING_MODEL_ITEM;
   // Read user's provider config from database

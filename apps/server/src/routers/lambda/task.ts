@@ -10,7 +10,7 @@ import { BriefModel } from '@/database/models/brief';
 import { TaskModel } from '@/database/models/task';
 import { TaskTopicModel } from '@/database/models/taskTopic';
 import { TopicModel } from '@/database/models/topic';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { assertAgentUsableBy } from '@/database/utils/agent-access';
 import { router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
@@ -140,7 +140,7 @@ async function resolveOrThrow(model: TaskModel, id: string) {
 }
 
 async function assertAssigneeAgentBelongsToUser(
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   callerCtx: { userId: string; workspaceId?: string },
   assigneeAgentId?: string | null,
 ) {

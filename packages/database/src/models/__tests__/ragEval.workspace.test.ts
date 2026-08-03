@@ -12,7 +12,7 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import {
   EvalDatasetModel,
   EvalDatasetRecordModel,
@@ -20,7 +20,7 @@ import {
   EvaluationRecordModel,
 } from '../ragEval';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'rag-eval-workspace-user';
 const workspaceId = 'rag-eval-workspace';

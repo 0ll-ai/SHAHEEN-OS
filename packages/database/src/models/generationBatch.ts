@@ -16,7 +16,7 @@ import type {
   NewGenerationBatch,
 } from '../schemas/generation';
 import { generationBatches, generationTopics } from '../schemas/generation';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 import { GenerationModel } from './generation';
 
@@ -35,13 +35,13 @@ interface BatchUser {
 }
 
 export class GenerationBatchModel {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private userId: string;
   private workspaceId?: string;
   private fileService: FileService;
   private generationModel: GenerationModel;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

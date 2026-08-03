@@ -1,6 +1,6 @@
 import type { AgentState } from '@lobechat/agent-runtime';
 import * as agentRuntime from '@lobechat/agent-runtime';
-import type * as LobeChatConst from '@lobechat/const';
+import type * as SHAHEEN OSConst from '@lobechat/const';
 import { type UIChatMessage } from '@lobechat/types';
 import { act, renderHook } from '@testing-library/react';
 import { type EnabledAiModel, ModelProvider } from 'model-bank';
@@ -104,7 +104,7 @@ vi.mock('@/store/chat/slices/agentRun/actions/lifecycle/agentSignalBridge', () =
 const desktopFlag = vi.hoisted(() => ({ value: false }));
 const desktopNotificationMock = vi.hoisted(() => ({ showNotification: vi.fn() }));
 vi.mock('@lobechat/const', async (importOriginal) => {
-  const actual = await importOriginal<typeof LobeChatConst>();
+  const actual = await importOriginal<typeof SHAHEEN OSConst>();
   return {
     ...actual,
     get isDesktop() {

@@ -3,14 +3,14 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { chunks, embeddings, users } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { EmbeddingModel } from '../embedding';
 import { designThinkingQuery } from './fixtures/embedding';
 
 const userId = 'embedding-user-test';
 const otherUserId = 'other-user-test';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 const embeddingModel = new EmbeddingModel(serverDB, userId);
 
 describe('EmbeddingModel', () => {

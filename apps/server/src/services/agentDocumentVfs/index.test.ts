@@ -3,7 +3,7 @@ import { AGENT_DOCUMENT_FILE_TYPE } from '@lobechat/const';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { AgentAccess, AgentDocumentModel } from '@/database/models/agentDocuments';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { AgentDocumentVfsService } from './index';
 import { createSkillMount } from './mounts/skills/createSkillMount';
@@ -25,7 +25,7 @@ vi.mock('./mounts/skills/createSkillMount', () => ({
 }));
 
 describe('AgentDocumentVfsService', () => {
-  const db = {} as LobeChatDatabase;
+  const db = {} as SHAHEEN OSDatabase;
   const userId = 'user-1';
   const mockAgentDocumentModel = {
     create: vi.fn(),

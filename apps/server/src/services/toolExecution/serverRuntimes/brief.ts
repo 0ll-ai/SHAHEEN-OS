@@ -1,5 +1,5 @@
 import { BriefIdentifier } from '@lobechat/builtin-tool-brief';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import { formatBriefCreated, formatCheckpointCreated } from '@lobechat/prompts';
 import { DEFAULT_BRIEF_ACTIONS } from '@lobechat/types';
 import { eq } from 'drizzle-orm';
@@ -15,7 +15,7 @@ import { type ServerRuntimeRegistration } from './types';
 // runtime fires inside a task. Falls back to undefined (personal mode) when
 // there is no task association.
 const resolveWorkspaceId = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   taskId: string | undefined,
 ): Promise<string | undefined> => {
   if (!taskId) return undefined;

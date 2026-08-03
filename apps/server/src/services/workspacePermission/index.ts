@@ -3,7 +3,7 @@ import { and, eq, isNull } from 'drizzle-orm';
 
 import { RbacModel } from '@/database/models/rbac';
 import { workspaceMembers, workspaces } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { getScopePermissions } from '@/utils/rbac';
 
 /**
@@ -17,7 +17,7 @@ export const isWorkspacePrimaryOwner = async ({
   userId,
   workspaceId,
 }: {
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   userId: string;
   workspaceId: string;
 }): Promise<boolean> => {
@@ -32,7 +32,7 @@ export const isWorkspacePrimaryOwner = async ({
 
 export interface WorkspaceScopedPermissionOptions {
   action: keyof typeof PERMISSION_ACTIONS;
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   requireMembership?: boolean;
   scopes?: PermissionScope[];
   userId: string;
@@ -60,7 +60,7 @@ export const resolveWorkspaceGrantedPermissions = async ({
   userId,
   workspaceId,
 }: {
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   requireMembership?: boolean;
   userId: string;
   workspaceId: string;

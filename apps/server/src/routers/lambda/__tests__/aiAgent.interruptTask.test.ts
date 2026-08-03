@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import { agents, chatGroups, sessions, threads, topics } from '@lobechat/database/schemas';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { ThreadStatus, ThreadType } from '@lobechat/types';
@@ -10,7 +10,7 @@ import { aiAgentRouter } from '../aiAgent';
 import { cleanupTestUser, createTestUser } from './integration/setup';
 
 // Mock getServerDB to return our test database instance
-let testDB: LobeChatDatabase;
+let testDB: SHAHEEN OSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -30,7 +30,7 @@ vi.mock('@/server/services/aiChat', () => ({
 }));
 
 describe('aiAgentRouter.interruptTask', () => {
-  let serverDB: LobeChatDatabase;
+  let serverDB: SHAHEEN OSDatabase;
   let userId: string;
   let testAgentId: string;
   let testGroupId: string;

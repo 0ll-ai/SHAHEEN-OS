@@ -4,7 +4,7 @@ import debug from 'debug';
 import { MessageModel } from '@/database/models/message';
 import { TaskModel } from '@/database/models/task';
 import { TaskTopicModel } from '@/database/models/taskTopic';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { AiAgentService } from '../aiAgent';
 
@@ -90,11 +90,11 @@ export interface DeliverTaskResultParams {
  * throws so a bridge failure never affects task status.
  */
 export class TaskResultBridgeService {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private userId: string;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

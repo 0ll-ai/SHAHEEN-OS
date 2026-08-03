@@ -1,5 +1,5 @@
 import { COMPOSIO_APP_TYPES } from '@lobechat/const';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import debug from 'debug';
 
 import { ConnectorModel } from '@/database/models/connector';
@@ -22,7 +22,7 @@ const log = debug('lobe-server:composio-connected-ids');
  * connect flow) instead of calling the already-authorized tool.
  */
 export async function loadConnectedComposioIds(
-  serverDB: LobeChatDatabase,
+  serverDB: SHAHEEN OSDatabase,
   userId: string,
   workspaceId: string | undefined,
   agentId: string | undefined,

@@ -1,5 +1,5 @@
 import { DEFAULT_FILE_EMBEDDING_MODEL_ITEM } from '@lobechat/const';
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   type ChatSemanticSearchChunk,
   type FileSearchResult,
@@ -82,7 +82,7 @@ const groupAndRankFiles = (chunks: ChatSemanticSearchChunk[], topK: number): Fil
  * place.
  */
 export class KnowledgeBaseSearchService {
-  private serverDB: LobeChatDatabase;
+  private serverDB: SHAHEEN OSDatabase;
   private userId: string;
   private chunkModel: ChunkModel;
   private documentModel: DocumentModel;
@@ -94,7 +94,7 @@ export class KnowledgeBaseSearchService {
   private workspaceId?: string;
 
   constructor(
-    serverDB: LobeChatDatabase,
+    serverDB: SHAHEEN OSDatabase,
     userId: string,
     workspaceId?: string,
     callerAgentVisibility?: 'private' | 'public' | null,

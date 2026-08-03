@@ -4,14 +4,14 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { agents, messengerAccountLinks, users, workspaces } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import {
   MessengerAccountLinkConflictError,
   MessengerAccountLinkModel,
   MessengerAccountLinkRelinkRequiredError,
 } from '../messengerAccountLink';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userA = 'msg-link-user-a';
 const userB = 'msg-link-user-b';

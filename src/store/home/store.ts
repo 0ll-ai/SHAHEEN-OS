@@ -65,7 +65,7 @@ const devtools = createDevtools('home');
 export const useHomeStore = createWithEqualityFn<HomeStore>()(
   subscribeWithSelector(
     devtools(createStore, {
-      name: 'LobeChat_Home' + (isDev ? '_DEV' : ''),
+      name: 'SHAHEEN OS_Home' + (isDev ? '_DEV' : ''),
     }),
   ),
   shallow,

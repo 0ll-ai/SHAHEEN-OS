@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { FileModel } from '@/database/models/file';
@@ -36,7 +36,7 @@ vi.mock('@/server/services/file', () => ({
 }));
 
 describe('file proxy route', () => {
-  const db = {} as LobeChatDatabase;
+  const db = {} as SHAHEEN OSDatabase;
 
   beforeEach(() => {
     vi.clearAllMocks();

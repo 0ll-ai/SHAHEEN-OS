@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import { users, userSettings } from '@lobechat/database/schemas';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -73,7 +73,7 @@ vi.mock('@/server/services/memory/userMemory/extract', () => ({
   resolveRuntimeAgentConfig: vi.fn().mockResolvedValue({}),
 }));
 
-let db: LobeChatDatabase;
+let db: SHAHEEN OSDatabase;
 const userId = 'user-persona-service';
 
 beforeEach(async () => {

@@ -7,7 +7,7 @@ import { RequestTrigger } from '@lobechat/types';
 import debug from 'debug';
 import { z } from 'zod';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 import { classifySatisfaction, transitionToSignals } from '../../processors';
@@ -148,7 +148,7 @@ export interface FeedbackSatisfactionJudgeAgentModelConfig {
 export interface CreateFeedbackSatisfactionJudgePolicyOptions {
   /** Optional diagnostics sink for malformed structured classifier output. */
   classifierDiagnostics?: ClassifierDiagnosticsService;
-  db?: LobeChatDatabase;
+  db?: SHAHEEN OSDatabase;
   judge?: FeedbackSatisfactionJudge;
   model?: string;
   provider?: string;
@@ -170,13 +170,13 @@ export interface CreateFeedbackSatisfactionJudgePolicyOptions {
  * - One validated satisfaction result parsed from structured model output
  */
 export class FeedbackSatisfactionJudgeAgentService implements FeedbackSatisfactionJudge {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly modelConfig: FeedbackSatisfactionJudgeAgentModelConfig;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
   constructor(
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     userId: string,
     modelConfig: Partial<FeedbackSatisfactionJudgeAgentModelConfig> = {},
     workspaceId?: string,

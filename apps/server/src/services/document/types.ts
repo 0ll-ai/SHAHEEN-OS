@@ -1,4 +1,4 @@
-import type { LobeChatDatabase, Transaction } from '@/database/type';
+import type { SHAHEEN OSDatabase, Transaction } from '@/database/type';
 
 export type DocumentHistorySaveSource = 'autosave' | 'manual' | 'restore' | 'system' | 'llm_call';
 
@@ -52,7 +52,7 @@ export interface ListDocumentHistoryResult {
   nextBeforeSavedAt?: Date;
 }
 
-export type DatabaseLike = LobeChatDatabase | Transaction;
+export type DatabaseLike = SHAHEEN OSDatabase | Transaction;
 
 export interface UpdateDocumentParams {
   breakAutosaveWindow?: boolean;

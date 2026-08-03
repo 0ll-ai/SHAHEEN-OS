@@ -1,4 +1,4 @@
-import type * as LobeChatConst from '@lobechat/const';
+import type * as SHAHEEN OSConst from '@lobechat/const';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type * as LucideReact from 'lucide-react';
 import type { CSSProperties, PropsWithChildren, ReactNode } from 'react';
@@ -43,7 +43,7 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock('@lobechat/const', async (importOriginal) => ({
-  ...(await importOriginal<typeof LobeChatConst>()),
+  ...(await importOriginal<typeof SHAHEEN OSConst>()),
   isDesktop: false,
 }));
 

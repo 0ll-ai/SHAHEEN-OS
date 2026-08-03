@@ -3,7 +3,7 @@ import debug from 'debug';
 import { asc, desc, eq } from 'drizzle-orm';
 
 import { messages } from '@/database/schemas';
-import { type LobeChatDatabase } from '@/database/type';
+import { type SHAHEEN OSDatabase } from '@/database/type';
 import { genRangeWhere, genWhere } from '@/database/utils/genWhere';
 import { buildWorkspaceWhere } from '@/database/utils/workspace';
 import { type MessageMetadata, type ModelUsage } from '@/types/message';
@@ -24,8 +24,8 @@ const log = debug('lobe-usage:service');
 export class UsageRecordService {
   private userId: string;
   private workspaceId?: string;
-  private db: LobeChatDatabase;
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  private db: SHAHEEN OSDatabase;
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;

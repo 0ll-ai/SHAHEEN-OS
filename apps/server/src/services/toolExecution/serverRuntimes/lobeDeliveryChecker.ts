@@ -1,7 +1,7 @@
 import { LobeDeliveryCheckerIdentifier } from '@lobechat/builtin-tool-lobe-delivery-checker';
 import type { BuiltinServerRuntimeOutput, RequiredEvidenceSpec } from '@lobechat/types';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { VerifyPlanGeneratorService } from '@/server/services/verify';
 
 import type { ServerRuntimeRegistration } from './types';
@@ -14,7 +14,7 @@ interface LobeDeliveryCheckerRuntimeContext {
   agentVisibility?: 'private' | 'public' | null;
   /** The current Agent Run (`agent_operations.id`) — the verify plan attaches to it. */
   operationId?: string;
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   userId: string;
   workspaceId?: string;
 }
@@ -33,7 +33,7 @@ const buildError = (content: string, code: string): BuiltinServerRuntimeOutput =
  */
 class LobeDeliveryCheckerExecutionRuntime {
   private operationId?: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private userId: string;
   private workspaceId?: string;
   private agentVisibility?: 'private' | 'public' | null;

@@ -6,11 +6,11 @@ import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 
 import type { ApiKeyItem, NewApiKeyItem } from '../schemas';
 import { apiKeys, users } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export class ApiKeyModel {
-  static findByKey = async (db: LobeChatDatabase, key: string) => {
+  static findByKey = async (db: SHAHEEN OSDatabase, key: string) => {
     if (!validateApiKeyFormat(key)) {
       return null;
     }
@@ -22,11 +22,11 @@ export class ApiKeyModel {
   };
 
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
   private gateKeeperPromise: Promise<KeyVaultsGateKeeper> | null = null;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

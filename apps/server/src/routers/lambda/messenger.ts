@@ -29,7 +29,7 @@ import { MessengerInstallationModel } from '@/database/models/messengerInstallat
 import { RbacModel } from '@/database/models/rbac';
 import { WorkspaceModel } from '@/database/models/workspace';
 import { agents, users } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { authedProcedure, publicProcedure, router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
 import { getServerFeatureFlagsStateFromRuntimeConfig } from '@/server/featureFlags';
@@ -103,7 +103,7 @@ const assertWorkspaceFeatureEnabledForUser = async (userId: string): Promise<voi
 };
 
 const reconcileSlackInstallation = async (
-  serverDB: LobeChatDatabase,
+  serverDB: SHAHEEN OSDatabase,
   row: DecryptedMessengerInstallation,
 ): Promise<DecryptedMessengerInstallation | null> => {
   if (row.platform !== 'slack') return row;
@@ -201,7 +201,7 @@ const messengerWriteProcedure = messengerProcedure.use(withScopedPermission('age
  * Throws `NOT_FOUND` / `FORBIDDEN`.
  */
 const resolveAuthorizedAgentScope = async (
-  serverDB: LobeChatDatabase,
+  serverDB: SHAHEEN OSDatabase,
   userId: string,
   agentId: string,
 ): Promise<{ title: string | null; workspaceId: string | null }> => {
@@ -448,7 +448,7 @@ export const messengerRouter = router({
             )
           : undefined;
         const link = await ctx.serverDB.transaction(async (tx) => {
-          const txDB = tx as LobeChatDatabase;
+          const txDB = tx as SHAHEEN OSDatabase;
           return new MessengerAccountLinkModel(txDB, ctx.userId).upsertForPlatform(
             {
               activeAgentId,
@@ -479,7 +479,7 @@ export const messengerRouter = router({
           const previousApplicationId = previousWechatLink?.applicationId;
           if (previousWechatLink && previousApplicationId) {
             await ctx.serverDB.transaction(async (tx) => {
-              const txDB = tx as LobeChatDatabase;
+              const txDB = tx as SHAHEEN OSDatabase;
               await new MessengerAccountLinkModel(txDB, ctx.userId).upsertForPlatform(
                 {
                   activeAgentId: previousWechatLink.activeAgentId,
@@ -501,7 +501,7 @@ export const messengerRouter = router({
             });
           } else {
             await ctx.serverDB.transaction(async (tx) => {
-              const txDB = tx as LobeChatDatabase;
+              const txDB = tx as SHAHEEN OSDatabase;
               await new MessengerAccountLinkModel(txDB, ctx.userId).deleteByPlatform(
                 'wechat',
                 platformUserId,

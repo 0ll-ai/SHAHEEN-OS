@@ -20,7 +20,7 @@ import { MessageModel } from '@/database/models/message';
 import { ThreadModel } from '@/database/models/thread';
 import { TopicModel } from '@/database/models/topic';
 import { agentOperations, topics } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { heteroAuthedProcedure, router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
 import { signUserJWT } from '@/libs/trpc/utils/internalJwt';
@@ -45,7 +45,7 @@ const log = debug('lobe-server:ai-agent-router');
  * No-op in personal mode (no workspaceId).
  */
 const assertCanUseOperationAgent = async (params: {
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   operationId: string;
   userId: string;
   workspaceId?: string | null;
@@ -75,7 +75,7 @@ const assertCanUseOperationAgent = async (params: {
  * workspace resource.
  */
 const assertCanUseAgentRunConversation = async (params: {
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   messageIds?: Array<string | null | undefined>;
   topicId?: string | null;
   userId: string;

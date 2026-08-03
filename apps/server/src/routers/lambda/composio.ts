@@ -1,4 +1,4 @@
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import { type ToolManifest } from '@lobechat/types';
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
@@ -193,7 +193,7 @@ async function deleteComposioConnector(
  * agent can't attach their account to it.
  */
 async function assertCanEditAgent(
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userId: string,
   agentId: string,
   workspaceId?: string,

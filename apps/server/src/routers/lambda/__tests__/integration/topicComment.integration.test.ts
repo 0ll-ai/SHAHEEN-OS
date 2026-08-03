@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   agents,
   messages,
@@ -19,7 +19,7 @@ import { assertTopicCommentReadAccess } from '../../_helpers/topicCommentAccess'
 import { topicCommentRouter } from '../../topicComment';
 import { cleanupTestUser, createTestUser } from './setup';
 
-let testDB: LobeChatDatabase;
+let testDB: SHAHEEN OSDatabase;
 const notifyTopicCommentActivity = vi.hoisted(() => vi.fn().mockResolvedValue(undefined));
 const notifyTopicCommentModeration = vi.hoisted(() => vi.fn().mockResolvedValue(undefined));
 const publishResourceEvent = vi.hoisted(() => vi.fn().mockResolvedValue(undefined));
@@ -50,7 +50,7 @@ const context = (userId: string, workspaceId?: string) => ({
 
 describe('topicCommentRouter integration', () => {
   let adminId: string;
-  let db: LobeChatDatabase;
+  let db: SHAHEEN OSDatabase;
   let memberId: string;
   let ownerId: string;
   let topicId: string;

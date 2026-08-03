@@ -2,7 +2,7 @@ import { and, desc, eq, inArray } from 'drizzle-orm';
 
 import type { AgentBotProviderItem, NewAgentBotProvider } from '../schemas';
 import { agentBotProviders } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 interface GateKeeper {
@@ -18,11 +18,11 @@ export interface DecryptedBotProvider extends Omit<AgentBotProviderItem, 'creden
 
 export class AgentBotProviderModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
   private gateKeeper?: GateKeeper;
 
-  constructor(db: LobeChatDatabase, userId: string, gateKeeper?: GateKeeper, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, gateKeeper?: GateKeeper, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -123,7 +123,7 @@ export class AgentBotProviderModel {
   // --------------- System-wide static methods ---------------
 
   static findByPlatformAndAppId = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     platform: string,
     applicationId: string,
   ) => {
@@ -175,7 +175,7 @@ export class AgentBotProviderModel {
    * never as an authorization check itself.
    */
   static findEnabledByPlatformAndAppId = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     platform: string,
     applicationId: string,
     gateKeeper?: GateKeeper,
@@ -215,7 +215,7 @@ export class AgentBotProviderModel {
    * {@link findEnabledByPlatformAndAppId}: runtime-layer use only.
    */
   static findByAgentId = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     agentId: string,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedBotProvider[]> => {
@@ -258,7 +258,7 @@ export class AgentBotProviderModel {
    * whole query with a Postgres cast error.
    */
   static findByIds = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     ids: string[],
   ): Promise<
     Array<Pick<AgentBotProviderItem, 'applicationId' | 'enabled' | 'id' | 'platform' | 'settings'>>
@@ -279,7 +279,7 @@ export class AgentBotProviderModel {
   };
 
   static findEnabledByPlatform = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     platform: string,
     gateKeeper?: GateKeeper,
     options?: {

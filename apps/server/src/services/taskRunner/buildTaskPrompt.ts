@@ -6,13 +6,13 @@ import type { TaskModel } from '@/database/models/task';
 import type { TaskTopicModel } from '@/database/models/taskTopic';
 import { VerifyCriterionModel } from '@/database/models/verifyCriterion';
 import { VerifyRubricModel } from '@/database/models/verifyRubric';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { extractFileIdsFromEditorData } from '@/server/services/file/extractFileIdsFromEditorData';
 import { resolveAttachmentMetadata } from '@/server/services/file/resolveAttachments';
 
 export interface BuildTaskPromptDeps {
   briefModel: BriefModel;
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   taskModel: TaskModel;
   taskTopicModel: TaskTopicModel;
   userId: string;

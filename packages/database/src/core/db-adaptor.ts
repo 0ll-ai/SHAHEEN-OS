@@ -1,13 +1,13 @@
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { getDBInstance } from './web-server';
 
 /**
  * Lazy-load database instance
  * Avoid initializing the database every time the module is imported
  */
-let cachedDB: LobeChatDatabase | null = null;
+let cachedDB: SHAHEEN OSDatabase | null = null;
 
-export const getServerDB = async (): Promise<LobeChatDatabase> => {
+export const getServerDB = async (): Promise<SHAHEEN OSDatabase> => {
   // If there's already a cached instance, return it directly
   if (cachedDB) return cachedDB;
 

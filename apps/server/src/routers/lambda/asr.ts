@@ -6,7 +6,7 @@ import {
   wsCompatProcedure,
 } from '@/business/server/trpc-middlewares/workspaceAuth';
 import { FileModel } from '@/database/models/file';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
@@ -129,7 +129,7 @@ export const asrRouter = router({
  * inline base64 payload.
  */
 async function resolveAudio(
-  ctx: { serverDB: LobeChatDatabase; userId: string },
+  ctx: { serverDB: SHAHEEN OSDatabase; userId: string },
   input: { audioBase64?: string; fileId?: string; fileName?: string; mimeType?: string },
   workspaceId?: string,
 ): Promise<ResolvedAudio> {

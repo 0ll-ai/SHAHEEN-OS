@@ -25,7 +25,7 @@ import {
   upsertUserPersonaInTransaction,
 } from '../../models/userMemory/persona';
 import { messages, threads, topics } from '../../schemas';
-import type { LobeChatDatabase, Transaction } from '../../type';
+import type { SHAHEEN OSDatabase, Transaction } from '../../type';
 import { getUnderstandingSourceFingerprint } from './fingerprint';
 
 export { getUnderstandingSourceFingerprint } from './fingerprint';
@@ -291,7 +291,7 @@ const mutateTopicSession = async <Result>(
 
 export class OnboardingUnderstandingRepository {
   constructor(
-    private readonly db: LobeChatDatabase,
+    private readonly db: SHAHEEN OSDatabase,
     private readonly userId: string,
   ) {}
 

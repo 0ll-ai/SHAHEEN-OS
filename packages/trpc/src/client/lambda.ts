@@ -43,9 +43,9 @@ const errorHandlingLink: TRPCLink<LambdaRouter> = () => {
               case 401: {
                 if (isMarketApi) {
                   // Market API 401: emit event for MarketAuthProvider to handle
-                  // Don't trigger LobeChat logout for market auth issues
+                  // Don't trigger SHAHEEN OS logout for market auth issues
                   const { getUserStoreState } = await import('@/store/user/store');
-                  // Without a LobeChat session a market.* 401 is not a Market auth
+                  // Without a SHAHEEN OS session a market.* 401 is not a Market auth
                   // issue — let it bubble instead of triggering the auth modal
                   if (!getUserStoreState().isSignedIn) break;
                   const now = Date.now();
@@ -63,7 +63,7 @@ const errorHandlingLink: TRPCLink<LambdaRouter> = () => {
                     });
                   }
                 } else {
-                  // Non-market 401: handle as before (LobeChat session expired)
+                  // Non-market 401: handle as before (SHAHEEN OS session expired)
                   const now = Date.now();
                   if (now - last401Time > MIN_401_INTERVAL) {
                     last401Time = now;

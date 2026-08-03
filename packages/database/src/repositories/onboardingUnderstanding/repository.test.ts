@@ -17,14 +17,14 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import {
   OnboardingUnderstandingRepository,
   StaleUnderstandingRevisionError,
   UnderstandingResourceNotFoundError,
 } from './repository';
 
-const db: LobeChatDatabase = await getTestDB();
+const db: SHAHEEN OSDatabase = await getTestDB();
 const userId = 'understanding-repository-user';
 const otherUserId = 'understanding-repository-other';
 const agentId = 'understanding-repository-agent';

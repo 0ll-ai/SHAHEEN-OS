@@ -4,14 +4,14 @@ import { and, asc, desc, eq, inArray, or, sql } from 'drizzle-orm';
 
 import type { NewUserMemoryActivity, UserMemoryActivity } from '../../schemas';
 import { userMemories, userMemoriesActivities } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { normalizeBm25MatchQuery, SAFE_BM25_QUERY_OPTIONS } from '../../utils/bm25';
 
 export class UserMemoryActivityModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase, userId: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }

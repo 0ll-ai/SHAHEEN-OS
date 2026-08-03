@@ -16,7 +16,7 @@ import { today } from '@/utils/time';
 
 import type { NewUser, UserItem, UserSettingsItem } from '../schemas';
 import { messages, nextauthAccounts, topics, users, userSettings } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 type DecryptUserKeyVaults = (
   encryptKeyVaultsStr: string | null,
@@ -54,9 +54,9 @@ interface LastActiveAtTransition {
 
 export class UserModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase, userId: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }
@@ -325,11 +325,11 @@ export class UserModel {
   };
 
   // Static method
-  static makeSureUserExist = async (db: LobeChatDatabase, userId: string) => {
+  static makeSureUserExist = async (db: SHAHEEN OSDatabase, userId: string) => {
     await db.insert(users).values({ id: userId }).onConflictDoNothing();
   };
 
-  static createUser = async (db: LobeChatDatabase, params: NewUser) => {
+  static createUser = async (db: SHAHEEN OSDatabase, params: NewUser) => {
     // if user already exists, skip creation
     if (params.id) {
       const user = await db.query.users.findFirst({ where: eq(users.id, params.id) });
@@ -342,26 +342,26 @@ export class UserModel {
     return { duplicate: false, user };
   };
 
-  static deleteUser = async (db: LobeChatDatabase, id: string) => {
+  static deleteUser = async (db: SHAHEEN OSDatabase, id: string) => {
     return db.delete(users).where(eq(users.id, id));
   };
 
-  static findById = async (db: LobeChatDatabase, id: string) => {
+  static findById = async (db: SHAHEEN OSDatabase, id: string) => {
     return db.query.users.findFirst({ where: eq(users.id, id) });
   };
 
-  static findByUsername = async (db: LobeChatDatabase, username: string) => {
+  static findByUsername = async (db: SHAHEEN OSDatabase, username: string) => {
     const normalizedUsername = username.trim();
     if (!normalizedUsername) return null;
 
     return db.query.users.findFirst({ where: eq(users.username, normalizedUsername) });
   };
 
-  static findByEmail = async (db: LobeChatDatabase, email: string) => {
+  static findByEmail = async (db: SHAHEEN OSDatabase, email: string) => {
     return db.query.users.findFirst({ where: eq(users.email, email) });
   };
 
-  static findByIds = async (db: LobeChatDatabase, ids: string[]) => {
+  static findByIds = async (db: SHAHEEN OSDatabase, ids: string[]) => {
     if (ids.length === 0) return [];
     return db.query.users.findMany({ where: inArray(users.id, ids) });
   };
@@ -375,7 +375,7 @@ export class UserModel {
    * see (e.g. userIds harvested from workspace-scoped connector rows).
    */
   static getDisplayInfoByIds = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     ids: string[],
   ): Promise<
     Array<{ avatar: string | null; fullName: string | null; id: string; username: string | null }>
@@ -393,7 +393,7 @@ export class UserModel {
   };
 
   static getUserApiKeys = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     id: string,
     decryptor: DecryptUserKeyVaults,
   ) => {
@@ -415,7 +415,7 @@ export class UserModel {
   };
 
   static listUsersForMemoryExtractor = (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     options: ListUsersForMemoryExtractorOptions = {},
   ) => {
     const cursorCondition = options.cursor
@@ -441,7 +441,7 @@ export class UserModel {
   };
 
   static listUsersForHourlyMemoryExtractor = (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     options: ListUsersForHourlyMemoryExtractorOptions = {},
   ) => {
     const cursorCondition = options.cursor
@@ -490,7 +490,7 @@ export class UserModel {
    * Get user info for AI generation (name and language preference)
    */
   static getInfoForAIGeneration = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     userId: string,
   ): Promise<UserInfoForAIGeneration> => {
     const result = await db

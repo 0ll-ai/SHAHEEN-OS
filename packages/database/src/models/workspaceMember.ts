@@ -4,15 +4,15 @@ import { nanoid } from 'nanoid/non-secure';
 
 import { devices } from '../schemas/device';
 import { workspaceInvitations, workspaceMembers } from '../schemas/workspace';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 type MemberRole = 'admin' | 'member' | 'viewer';
 
 export class WorkspaceMemberModel {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly userId: string;
 
-  constructor(db: LobeChatDatabase, userId: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
   }

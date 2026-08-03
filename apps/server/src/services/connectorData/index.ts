@@ -10,7 +10,7 @@ import { and, eq } from 'drizzle-orm';
 
 import { ConnectorModel } from '@/database/models/connector';
 import { account } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { getComposioClient, isComposioConnectedAccountLookupNotFoundError } from '@/libs/composio';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 import { ensureFreshConnectorToken } from '@/server/services/connector/tokens';
@@ -75,7 +75,7 @@ const isTokenUsable = (expiresAt: Date | number | null | undefined) =>
  */
 export class ConnectorDataService {
   constructor(
-    private readonly db: LobeChatDatabase,
+    private readonly db: SHAHEEN OSDatabase,
     private readonly userId: string,
     private readonly workspaceId?: string,
   ) {}

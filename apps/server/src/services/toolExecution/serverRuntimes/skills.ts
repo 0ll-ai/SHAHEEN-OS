@@ -27,7 +27,7 @@ import { AgentModel } from '@/database/models/agent';
 import { AgentSkillModel } from '@/database/models/agentSkill';
 import { FileModel } from '@/database/models/file';
 import { UserModel } from '@/database/models/user';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { filterBuiltinSkills } from '@/helpers/skillFilters';
 import { AgentDocumentsService } from '@/server/services/agentDocuments';
 import { deviceGateway } from '@/server/services/deviceGateway';
@@ -106,7 +106,7 @@ class SkillServerRuntimeService implements SkillRuntimeService {
   private marketService: MarketService;
   private fileService: FileService;
   private fileModel: FileModel;
-  private serverDB: LobeChatDatabase;
+  private serverDB: SHAHEEN OSDatabase;
   private topicId?: string;
   private userId: string;
   private workspaceId?: string;
@@ -127,7 +127,7 @@ class SkillServerRuntimeService implements SkillRuntimeService {
     fileService: FileService;
     marketService: MarketService;
     resourceService: SkillResourceService;
-    serverDB: LobeChatDatabase;
+    serverDB: SHAHEEN OSDatabase;
     skillModel: AgentSkillModel;
     topicId?: string;
     userId: string;

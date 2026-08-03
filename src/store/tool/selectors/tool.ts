@@ -104,7 +104,7 @@ const getRenderDisplayControl =
     )?.renderDisplayControl;
     if (manifestControl) return manifestControl;
 
-    // Fallback for packages that don't ship a LobeChat manifest (e.g. Claude Code —
+    // Fallback for packages that don't ship a SHAHEEN OS manifest (e.g. Claude Code —
     // its tools come from Anthropic tool_use blocks at runtime).
     return getBuiltinRenderDisplayControl(identifier, apiName, pluginState) ?? 'collapsed';
   };

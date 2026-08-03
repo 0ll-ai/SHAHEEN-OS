@@ -5,7 +5,7 @@ import { and, eq, sql } from 'drizzle-orm';
 import { DocumentModel } from '../../models/document';
 import { FileModel } from '../../models/file';
 import { DOCUMENT_FOLDER_TYPE, documents, files, knowledgeBaseFiles, users } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 export interface KnowledgeItem {
@@ -51,12 +51,12 @@ interface KnowledgeQueryParams extends QueryFileListParams {
  */
 export class KnowledgeRepo {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private fileModel: FileModel;
   private documentModel: DocumentModel;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

@@ -2,7 +2,7 @@ import { and, eq, getTableColumns, type SQL } from 'drizzle-orm';
 
 import type { MessengerAccountLinkItem, NewMessengerAccountLink } from '../schemas';
 import { messengerAccountLinks } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 interface GateKeeper {
   decrypt: (ciphertext: string) => Promise<{ plaintext: string }>;
@@ -95,9 +95,9 @@ export class MessengerAccountLinkRelinkRequiredError extends Error {
 
 export class MessengerAccountLinkModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase, userId: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }
@@ -402,7 +402,7 @@ export class MessengerAccountLinkModel {
    * the multi-tenant router pass the resolved `team_id` / `enterprise_id`.
    */
   static findByPlatformUser = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     platform: string,
     platformUserId: string,
     tenantId: string = GLOBAL_TENANT_ID,
@@ -428,7 +428,7 @@ export class MessengerAccountLinkModel {
    * above and therefore cannot accidentally expose ciphertext.
    */
   static findByPlatformUserWithCredentials = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     params: CredentialLookupParams,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedMessengerAccountLink | undefined> => {
@@ -452,7 +452,7 @@ export class MessengerAccountLinkModel {
 
   /** Static setter used by IM `/switch` (no user-scope context, but trusted by sender match). */
   static setActiveAgentById = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     linkId: string,
     agentId: string | null,
   ): Promise<SafeMessengerAccountLink | undefined> => {
@@ -473,7 +473,7 @@ export class MessengerAccountLinkModel {
    * scope first.
    */
   static setActiveScope = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     linkId: string,
     workspaceId: string | null,
     agentId: string | null = null,

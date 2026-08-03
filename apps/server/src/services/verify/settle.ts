@@ -5,7 +5,7 @@ import { AgentOperationModel } from '@/database/models/agentOperation';
 import { BriefModel } from '@/database/models/brief';
 import { TaskModel } from '@/database/models/task';
 import { VerifyRunModel } from '@/database/models/verifyRun';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { TaskService } from '@/server/services/task';
 import { TaskResultBridgeService } from '@/server/services/taskResultBridge';
 
@@ -73,7 +73,7 @@ interface ReportContext {
  * Idempotent via a run-metadata marker; best-effort (never throws into verify).
  */
 export const driveTaskFromVerify = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userId: string,
   operationId: string,
   workspaceId?: string,
@@ -176,7 +176,7 @@ export const driveTaskFromVerify = async (
  * location regardless of which path completed the last check.
  */
 export const finalizeVerifyRun = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userId: string,
   operationId: string,
   opts: { report?: ReportContext },

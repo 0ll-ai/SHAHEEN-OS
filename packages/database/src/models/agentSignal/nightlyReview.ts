@@ -15,7 +15,7 @@ import {
 } from 'drizzle-orm';
 
 import { agents, messagePlugins, messages, topics, users, userSettings } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { normalizeInboxAgentTitle } from '../../utils/inboxAgent';
 
 /**
@@ -105,9 +105,9 @@ export interface AgentSignalNightlyReviewTarget {
  * - Candidate users and active agent targets without emitting source events
  */
 export class AgentSignalNightlyReviewModel {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase) {
+  constructor(db: SHAHEEN OSDatabase) {
     this.db = db;
   }
 

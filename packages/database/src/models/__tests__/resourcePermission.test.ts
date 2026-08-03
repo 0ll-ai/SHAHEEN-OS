@@ -8,10 +8,10 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { ResourcePermissionModel } from '../resourcePermission';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const ownerId = 'rp-test-owner';
 const wsId = 'rp-test-ws';

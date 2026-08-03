@@ -1,4 +1,4 @@
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import { TRPCError } from '@trpc/server';
 import debug from 'debug';
 
@@ -35,7 +35,7 @@ export const asyncAuth = asyncTrpc.middleware(async (opts) => {
 
   try {
     log('Looking up user in database: %s', ctx.userId);
-    const result = await UserModel.findById(ctx.serverDB as LobeChatDatabase, ctx.userId);
+    const result = await UserModel.findById(ctx.serverDB as SHAHEEN OSDatabase, ctx.userId);
 
     if (!result) {
       log('User not found in database: %s', ctx.userId);

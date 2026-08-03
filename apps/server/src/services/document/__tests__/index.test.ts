@@ -1,4 +1,4 @@
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import { TRPCError } from '@trpc/server';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -79,7 +79,7 @@ const normalizedEditorDataFromDiffNode = {
 
 describe('DocumentService', () => {
   let service: DocumentService;
-  let mockDb: LobeChatDatabase;
+  let mockDb: SHAHEEN OSDatabase;
   let mockDocumentModel: any;
   let mockDocumentHistoryService: any;
   let mockFileModel: any;
@@ -97,7 +97,7 @@ describe('DocumentService', () => {
           findMany: vi.fn().mockResolvedValue([]),
         },
       },
-      transaction: vi.fn(async (callback: (tx: LobeChatDatabase) => Promise<unknown>) =>
+      transaction: vi.fn(async (callback: (tx: SHAHEEN OSDatabase) => Promise<unknown>) =>
         callback(mockDb),
       ),
     } as any;

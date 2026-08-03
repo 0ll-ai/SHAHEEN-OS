@@ -14,7 +14,7 @@ import {
   agentEvalRuns,
   type NewAgentEvalExperiment,
 } from '../../schemas';
-import { type LobeChatDatabase } from '../../type';
+import { type SHAHEEN OSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 import { AgentEvalDatasetModel } from './dataset';
 import { AgentEvalRunModel } from './run';
@@ -23,12 +23,12 @@ const RECENT_RUNS_PER_EXPERIMENT = 5;
 
 export class AgentEvalExperimentModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
   private datasetModel: AgentEvalDatasetModel;
   private runModel: AgentEvalRunModel;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

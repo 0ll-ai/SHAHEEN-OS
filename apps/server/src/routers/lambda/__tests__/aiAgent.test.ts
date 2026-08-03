@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   agents,
   agentsToSessions,
@@ -24,7 +24,7 @@ import { aiAgentRouter } from '../aiAgent';
 import { cleanupTestUser, createTestUser } from './integration/setup';
 
 // Mock getServerDB to return our test database instance
-let testDB: LobeChatDatabase;
+let testDB: SHAHEEN OSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -99,7 +99,7 @@ vi.mock('model-bank', async (importOriginal) => {
  * 3. Verify interactions with the database
  */
 describe('AI Agent Router Integration Tests', () => {
-  let serverDB: LobeChatDatabase;
+  let serverDB: SHAHEEN OSDatabase;
   let userId: string;
   let testAgentId: string;
   let testSessionId: string;

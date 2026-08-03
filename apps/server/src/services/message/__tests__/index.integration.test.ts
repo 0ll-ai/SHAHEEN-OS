@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   agents,
   agentsToSessions,
@@ -26,7 +26,7 @@ vi.mock('@/server/services/file', () => ({
   })),
 }));
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'message-service-integration-test';
 const otherUserId = 'message-service-integration-test-other';

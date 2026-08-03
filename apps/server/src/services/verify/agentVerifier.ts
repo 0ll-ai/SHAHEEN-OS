@@ -5,7 +5,7 @@ import debug from 'debug';
 
 import { AgentModel } from '@/database/models/agent';
 import { DocumentModel } from '@/database/models/document';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import type { AgentHook, AgentHookEvent } from '@/server/services/agentRuntime/hooks/types';
 import { AiAgentService } from '@/server/services/aiAgent';
 
@@ -41,7 +41,7 @@ const log = debug('lobe-server:verify-agent-verifier');
  * identifiers (e.g. claude-code / codex) that cannot run LobeHub LLM calls.
  */
 export const createVerifierAgentRunner = (params: {
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   deliverable: string;
   /** Verify-safe model selected by the completion lifecycle. */
   model?: string | null;

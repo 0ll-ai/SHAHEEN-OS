@@ -12,12 +12,12 @@ import {
   users,
   workspaces,
 } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { HeteroSessionImporterRepo } from '../index';
 
 const userId = 'session-importer-user';
 const agentId = 'session-importer-agent';
-let serverDB: LobeChatDatabase;
+let serverDB: SHAHEEN OSDatabase;
 
 const basePayload = (): HeteroSessionImportPayload => ({
   messages: [

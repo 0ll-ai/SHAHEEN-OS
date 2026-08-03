@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import type { FileService } from '@/server/services/file';
 import type { MarketService } from '@/server/services/market';
 
@@ -37,7 +37,7 @@ const createFileService = (): FileService =>
 const baseOptions = () => ({
   fileService: createFileService(),
   marketService: {} as MarketService,
-  serverDB: {} as LobeChatDatabase,
+  serverDB: {} as SHAHEEN OSDatabase,
   topicId: 'topic-1',
   userId: 'user-1',
 });

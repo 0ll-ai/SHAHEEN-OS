@@ -1,5 +1,5 @@
 import { TopicReferenceIdentifier } from '@lobechat/builtin-tool-topic-reference';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import type { BuiltinServerRuntimeOutput } from '@lobechat/types';
 
 import { MessageModel } from '@/database/models/message';
@@ -14,11 +14,11 @@ interface GetTopicContextParams {
 }
 
 class TopicReferenceExecutionRuntime {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private userId: string;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

@@ -4,10 +4,10 @@ import { beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { agents, messagePlugins, messages, topics, users, userSettings } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { AgentSignalNightlyReviewModel } from '../nightlyReview';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const enabledUserId = 'nightly-review-enabled-user';
 const enabledUserWithoutTimezoneId = 'nightly-review-enabled-user-utc';

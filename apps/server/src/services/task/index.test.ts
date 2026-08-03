@@ -6,7 +6,7 @@ import { BriefModel } from '@/database/models/brief';
 import { TaskModel } from '@/database/models/task';
 import { TaskTopicModel } from '@/database/models/taskTopic';
 import { UserModel } from '@/database/models/user';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { TaskService } from './index';
 
@@ -45,7 +45,7 @@ vi.mock('@/server/services/file/resolveAttachments', () => ({
 }));
 
 describe('TaskService', () => {
-  const db = {} as LobeChatDatabase;
+  const db = {} as SHAHEEN OSDatabase;
   const userId = 'user-1';
 
   const mockAgentModel = {

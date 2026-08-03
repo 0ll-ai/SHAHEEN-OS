@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { agentProviderAccounts, agents, users, workspaces } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import {
   AgentAccountBindingModel,
   AgentProviderAccountModel,
@@ -14,7 +14,7 @@ import {
   AgentQuotaWindowModel,
 } from '../agentQuota';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'agent-quota-workspace-user';
 const teammateId = 'agent-quota-workspace-teammate';

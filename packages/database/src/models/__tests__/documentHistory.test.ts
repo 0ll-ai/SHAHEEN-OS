@@ -4,12 +4,12 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { documentHistories, documents, files, users } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { DocumentModel } from '../document';
 import { DocumentHistoryModel } from '../documentHistory';
 import { FileModel } from '../file';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'document-history-model-test-user-id';
 const userId2 = 'document-history-model-test-user-id-2';

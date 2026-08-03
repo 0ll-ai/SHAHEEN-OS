@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import { agentSkills } from '@lobechat/database/schemas';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -17,7 +17,7 @@ import { agentSkillsRouter } from '../../agentSkills';
 import { cleanupTestUser, createTestAgent, createTestContext, createTestUser } from './setup';
 
 // Mock getServerDB to return our test database instance
-let testDB: LobeChatDatabase;
+let testDB: SHAHEEN OSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -99,7 +99,7 @@ const mockFetch = vi.fn(() => {
 vi.stubGlobal('fetch', mockFetch);
 
 describe('Skill Router Integration Tests', () => {
-  let serverDB: LobeChatDatabase;
+  let serverDB: SHAHEEN OSDatabase;
   let agentDocumentModel: AgentDocumentModel;
   let userId: string;
 

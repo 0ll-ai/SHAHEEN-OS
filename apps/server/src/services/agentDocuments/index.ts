@@ -6,7 +6,7 @@ import type {
 } from '@lobechat/agent-templates';
 import { DocumentLoadPosition, getDocumentTemplate, PolicyLoad } from '@lobechat/agent-templates';
 import { buildAgentSkillIdentifier } from '@lobechat/const';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import { DOCUMENT_FOLDER_TYPE } from '@lobechat/database/schemas';
 
 import type {
@@ -146,7 +146,7 @@ export class AgentDocumentsService {
   private topicDocumentModel: TopicDocumentModel;
 
   constructor(
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     userId: string,
     workspaceId?: string,
     callerAgentVisibility?: 'private' | 'public' | null,

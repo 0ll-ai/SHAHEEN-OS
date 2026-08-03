@@ -4,7 +4,7 @@ import { BUILTIN_AGENT_SLUGS } from '@lobechat/builtin-agents';
 import { createAgentSignalSelfIterationPrompt } from '@lobechat/prompts';
 import { isNonEmptyString } from '@lobechat/utils';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { defineSourceHandler } from '../../../runtime/middleware';
 import { enqueueSelfIterationRun } from '../dispatch/enqueueSelfIterationRun';
@@ -140,7 +140,7 @@ export interface CreateSelfFeedbackIntentSourceHandlerDependencies {
   /** Re-checks runtime gates before doing reviewer work. */
   canRunReview: (input: SelfFeedbackIntentSourceGuardInput) => Promise<boolean>;
   /** Postgres handle used by the dispatch helper to enqueue the execAgent run. */
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   /** Enqueues the async self-iteration run. Overridable for tests. */
   dispatch?: typeof enqueueSelfIterationRun;
   /** Adds topic or operation evidence without mutating shared resources. */

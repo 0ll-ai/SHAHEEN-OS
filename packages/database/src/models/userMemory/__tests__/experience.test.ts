@@ -4,14 +4,14 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { getTestDB } from '../../../core/getTestDB';
 import type { NewUserMemoryExperience } from '../../../schemas';
 import { userMemories, userMemoriesExperiences, users } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { UserMemoryExperienceModel } from '../experience';
 
 const userId = 'experience-test-user';
 const otherUserId = 'other-experience-user';
 
 let experienceModel: UserMemoryExperienceModel;
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 beforeEach(async () => {
   // Clean up

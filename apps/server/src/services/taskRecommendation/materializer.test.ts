@@ -2,7 +2,7 @@
 import type { OnboardingTaskRecommendationSession } from '@lobechat/types';
 import { describe, expect, it, vi } from 'vitest';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { TaskRecommendationMaterializer } from './materializer';
 
@@ -54,7 +54,7 @@ describe('TaskRecommendationMaterializer', () => {
     };
     const database = {
       transaction: vi.fn(async (callback) => callback(transaction)),
-    } as unknown as LobeChatDatabase;
+    } as unknown as SHAHEEN OSDatabase;
     const createTask = vi.fn(async () => ({ id: 'task-1' }));
     const materializer = new TaskRecommendationMaterializer(database, 'user-1', createTask);
     const input = {

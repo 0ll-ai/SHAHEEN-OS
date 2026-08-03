@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   topics,
   workspaceAuditLogs,
@@ -22,7 +22,7 @@ vi.mock('@/server/services/file', () => ({
   })),
 }));
 
-let testDB: LobeChatDatabase;
+let testDB: SHAHEEN OSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -34,7 +34,7 @@ const createWorkspaceContext = (userId: string, workspaceId?: string) => ({
 });
 
 describe('Topic Share Router Integration Tests (workspace permission matrix)', () => {
-  let serverDB: LobeChatDatabase;
+  let serverDB: SHAHEEN OSDatabase;
   let creatorId: string;
   let memberId: string;
   let ownerId: string;

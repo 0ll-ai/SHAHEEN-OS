@@ -639,7 +639,7 @@ export default defineFixtures({
         url: 'https://github.com/lobehub/lobe-chat/releases/latest',
       },
       content:
-        '## LobeChat v1.0\n\n- New agent runtime with tool streaming\n- Faster cold start\n- Fixed a memory leak in the chat store',
+        '## SHAHEEN OS v1.0\n\n- New agent runtime with tool streaming\n- Faster cold start\n- Fixed a memory leak in the chat store',
     }),
     WebSearch: single({
       args: {

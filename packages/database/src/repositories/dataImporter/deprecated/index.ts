@@ -13,7 +13,7 @@ import {
   sessions,
   topics,
 } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { buildWorkspaceWhere } from '../../../utils/workspace';
 
 interface ImportResult {
@@ -26,14 +26,14 @@ interface ImportResult {
 export class DeprecatedDataImporterRepos {
   private userId: string;
   private workspaceId?: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
   /**
    * The version of the importer that this module supports
    */
   supportVersion = 7;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;
