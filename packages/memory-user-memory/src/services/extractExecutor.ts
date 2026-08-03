@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import type { ModelRuntime } from '@lobechat/model-runtime';
 import { SpanStatusCode } from '@lobechat/observability-otel/api';
 import {
@@ -57,7 +57,7 @@ export interface MemoryExtractionRuntimeOptions {
 export interface MemoryExtractionServiceOptions {
   callbacks?: ExtractorOptions['callbacks'];
   config: MemoryExtractionLLMConfig;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   language?: string;
   runtimes: MemoryExtractionRuntimeOptions;
 }

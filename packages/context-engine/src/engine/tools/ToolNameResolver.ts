@@ -3,7 +3,7 @@ import { Md5 } from 'ts-md5';
 
 import type { ChatToolPayload, MessageToolCall } from '@/types/index';
 
-import type { SHAHEEN OSPluginApi, LobeToolManifest } from './types';
+import type { SHAHEENOSPluginApi, LobeToolManifest } from './types';
 
 // Tool naming constants
 const PLUGIN_SCHEMA_SEPARATOR = '____';
@@ -158,7 +158,7 @@ export class ToolNameResolver {
           const matches: string[] = [];
           for (const [id, manifest] of Object.entries(manifests)) {
             const matchedApi = manifest?.api?.find(
-              (api: SHAHEEN OSPluginApi) => api.name === bareName,
+              (api: SHAHEENOSPluginApi) => api.name === bareName,
             );
             if (!matchedApi) continue;
             // Restrict to tools actually offered to the LLM this turn so a
@@ -204,7 +204,7 @@ export class ToolNameResolver {
           const manifest = manifests[identifier];
 
           const api = manifest?.api.find(
-            (api: SHAHEEN OSPluginApi) => this.genHash(api.name) === md5,
+            (api: SHAHEENOSPluginApi) => this.genHash(api.name) === md5,
           );
           if (api) {
             payload.apiName = api.name;

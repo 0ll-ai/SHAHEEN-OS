@@ -4,14 +4,14 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { getTestDB } from '../../../core/getTestDB';
 import type { NewUserMemoryActivity } from '../../../schemas';
 import { userMemories, userMemoriesActivities, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { UserMemoryActivityModel } from '../activity';
 
 const userId = 'activity-test-user';
 const otherUserId = 'other-activity-user';
 
 let activityModel: UserMemoryActivityModel;
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   // Clean up

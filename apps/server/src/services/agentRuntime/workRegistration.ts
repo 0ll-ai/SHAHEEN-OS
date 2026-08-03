@@ -17,7 +17,7 @@ import debug from 'debug';
 import { AgentOperationModel } from '@/database/models/agentOperation';
 import { MessageModel } from '@/database/models/message';
 import { WorkModel } from '@/database/models/work';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { FileService } from '@/server/services/file';
 import { MarketService } from '@/server/services/market';
 import { createSandboxService } from '@/server/services/sandbox';
@@ -57,7 +57,7 @@ export interface RegisterWorksForOperationParams {
   /** Terminal in-memory usage blob of the completing operation (`state.usage`). */
   finalUsage?: Record<string, unknown> | null;
   operationId: string;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   userId: string;
   workspaceId?: string;
 }

@@ -14,10 +14,10 @@ import {
   workspaceMembers,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { TopicShareModel } from '../topicShare';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'topic-share-test-user-id';
 const userId2 = 'topic-share-test-user-id-2';

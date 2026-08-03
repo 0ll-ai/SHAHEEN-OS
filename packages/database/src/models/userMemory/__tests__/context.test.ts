@@ -4,14 +4,14 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { getTestDB } from '../../../core/getTestDB';
 import type { NewUserMemoryContext } from '../../../schemas';
 import { userMemories, userMemoriesContexts, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { UserMemoryContextModel } from '../context';
 
 const userId = 'context-test-user';
 const otherUserId = 'other-context-user';
 
 let contextModel: UserMemoryContextModel;
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   // Clean up

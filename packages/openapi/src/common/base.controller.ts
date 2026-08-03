@@ -4,7 +4,7 @@ import { HTTPException } from 'hono/http-exception';
 import { RBAC_PERMISSIONS } from '@/const/rbac';
 import { getServerDB } from '@/database/core/db-adaptor';
 import { RbacModel } from '@/database/models/rbac';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { parseFormData } from '../helpers/file';
 import type { ApiResponse } from '../types';
@@ -14,13 +14,13 @@ import type { ApiResponse } from '../types';
  * Provides unified response formatting, error handling, and common utility methods
  */
 export abstract class BaseController {
-  private _db: SHAHEEN OSDatabase | null = null;
+  private _db: SHAHEENOSDatabase | null = null;
 
   /**
    * Get database connection instance
    * Lazy initialization to avoid initializing the database during module import
    */
-  protected async getDatabase(): Promise<SHAHEEN OSDatabase> {
+  protected async getDatabase(): Promise<SHAHEENOSDatabase> {
     if (!this._db) {
       this._db = await getServerDB();
     }

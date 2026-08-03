@@ -2,7 +2,7 @@ import { BRANDING_LOGO_URL, BRANDING_NAME } from '@lobechat/business-const';
 import { type IconType } from '@lobehub/icons';
 import { type FlexboxProps } from '@lobehub/ui';
 import { Flexbox } from '@lobehub/ui';
-import { type SHAHEEN OSProps } from '@lobehub/ui/brand';
+import { type SHAHEENOSProps } from '@lobehub/ui/brand';
 import { createStaticStyles, cssVar } from 'antd-style';
 import { type ReactNode } from 'react';
 import { memo } from 'react';
@@ -69,7 +69,7 @@ const Divider: IconType = (({ ref, size = '1em', style, ...rest }) => (
   </svg>
 )) as IconType;
 
-const CustomLogo = memo<SHAHEEN OSProps>(({ extra, size = 32, className, style, type, ...rest }) => {
+const CustomLogo = memo<SHAHEENOSProps>(({ extra, size = 32, className, style, type, ...rest }) => {
   let logoComponent: ReactNode;
 
   switch (type) {

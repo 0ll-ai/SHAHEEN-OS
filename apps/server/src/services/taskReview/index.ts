@@ -4,7 +4,7 @@ import type { EvalBenchmarkRubric, UserSystemAgentConfig } from '@lobechat/types
 import debug from 'debug';
 
 import { UserModel } from '@/database/models/user';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 import { resolveSystemAgentModelConfig } from '../systemAgent/modelConfig';
@@ -34,11 +34,11 @@ export interface ReviewResult {
 }
 
 export class TaskReviewService {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private userId: string;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

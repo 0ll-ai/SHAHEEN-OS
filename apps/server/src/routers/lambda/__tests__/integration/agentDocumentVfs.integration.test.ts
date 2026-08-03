@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -8,7 +8,7 @@ import { AgentDocumentModel } from '@/database/models/agentDocuments';
 import { agentDocumentRouter } from '../../agentDocument';
 import { cleanupTestUser, createTestAgent, createTestContext, createTestUser } from './setup';
 
-let testDB: SHAHEEN OSDatabase;
+let testDB: SHAHEENOSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -24,7 +24,7 @@ vi.mock('@/server/services/skill/resource', () => ({
 describe('AgentDocument VFS Router Integration Tests', () => {
   let agentDocumentModel: AgentDocumentModel;
   let agentId: string;
-  let serverDB: SHAHEEN OSDatabase;
+  let serverDB: SHAHEENOSDatabase;
   let userId: string;
 
   beforeEach(async () => {

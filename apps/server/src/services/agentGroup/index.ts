@@ -1,5 +1,5 @@
 import { DEFAULT_AGENT_CONFIG, DEFAULT_CHAT_GROUP_CHAT_CONFIG } from '@lobechat/const';
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { type LobeAgentConfig } from '@lobechat/types';
 import { cleanObject, merge } from '@lobechat/utils';
 import { type PartialDeep } from 'type-fest';
@@ -24,7 +24,7 @@ export class AgentGroupService {
   private readonly chatGroupModel: ChatGroupModel;
   private readonly agentGroupRepo: AgentGroupRepository;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.agentModel = new AgentModel(db, userId, workspaceId);
     this.chatGroupModel = new ChatGroupModel(db, userId, workspaceId);
     this.agentGroupRepo = new AgentGroupRepository(db, userId, workspaceId);

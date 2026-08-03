@@ -2,7 +2,7 @@ import { and, desc, eq } from 'drizzle-orm';
 
 import type { DocumentItem, NewTopicDocument } from '../schemas';
 import { documents, topicDocuments } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspaceWhere } from '../utils/workspace';
 
 export interface TopicDocumentWithDetails extends DocumentItem {
@@ -11,10 +11,10 @@ export interface TopicDocumentWithDetails extends DocumentItem {
 
 export class TopicDocumentModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

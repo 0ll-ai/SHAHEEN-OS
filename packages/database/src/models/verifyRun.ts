@@ -11,7 +11,7 @@ import { and, asc, desc, eq, ilike, isNull, lt, or, sql } from 'drizzle-orm';
 import { agentOperations } from '../schemas/agentOperations';
 import type { NewVerifyRun, VerifyRunItem } from '../schemas/verify';
 import { verifyRuns } from '../schemas/verify';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { isUuid } from '../utils/uuid';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
@@ -68,11 +68,11 @@ const toState = (run: VerifyRunItem | null | undefined): VerifyRunState | null =
  * (e.g. agent-testing ingest) are created directly with no operation.
  */
 export class VerifyRunModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

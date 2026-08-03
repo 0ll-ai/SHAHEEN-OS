@@ -12,7 +12,7 @@ vi.mock('electron', () => ({
     setApplicationMenu: vi.fn(),
   },
   app: {
-    getName: vi.fn(() => 'SHAHEEN OS'),
+    getName: vi.fn(() => 'SHAHEENOS'),
   },
   shell: {
     openExternal: vi.fn(),

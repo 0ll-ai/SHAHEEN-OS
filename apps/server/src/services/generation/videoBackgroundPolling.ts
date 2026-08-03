@@ -5,7 +5,7 @@ import { getProviderContentPolicyErrorMessage } from '@/business/server/getProvi
 import { trackProviderContentPolicyViolation } from '@/business/server/trackProviderContentPolicyViolation';
 import { AsyncTaskModel } from '@/database/models/asyncTask';
 import { GenerationModel } from '@/database/models/generation';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 import { VideoGenerationService } from '@/server/services/generation/video';
 import { buildVideoGenerationFilePayload } from '@/server/services/generation/videoFile';
@@ -30,7 +30,7 @@ interface BackgroundPollingParams {
 }
 
 export async function processBackgroundVideoPolling(
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   params: BackgroundPollingParams,
 ): Promise<void> {
   const {

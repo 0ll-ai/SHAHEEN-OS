@@ -168,7 +168,7 @@ export const PluginApiWorkConfigSchema = z.object({
   resourceType: z.enum(['document', 'task']),
 });
 
-export interface SHAHEEN OSPluginApi {
+export interface SHAHEENOSPluginApi {
   /**
    * Default execution timeout in milliseconds for this API.
    *
@@ -217,7 +217,7 @@ export interface SHAHEEN OSPluginApi {
   work?: PluginApiWorkConfig;
 }
 
-export const SHAHEEN OSPluginApiSchema = z.object({
+export const SHAHEENOSPluginApiSchema = z.object({
   defaultTimeoutMs: z.number().int().positive().optional(),
   description: z.string(),
   humanIntervention: ExtendedHumanInterventionConfigSchema.optional(),
@@ -229,7 +229,7 @@ export const SHAHEEN OSPluginApiSchema = z.object({
 });
 
 export interface BuiltinToolManifest {
-  api: SHAHEEN OSPluginApi[];
+  api: SHAHEENOSPluginApi[];
 
   /**
    * Supported execution environments for this tool.
@@ -269,7 +269,7 @@ export interface BuiltinToolManifest {
 }
 
 export const BuiltinToolManifestSchema = z.object({
-  api: z.array(SHAHEEN OSPluginApiSchema),
+  api: z.array(SHAHEENOSPluginApiSchema),
   executors: z.array(z.enum(['client', 'server'])).optional(),
   humanIntervention: ExtendedHumanInterventionConfigSchema.optional(),
   identifier: z.string(),

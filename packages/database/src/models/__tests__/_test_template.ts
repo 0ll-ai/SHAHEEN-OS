@@ -4,10 +4,10 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { sessionGroups, users } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { SessionGroupModel } from '../sessionGroup';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'session-group-model-test-user-id';
 const sessionGroupModel = new SessionGroupModel(serverDB, userId);

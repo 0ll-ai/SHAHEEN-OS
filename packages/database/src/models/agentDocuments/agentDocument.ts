@@ -3,7 +3,7 @@ import { and, asc, desc, eq, inArray, isNotNull, isNull, like, ne, or, sql } fro
 
 import type { DocumentItem, NewAgentDocument, NewDocument } from '../../schemas';
 import { AGENT_SKILL_TEMPLATE_ID, agentDocuments, documents } from '../../schemas';
-import type { SHAHEEN OSDatabase, Transaction } from '../../type';
+import type { SHAHEENOSDatabase, Transaction } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 import { deriveAgentDocumentFields } from './deriveFields';
 import { buildDocumentFilename } from './filename';
@@ -89,9 +89,9 @@ interface AgentDocumentListQueryRow {
 export class AgentDocumentModel {
   private userId: string;
   private workspaceId?: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;

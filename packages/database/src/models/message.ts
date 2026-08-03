@@ -74,7 +74,7 @@ import {
   threads,
   users,
 } from '../schemas';
-import type { SHAHEEN OSDatabase, Transaction } from '../type';
+import type { SHAHEENOSDatabase, Transaction } from '../type';
 import { sanitizeBm25Query } from '../utils/bm25';
 import { genEndDateWhere, genRangeWhere, genStartDateWhere, genWhere } from '../utils/genWhere';
 import { idGenerator } from '../utils/idGenerator';
@@ -340,10 +340,10 @@ const computeTopicMessageStats = (counts: number[]): TopicMessageStats => {
 
 export class MessageModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -3427,7 +3427,7 @@ export class MessageModel {
    * Check which user IDs from the given list have at least one message.
    */
   static checkUsersHaveMessages = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userIds: string[],
   ): Promise<Set<string>> => {
     if (userIds.length === 0) return new Set();

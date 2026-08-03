@@ -1,7 +1,7 @@
 import { and, asc, eq } from 'drizzle-orm';
 
 import { messages } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 /**
@@ -14,10 +14,10 @@ const MAX_QUERY_LENGTH = 7000;
  */
 export class UserMemoryTopicRepository {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

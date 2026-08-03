@@ -3,7 +3,7 @@ import { DEFAULT_MODEL_PROVIDER_LIST } from 'model-bank/modelProviders';
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { AiInfraRepos } from '../index';
 
 const userId = 'test-user-id';
@@ -12,7 +12,7 @@ const mockProviderConfigs = {
   anthropic: { enabled: false },
 };
 
-let serverDB: SHAHEEN OSDatabase;
+let serverDB: SHAHEENOSDatabase;
 let repo: AiInfraRepos;
 
 beforeAll(async () => {

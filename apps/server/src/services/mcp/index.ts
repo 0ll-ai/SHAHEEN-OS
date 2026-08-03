@@ -1,7 +1,7 @@
 import {
   type CheckMcpInstallResult,
   type CustomPluginMetadata,
-  type SHAHEEN OSPluginApi,
+  type SHAHEENOSPluginApi,
   type ToolManifest,
   type ToolManifestSettings,
 } from '@lobechat/types';
@@ -91,7 +91,7 @@ export class MCPService {
   // --- MCP Interaction ---
 
   // listTools now accepts MCPClientParams
-  async listTools(params: MCPClientParams): Promise<SHAHEEN OSPluginApi[]> {
+  async listTools(params: MCPClientParams): Promise<SHAHEENOSPluginApi[]> {
     const loggableParams = this.sanitizeForLogging(params);
 
     return retry(
@@ -108,7 +108,7 @@ export class MCPService {
             loggableParams,
             result.length,
           );
-          return result.map<SHAHEEN OSPluginApi>((item) => ({
+          return result.map<SHAHEENOSPluginApi>((item) => ({
             // Assuming identifier is the unique name/id
             description: item.description,
             name: item.name,
@@ -487,7 +487,7 @@ export class MCPService {
   }
 
   private transformMCPToolToLobeAPI = (data: McpTool[]) => {
-    return data.map<SHAHEEN OSPluginApi>((item) => ({
+    return data.map<SHAHEENOSPluginApi>((item) => ({
       // Assuming identifier is the unique name/id
       description: item.description,
       name: item.name,

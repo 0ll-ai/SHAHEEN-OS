@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { FileService } from '@/server/services/file';
 
 import { KnowledgeBaseService } from '../../packages/openapi/src/services/knowledge-base.service';
@@ -8,7 +8,7 @@ import { KnowledgeBaseService } from '../../packages/openapi/src/services/knowle
 vi.mock('@/server/services/file');
 
 describe('KnowledgeBaseService.deleteKnowledgeBase', () => {
-  let db: SHAHEEN OSDatabase;
+  let db: SHAHEENOSDatabase;
   let deleteFilesSpy: ReturnType<typeof vi.fn>;
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('KnowledgeBaseService.deleteKnowledgeBase', () => {
           findFirst: vi.fn().mockResolvedValue({ id: 'kb-1', userId: 'user-1' }),
         },
       },
-    } as unknown as SHAHEEN OSDatabase;
+    } as unknown as SHAHEENOSDatabase;
 
     deleteFilesSpy = vi.fn().mockResolvedValue(undefined);
     vi.mocked(FileService).mockImplementation(() => ({ deleteFiles: deleteFilesSpy }) as any);

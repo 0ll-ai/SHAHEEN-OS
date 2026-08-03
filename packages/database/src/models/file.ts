@@ -34,7 +34,7 @@ import {
   topics,
   users,
 } from '../schemas';
-import type { SHAHEEN OSDatabase, Transaction } from '../type';
+import type { SHAHEENOSDatabase, Transaction } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 /**
@@ -51,10 +51,10 @@ export interface SandboxInitFileItem {
 
 export class FileModel {
   private readonly userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -74,7 +74,7 @@ export class FileModel {
    * @param id - File ID
    * @returns File record or undefined
    */
-  static async getFileById(db: SHAHEEN OSDatabase, id: string): Promise<FileItem | undefined> {
+  static async getFileById(db: SHAHEENOSDatabase, id: string): Promise<FileItem | undefined> {
     return db.query.files.findFirst({
       where: eq(files.id, id),
     });

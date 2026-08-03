@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import {
   agentEvalBenchmarks,
   agentEvalDatasets,
@@ -26,7 +26,7 @@ vi.mock('@/server/services/file', () => ({
 }));
 
 // Mock getServerDB to return our test database instance
-let testDB: SHAHEEN OSDatabase;
+let testDB: SHAHEENOSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -41,7 +41,7 @@ vi.mock('@/database/core/db-adaptor', () => ({
  * 4. Verify permissions and data isolation (users can only operate on their own data)
  */
 describe('Agent Eval Router Integration Tests', () => {
-  let serverDB: SHAHEEN OSDatabase;
+  let serverDB: SHAHEENOSDatabase;
   let userId: string;
 
   beforeEach(async () => {

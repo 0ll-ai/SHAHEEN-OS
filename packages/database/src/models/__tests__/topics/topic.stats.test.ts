@@ -2,13 +2,13 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { agents, agentsToSessions, messages, sessions, topics, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { TopicModel } from '../../topic';
 
 const userId = 'topic-stats-user';
 const userId2 = 'topic-stats-user-2';
 const sessionId = 'topic-stats-session';
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const topicModel = new TopicModel(serverDB, userId);
 
 describe('TopicModel - Stats', () => {

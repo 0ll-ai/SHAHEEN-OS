@@ -15,7 +15,7 @@ vi.mock('electron', () => ({
     setApplicationMenu: vi.fn(),
   },
   app: {
-    getName: vi.fn(() => 'SHAHEEN OS'),
+    getName: vi.fn(() => 'SHAHEENOS'),
     getVersion: vi.fn(() => '1.0.0'),
   },
   shell: {
@@ -84,7 +84,7 @@ const createMockApp = () => {
     const translations: Record<string, string> = {
       'about.title': 'About',
       'about.message': `${params?.appName || 'App'} ${params?.appVersion || '1.0.0'}`,
-      'about.detail': 'SHAHEEN OS Desktop Application',
+      'about.detail': 'SHAHEENOS Desktop Application',
     };
     return translations[key] || key;
   });
@@ -654,7 +654,7 @@ describe('LinuxMenu', () => {
       aboutItem.click();
 
       const callArgs = (dialog.showMessageBox as any).mock.calls[0][0];
-      expect(callArgs.message).toContain('SHAHEEN OS');
+      expect(callArgs.message).toContain('SHAHEENOS');
       expect(callArgs.message).toContain('1.0.0');
     });
   });

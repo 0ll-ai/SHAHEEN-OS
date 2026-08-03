@@ -1,10 +1,10 @@
 import type {
-  SHAHEEN OSGroupChatConfig,
-  SHAHEEN OSGroupFullConfig,
-  SHAHEEN OSGroupMetaConfig,
+  SHAHEENOSGroupChatConfig,
+  SHAHEENOSGroupFullConfig,
+  SHAHEENOSGroupMetaConfig,
 } from '@lobechat/types';
 
-export const DEFAULT_CHAT_GROUP_CHAT_CONFIG: SHAHEEN OSGroupChatConfig = {
+export const DEFAULT_CHAT_GROUP_CHAT_CONFIG: SHAHEENOSGroupChatConfig = {
   allowDM: true,
   openingMessage: '',
   openingQuestions: [],
@@ -12,12 +12,12 @@ export const DEFAULT_CHAT_GROUP_CHAT_CONFIG: SHAHEEN OSGroupChatConfig = {
   systemPrompt: '',
 };
 
-export const DEFAULT_CHAT_GROUP_META_CONFIG: SHAHEEN OSGroupMetaConfig = {
+export const DEFAULT_CHAT_GROUP_META_CONFIG: SHAHEENOSGroupMetaConfig = {
   description: '',
   title: '',
 };
 
-export const DEFAULT_CHAT_GROUP_CONFIG: SHAHEEN OSGroupFullConfig = {
+export const DEFAULT_CHAT_GROUP_CONFIG: SHAHEENOSGroupFullConfig = {
   chat: DEFAULT_CHAT_GROUP_CHAT_CONFIG,
   meta: DEFAULT_CHAT_GROUP_META_CONFIG,
 };

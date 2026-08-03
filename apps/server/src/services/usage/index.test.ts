@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { type MessageMetadata } from '@/types/message';
 
 import { UsageRecordService } from './index';
@@ -20,7 +20,7 @@ const deepIncludes = (value: unknown, target: string, seen = new Set<unknown>())
 
 describe('UsageRecordService', () => {
   let service: UsageRecordService;
-  let mockDb: SHAHEEN OSDatabase;
+  let mockDb: SHAHEENOSDatabase;
   const userId = 'test-user-id';
 
   // Helper function to setup query chain mock
@@ -54,7 +54,7 @@ describe('UsageRecordService', () => {
 
     mockDb = {
       select: mockSelect,
-    } as unknown as SHAHEEN OSDatabase;
+    } as unknown as SHAHEENOSDatabase;
 
     service = new UsageRecordService(mockDb, userId);
   });

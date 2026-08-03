@@ -3,7 +3,7 @@ import type { SourceAgentUserMessage } from '@lobechat/agent-signal/source';
 import { RequestTrigger } from '@lobechat/types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 import { createRuntimeProcessorContext } from '../../../runtime/context';
@@ -126,7 +126,7 @@ describe('feedbackSatisfactionJudge', () => {
     });
 
     const processor = createFeedbackSatisfactionJudgeProcessor({
-      db: {} as SHAHEEN OSDatabase,
+      db: {} as SHAHEENOSDatabase,
       model: 'gpt-test',
       provider: 'openai',
       userId: 'user_1',
@@ -137,7 +137,7 @@ describe('feedbackSatisfactionJudge', () => {
     );
 
     expect(initModelRuntimeFromDB).toHaveBeenCalledWith(
-      {} as SHAHEEN OSDatabase,
+      {} as SHAHEENOSDatabase,
       'user_1',
       'openai',
       undefined,

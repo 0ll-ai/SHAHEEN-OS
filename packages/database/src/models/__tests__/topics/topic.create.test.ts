@@ -11,14 +11,14 @@ import {
   users,
   workspaces,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import type { CreateTopicParams } from '../../topic';
 import { TopicModel } from '../../topic';
 
 const userId = 'topic-create-user';
 const userId2 = 'topic-create-user-2';
 const sessionId = 'topic-create-session';
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const topicModel = new TopicModel(serverDB, userId);
 
 describe('TopicModel - Create', () => {

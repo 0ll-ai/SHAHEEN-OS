@@ -15,7 +15,7 @@ import {
 } from 'drizzle-orm';
 
 import { agents, messagePlugins, messages, topics, users, userSettings } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { normalizeInboxAgentTitle } from '../../utils/inboxAgent';
 
 /**
@@ -105,9 +105,9 @@ export interface AgentSignalNightlyReviewTarget {
  * - Candidate users and active agent targets without emitting source events
  */
 export class AgentSignalNightlyReviewModel {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase) {
+  constructor(db: SHAHEENOSDatabase) {
     this.db = db;
   }
 

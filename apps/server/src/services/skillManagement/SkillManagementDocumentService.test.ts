@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { SHAHEEN OSDatabase, Transaction } from '@lobechat/database';
+import type { SHAHEENOSDatabase, Transaction } from '@lobechat/database';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {
@@ -276,7 +276,7 @@ const createService = () => {
     {
       transaction: async <T>(callback: (trx: Transaction) => Promise<T>) =>
         callback({} as Transaction),
-    } as SHAHEEN OSDatabase,
+    } as SHAHEENOSDatabase,
     'user-1',
     undefined,
     {

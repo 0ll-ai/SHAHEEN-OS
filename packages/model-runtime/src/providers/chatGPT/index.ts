@@ -23,7 +23,7 @@ interface ChatGPTAdditionalToolsInput {
 const isResponsesLiteModel = (model: string | undefined) =>
   !!model && CHATGPT_RESPONSES_LITE_MODEL_IDS.has(model);
 
-export const SHAHEEN OSGPTAI = createOpenAICompatibleRuntime<ChatGPTClientOptions>({
+export const SHAHEENOSGPTAI = createOpenAICompatibleRuntime<ChatGPTClientOptions>({
   baseURL: CHATGPT_CODEX_BASE_URL,
   chatCompletion: {
     useResponse: true,

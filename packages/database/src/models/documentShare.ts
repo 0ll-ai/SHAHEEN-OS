@@ -3,7 +3,7 @@ import { TRPCError } from '@trpc/server';
 import { and, eq, sql } from 'drizzle-orm';
 
 import { documents, documentShares, users } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export interface DocumentShareAccessResult {
@@ -19,9 +19,9 @@ export interface DocumentShareAccessResult {
 export class DocumentShareModel {
   private userId: string;
   private workspaceId?: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;
@@ -123,7 +123,7 @@ export class DocumentShareModel {
     return result[0] || null;
   };
 
-  static findByDocumentId = async (db: SHAHEEN OSDatabase, documentId: string) => {
+  static findByDocumentId = async (db: SHAHEENOSDatabase, documentId: string) => {
     const result = await db
       .select({
         document: documents,
@@ -143,7 +143,7 @@ export class DocumentShareModel {
     return result[0] || null;
   };
 
-  static incrementPageViewCount = async (db: SHAHEEN OSDatabase, documentId: string) => {
+  static incrementPageViewCount = async (db: SHAHEENOSDatabase, documentId: string) => {
     await db
       .update(documentShares)
       .set({ pageViewCount: sql`${documentShares.pageViewCount} + 1` })
@@ -151,7 +151,7 @@ export class DocumentShareModel {
   };
 
   static findByDocumentIdWithAccessCheck = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     documentId: string,
     accessUserId?: string,
   ): Promise<DocumentShareAccessResult> => {

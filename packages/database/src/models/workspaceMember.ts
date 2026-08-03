@@ -4,15 +4,15 @@ import { nanoid } from 'nanoid/non-secure';
 
 import { devices } from '../schemas/device';
 import { workspaceInvitations, workspaceMembers } from '../schemas/workspace';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 type MemberRole = 'admin' | 'member' | 'viewer';
 
 export class WorkspaceMemberModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
   }

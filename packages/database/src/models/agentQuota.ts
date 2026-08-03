@@ -18,7 +18,7 @@ import {
   agentQuotaUsageLedger,
   agentQuotaWindows,
 } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import {
   type QuotaAccountCredentials,
   QuotaBindingRole,
@@ -48,11 +48,11 @@ export interface AccountIdentityInput {
 
 export class AgentProviderAccountModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
   private gateKeeperPromise: Promise<KeyVaultsGateKeeper> | null = null;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -209,10 +209,10 @@ export class AgentProviderAccountModel {
 
 export class AgentAccountBindingModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -289,10 +289,10 @@ export class AgentAccountBindingModel {
 
 export class AgentQuotaSnapshotModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -335,10 +335,10 @@ export class AgentQuotaSnapshotModel {
 
 export class AgentQuotaUsageLedgerModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -385,10 +385,10 @@ export class AgentQuotaUsageLedgerModel {
 
 export class AgentQuotaWindowModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -445,10 +445,10 @@ export class AgentQuotaWindowModel {
 
 export class AgentQuotaCalibrationModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

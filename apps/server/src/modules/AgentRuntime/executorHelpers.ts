@@ -12,7 +12,7 @@ import {
 import debug from 'debug';
 
 import { WorkModel } from '@/database/models/work';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { FileService } from '@/server/services/file';
 import {
   type ServerAgentMemberRunner,
@@ -52,7 +52,7 @@ export const archiveRuntimeToolResult = async (
     agentId?: string | null;
     identifier?: string;
     limit?: number;
-    serverDB: SHAHEEN OSDatabase;
+    serverDB: SHAHEENOSDatabase;
     toolCallId?: string;
     topicId?: string | null;
     userId?: string;
@@ -109,7 +109,7 @@ export const registerWorkFromIntent = async ({
   agentId?: string | null;
   intent: WorkRegistrationIntent;
   rootOperationId?: string;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   sourceMessageId?: string;
   sourceToolCallId?: string;
   /** Tool/plugin identifier supplied by the runtime event that produced this version. */

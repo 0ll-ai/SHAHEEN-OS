@@ -13,7 +13,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
-import type * as SHAHEEN OSConst from '@lobechat/const';
+import type * as SHAHEENOSConst from '@lobechat/const';
 import { HeterogeneousAgentSessionErrorCode } from '@lobechat/electron-client-ipc';
 import type { AgentEventAdapter } from '@lobechat/heterogeneous-agents';
 import { createAdapter } from '@lobechat/heterogeneous-agents';
@@ -106,7 +106,7 @@ vi.mock('../transports/gateway/gatewayEventHandler', () => ({
 // module-evaluation time (which happens during collection, before any test).
 const desktopFlag = vi.hoisted(() => ({ value: false }));
 vi.mock('@lobechat/const', async (importOriginal) => {
-  const actual = await importOriginal<typeof SHAHEEN OSConst>();
+  const actual = await importOriginal<typeof SHAHEENOSConst>();
   return {
     ...actual,
     get isDesktop() {

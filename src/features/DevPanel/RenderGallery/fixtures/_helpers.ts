@@ -1,6 +1,6 @@
 'use client';
 
-import type { SHAHEEN OSPluginApi } from '@lobechat/types';
+import type { SHAHEENOSPluginApi } from '@lobechat/types';
 
 import type { ToolRenderFixture, ToolRenderFixtureVariant } from '../lifecycleMode';
 
@@ -32,7 +32,7 @@ export const variants = (
 
 export interface ToolsetFixtureModule {
   /** Optional per-API descriptions when the live manifest doesn't carry them. */
-  apiList?: Array<Pick<SHAHEEN OSPluginApi, 'description' | 'name'>>;
+  apiList?: Array<Pick<SHAHEENOSPluginApi, 'description' | 'name'>>;
   /** Map of `apiName -> ToolRenderFixture` for this toolset. */
   fixtures: Record<string, ToolRenderFixture>;
   /** Toolset identifier exactly as registered in the builtin tool registry. */

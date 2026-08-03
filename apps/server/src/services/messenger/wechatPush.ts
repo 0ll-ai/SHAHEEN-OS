@@ -2,7 +2,7 @@ import { WechatApiClient } from '@lobechat/chat-adapter-wechat';
 import debug from 'debug';
 
 import { MessengerAccountLinkModel } from '@/database/models/messengerAccountLink';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { getAgentRuntimeRedisClient } from '@/server/modules/AgentRuntime/redis';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 import type {
@@ -60,7 +60,7 @@ interface ResolvedWechatTarget {
 }
 
 const resolveWechatTarget = async (
-  serverDB: SHAHEEN OSDatabase,
+  serverDB: SHAHEENOSDatabase,
   userId: string,
 ): Promise<ResolvedWechatTarget | null> => {
   const linkModel = new MessengerAccountLinkModel(serverDB, userId);
@@ -122,7 +122,7 @@ const CLOSED_WINDOW: Omit<WechatPushWindowStatus, 'linked' | 'queued'> = {
  * safe link projection only; no credential decryption happens here.
  */
 export const getWechatPushWindowStatus = async (params: {
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   userId: string;
 }): Promise<WechatPushWindowStatus> => {
   const linkModel = new MessengerAccountLinkModel(params.serverDB, params.userId);
@@ -165,7 +165,7 @@ export const getWechatPushWindowStatus = async (params: {
 export const sendProactiveWechatMessage = async (params: {
   attachments?: WechatOutboundAttachment[];
   content?: string;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   userId: string;
 }): Promise<WechatPushResult> => {
   const { serverDB, userId, content, attachments } = params;

@@ -4,17 +4,17 @@ import { and, count, desc, eq, gte, inArray, sql } from 'drizzle-orm';
 import type { TaskTopicItem } from '../schemas/task';
 import { tasks, taskTopics } from '../schemas/task';
 import { topics } from '../schemas/topic';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspaceWhere } from '../utils/workspace';
 
 const TERMINAL_TOPIC_STATUSES = new Set(['canceled', 'completed', 'failed', 'timeout']);
 
 export class TaskTopicModel {
   private readonly userId: string;
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

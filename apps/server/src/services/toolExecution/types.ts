@@ -1,5 +1,5 @@
 import { type LobeToolManifest } from '@lobechat/context-engine';
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import {
   type ChatToolPayload,
   type ClientSecretPayload,
@@ -236,7 +236,7 @@ export interface ToolExecutionContext {
   /** Conversation scope captured when the operation was created */
   scope?: string | null;
   /** Server database for LobeHub Skills execution */
-  serverDB?: SHAHEEN OSDatabase;
+  serverDB?: SHAHEENOSDatabase;
   /** Skip low-level result truncation so the AgentRuntime boundary can archive full content first. */
   skipResultTruncation?: boolean;
   /**

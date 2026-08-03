@@ -4,11 +4,11 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { agentDocuments, agents, documents, users, workspaces } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { AgentDocumentModel } from '../agentDocuments';
 import { AgentSignalReviewContextModel } from '../agentSignal/reviewContext';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'agent-signal-review-workspace-user';
 const workspaceId = 'agent-signal-review-workspace';

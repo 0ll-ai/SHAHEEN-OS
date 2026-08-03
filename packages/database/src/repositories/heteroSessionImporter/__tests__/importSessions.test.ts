@@ -12,12 +12,12 @@ import {
   users,
   workspaces,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { HeteroSessionImporterRepo } from '../index';
 
 const userId = 'session-importer-user';
 const agentId = 'session-importer-agent';
-let serverDB: SHAHEEN OSDatabase;
+let serverDB: SHAHEENOSDatabase;
 
 const basePayload = (): HeteroSessionImportPayload => ({
   messages: [

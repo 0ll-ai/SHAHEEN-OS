@@ -3,7 +3,7 @@ import { tracer } from '@lobechat/observability-otel/modules/agent-signal';
 
 import type { AgentSignalReviewContextModel } from '@/database/models/agentSignal/reviewContext';
 import type { BriefModel } from '@/database/models/brief';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { NIGHTLY_REVIEW_BRIEF_TRIGGER } from './review/brief';
 import type { ProposalActivityDigest } from './review/collect';
@@ -30,7 +30,7 @@ export interface CreateServerSelfIterationPolicyOptions {
   /** Agent id from the workflow payload, used as an extra ownership check. */
   agentId?: string;
   /** Database bound to the current workflow worker. */
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   /**
    * User-level Agent Signal gate computed by workflow normalization.
    *

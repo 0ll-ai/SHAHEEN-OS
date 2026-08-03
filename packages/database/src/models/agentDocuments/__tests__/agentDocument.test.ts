@@ -15,7 +15,7 @@ import {
   SKILL_BUNDLE_FILE_TYPE,
   SKILL_INDEX_FILE_TYPE,
 } from '../../../schemas/file';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import {
   AgentDocumentModel,
   DocumentLoadFormat,
@@ -33,7 +33,7 @@ const otherAgentId = 'other-agent-document-test-agent';
 
 let agentDocumentModel: AgentDocumentModel;
 let otherAgentDocumentModel: AgentDocumentModel;
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   await serverDB.delete(users);

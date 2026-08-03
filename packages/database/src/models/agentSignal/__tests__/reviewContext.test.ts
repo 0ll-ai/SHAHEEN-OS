@@ -13,10 +13,10 @@ import {
   userMemories,
   users,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { AgentSignalReviewContextModel } from '../reviewContext';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'agent-signal-review-context-user';
 const agentId = 'agent-signal-review-context-agent';

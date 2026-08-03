@@ -7,11 +7,11 @@ import ws from 'ws';
 import { serverDBEnv } from '@/config/db';
 
 import * as schema from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
-export const getDBInstance = (): SHAHEEN OSDatabase => {
+export const getDBInstance = (): SHAHEENOSDatabase => {
   // In test environment, return a mock instance to avoid initialization errors
-  if (process.env.NODE_ENV === 'test') return {} as SHAHEEN OSDatabase;
+  if (process.env.NODE_ENV === 'test') return {} as SHAHEENOSDatabase;
 
   if (!serverDBEnv.KEY_VAULTS_SECRET) {
     throw new Error(

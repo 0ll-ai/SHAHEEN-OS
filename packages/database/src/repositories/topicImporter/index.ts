@@ -1,7 +1,7 @@
 import type { ExportedTopic, ImportedMessage } from '@lobechat/types';
 
 import { messagePlugins, messages, topics } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { idGenerator } from '../../utils/idGenerator';
 
 export interface ImportTopicParams {
@@ -52,10 +52,10 @@ interface PreparedMessagePlugin {
 
 export class TopicImporterRepo {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

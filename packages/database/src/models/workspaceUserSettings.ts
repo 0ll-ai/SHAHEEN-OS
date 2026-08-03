@@ -3,7 +3,7 @@ import { mergeNotificationSettings } from '@lobechat/utils/mergeNotificationSett
 import { and, eq } from 'drizzle-orm';
 
 import { workspaceUserSettings } from '../schemas/workspace';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 /**
  * Per-user preferences scoped to a specific workspace — the workspace-scoped
@@ -20,11 +20,11 @@ import type { SHAHEEN OSDatabase } from '../type';
  * and callers fall through to defaults on read.
  */
 export class WorkspaceUserSettingsModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { parseDataUri } from '@lobechat/model-runtime';
 import { ssrfSafeFetch } from '@lobechat/ssrf-safe-fetch';
 import debug from 'debug';
@@ -87,7 +87,7 @@ interface ImageForGeneration {
 export class GenerationService {
   private fileService: FileService;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.fileService = new FileService(db, userId, workspaceId);
   }
 

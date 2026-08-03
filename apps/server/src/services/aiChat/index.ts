@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { createTimingHelpers } from '@lobechat/utils';
 
 import { MessageModel } from '@/database/models/message';
@@ -33,7 +33,7 @@ export class AiChatService {
   private fileService: FileService;
   private topicModel: TopicModel;
 
-  constructor(serverDB: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(serverDB: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.messageModel = new MessageModel(serverDB, userId, workspaceId);
     this.topicModel = new TopicModel(serverDB, userId, workspaceId);
     this.fileService = new FileService(serverDB, userId, workspaceId);

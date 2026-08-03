@@ -2,7 +2,7 @@ import debug from 'debug';
 import { eq } from 'drizzle-orm';
 
 import { users } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { MarketService } from '@/server/services/market';
 
 const log = debug('lobe-server:bot:feedback');
@@ -53,7 +53,7 @@ export interface BotFeedbackSubmitResult {
  * `renderCommandReply('cmdFeedbackError')`.
  */
 export async function submitBotFeedback(
-  serverDB: SHAHEEN OSDatabase,
+  serverDB: SHAHEENOSDatabase,
   options: BotFeedbackSubmitOptions,
 ): Promise<BotFeedbackSubmitResult> {
   const { applicationId, body, platform, threadId, userId } = options;

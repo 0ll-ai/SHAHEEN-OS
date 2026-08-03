@@ -1,5 +1,5 @@
 import { normalizeListTasksParams, TaskIdentifier } from '@lobechat/builtin-tool-task';
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import type { TaskCreatedItem } from '@lobechat/prompts';
 import {
   formatDependencyAdded,
@@ -30,7 +30,7 @@ import { type ServerRuntimeRegistration } from './types';
 // task we derive the workspace from that task row; otherwise we fall back to
 // personal mode.
 const resolveWorkspaceId = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   taskId: string | undefined,
 ): Promise<string | undefined> => {
   if (!taskId) return undefined;

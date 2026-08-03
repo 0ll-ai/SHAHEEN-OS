@@ -23,7 +23,7 @@ import { DEFAULT_MODEL_PROVIDER_LIST } from 'model-bank/modelProviders';
 
 import { getBusinessModelRuntimeHooks } from '@/business/server/model-runtime';
 import { AiProviderModel } from '@/database/models/aiProvider';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { getLLMConfig } from '@/envs/llm';
 import { createLLMGenerationTracingHook } from '@/server/services/llmGenerationTracing/hook';
 import { ensureFreshOAuthToken } from '@/server/services/oauthDeviceFlow/refresh';
@@ -447,7 +447,7 @@ export const initModelRuntimeWithUserPayload = (
  * ```
  */
 export const initModelRuntimeFromDB = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   provider: string,
   workspaceId?: string,

@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -7,7 +7,7 @@ import { aiAgentRouter } from '../aiAgent';
 import { cleanupTestUser, createTestUser } from './integration/setup';
 
 // Mock getServerDB to return our test database instance
-let testDB: SHAHEEN OSDatabase;
+let testDB: SHAHEENOSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -51,7 +51,7 @@ vi.mock('@/server/services/heterogeneousAgent', () => ({
 }));
 
 describe('aiAgentRouter — remote Human-in-the-loop', () => {
-  let serverDB: SHAHEEN OSDatabase;
+  let serverDB: SHAHEENOSDatabase;
   let userId: string;
 
   beforeEach(async () => {

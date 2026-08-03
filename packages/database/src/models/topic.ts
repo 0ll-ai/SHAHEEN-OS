@@ -42,7 +42,7 @@ import {
   topicDocuments,
   topics,
 } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { sanitizeBm25Query } from '../utils/bm25';
 import { genEndDateWhere, genRangeWhere, genStartDateWhere, genWhere } from '../utils/genWhere';
 import { idGenerator } from '../utils/idGenerator';
@@ -228,10 +228,10 @@ const buildTopicOrderBy = (topicActivityAt: SQL, sortBy?: TopicQuerySortBy): SQL
  */
 export class TopicModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -1529,7 +1529,7 @@ export class TopicModel {
    * payload the dispatcher then reads.
    */
   static async getDueScheduledTopics(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     now: Date = new Date(),
   ): Promise<TopicItem[]> {
     const nowIso = now.toISOString();
@@ -1574,7 +1574,7 @@ export class TopicModel {
    * lease. Returns `true` when this caller won the claim.
    */
   static async claimScheduledTopic(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     claim: { claimedAt: string; expiresAt: string; id: string },
     now: Date = new Date(),
@@ -1614,7 +1614,7 @@ export class TopicModel {
    * a continuation is successfully dispatched/executed and when it is cancelled.
    */
   static async clearScheduledRun(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     nextStatus: ChatTopicStatus = 'active',
     expectedClaimId?: string,
@@ -1652,7 +1652,7 @@ export class TopicModel {
    * schedule was cleared or the claim no longer matches.
    */
   static async repointScheduledRunFailedMessage(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     failedAssistantMessageId: string,
     expectedClaimId: string,

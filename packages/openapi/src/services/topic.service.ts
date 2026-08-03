@@ -1,7 +1,7 @@
 import { and, count, desc, eq, ilike, inArray, isNull, notInArray } from 'drizzle-orm';
 
 import { agentsToSessions, messages, topics, users } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { idGenerator } from '@/database/utils/idGenerator';
 
 import { BaseService } from '../common/base.service';
@@ -15,7 +15,7 @@ import type {
 } from '../types/topic.type';
 
 export class TopicService extends BaseService {
-  constructor(db: SHAHEEN OSDatabase, userId: string | null, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string | null, workspaceId?: string) {
     super(db, userId, workspaceId);
   }
 

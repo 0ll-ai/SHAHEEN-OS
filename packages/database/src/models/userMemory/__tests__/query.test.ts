@@ -13,14 +13,14 @@ import {
   userMemoriesPreferences,
   users,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { UserMemoryModel } from '../model';
 import type { LayerBaseMemorySignals } from '../query';
 import { buildBm25MatchCondition, scoreHybridCandidates } from '../query';
 
 const userId = 'memory-query-test-user';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 let memoryModel: UserMemoryModel;
 

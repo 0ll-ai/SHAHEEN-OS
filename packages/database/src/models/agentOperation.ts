@@ -10,7 +10,7 @@ import type {
   NewAgentOperation,
 } from '../schemas/agentOperations';
 import { agentOperations } from '../schemas/agentOperations';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspaceWhere } from '../utils/workspace';
 
 /**
@@ -87,11 +87,11 @@ export interface RecordOperationCompletionParams {
 }
 
 export class AgentOperationModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

@@ -7,7 +7,7 @@ import type {
 import { and, count, eq, inArray, isNotNull, like, or, sql } from 'drizzle-orm';
 
 import { messagePlugins, messages, threads, topics } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { idGenerator } from '../../utils/idGenerator';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
@@ -39,10 +39,10 @@ const BATCH_SIZE = 100;
  */
 export class HeteroSessionImporterRepo {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

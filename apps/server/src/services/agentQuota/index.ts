@@ -21,7 +21,7 @@ import {
   AgentQuotaUsageLedgerModel,
   AgentQuotaWindowModel,
 } from '@/database/models/agentQuota';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import {
   type QuotaAccountCredentialRef,
   QuotaBindingRole,
@@ -50,7 +50,7 @@ export class AgentQuotaService {
   private windows: AgentQuotaWindowModel;
   private calibrations: AgentQuotaCalibrationModel;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.accounts = new AgentProviderAccountModel(db, userId, workspaceId);
     this.bindings = new AgentAccountBindingModel(db, userId, workspaceId);
     this.snapshots = new AgentQuotaSnapshotModel(db, userId, workspaceId);

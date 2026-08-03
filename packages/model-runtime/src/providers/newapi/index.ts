@@ -117,7 +117,7 @@ export const params = {
           // Assumption: model_price is the price per 1,000 tokens (i.e., $/1K tokens).
           // To convert to price per 1,000,000 tokens ($/1M tokens), multiply by 1,000,000 / 1,000 = 1,000.
           // Since the base price is $0.002/1K tokens, multiplying by 2 gives $2/1M tokens.
-          // Therefore, inputPrice = model_price * 2 converts the price to $/1M tokens for SHAHEEN OS.
+          // Therefore, inputPrice = model_price * 2 converts the price to $/1M tokens for SHAHEENOS.
           inputPrice = pricing.model_price * 2;
         } else if (pricing.model_ratio) {
           // model_ratio × $0.002/1K = model_ratio × $2/1M
@@ -163,7 +163,7 @@ export const params = {
         // - model_price: directly specified price (takes priority)
         // - completion_ratio: output price multiplier relative to input price
         //
-        // SHAHEEN OS required format: USD per million tokens
+        // SHAHEENOS required format: USD per million tokens
 
         const pricingData = calculatePricing(pricing);
         if (pricingData) {

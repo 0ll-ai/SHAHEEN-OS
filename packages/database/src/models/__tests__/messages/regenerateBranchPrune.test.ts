@@ -7,14 +7,14 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { pruneRegeneratedBranch } from '../../../../../../apps/server/src/services/aiAgent/pruneRegeneratedBranch';
 import { getTestDB } from '../../../core/getTestDB';
 import { messageGroups, messages, topics, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { MessageModel } from '../../message';
 
 const userId = 'regenerate-prune-test-user';
 const topicId = 'regenerate-prune-topic';
 
 let messageModel: MessageModel;
-let serverDB: SHAHEEN OSDatabase;
+let serverDB: SHAHEENOSDatabase;
 
 beforeEach(async () => {
   serverDB = await getTestDB();

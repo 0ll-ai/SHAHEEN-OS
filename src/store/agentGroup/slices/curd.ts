@@ -1,4 +1,4 @@
-import { type SHAHEEN OSGroupConfig } from '@lobechat/types';
+import { type SHAHEENOSGroupConfig } from '@lobechat/types';
 
 import { DEFAULT_CHAT_GROUP_CHAT_CONFIG } from '@/const/settings';
 import { type ChatGroupItem } from '@/database/schemas/chatGroup';
@@ -87,7 +87,7 @@ export class ChatGroupCurdAction {
     await this.#get().refreshGroupDetail(id);
   };
 
-  updateGroupConfig = async (config: Partial<SHAHEEN OSGroupConfig>) => {
+  updateGroupConfig = async (config: Partial<SHAHEENOSGroupConfig>) => {
     const s = this.#get();
     const group = s.activeGroupId
       ? agentGroupSelectors.getGroupById(s.activeGroupId)(s)

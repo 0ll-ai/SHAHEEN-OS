@@ -1,12 +1,12 @@
 import { and, eq } from 'drizzle-orm';
 
 import { agents, chatGroupsAgents } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { assertCanPerformResourceAction } from '@/server/services/resourcePermission';
 
 interface WorkspaceAgentGuardParams {
   agentId?: string;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   groupId?: string | null;
   slug?: string;
   userId: string;
@@ -19,7 +19,7 @@ export const getWorkspaceAgentParentGroupIds = async ({
   workspaceId,
 }: {
   agentId: string;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   workspaceId: string;
 }): Promise<string[]> => {
   const linkedGroups = await db
@@ -47,7 +47,7 @@ export const getWorkspaceGroupVirtualAgentIds = async ({
   groupId,
   workspaceId,
 }: {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   groupId: string;
   workspaceId: string;
 }): Promise<string[]> => {

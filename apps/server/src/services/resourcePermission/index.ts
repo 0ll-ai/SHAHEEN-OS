@@ -6,7 +6,7 @@ import { eq } from 'drizzle-orm';
 import { ResourcePermissionModel } from '@/database/models/resourcePermission';
 import type { PermissionResourceType, ResourceAccessLevel } from '@/database/schemas';
 import { agents, chatGroups, documents, isResourceAccessLevelAllowed } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import {
   getWorkspaceScopedPermissionMatches,
   isWorkspacePrimaryOwner,
@@ -79,7 +79,7 @@ export const isAccessLevelAllowed = (
  * without caller scoping. Authorization is applied by the action evaluator.
  */
 export const getResourceMeta = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   resourceType: PermissionResourceType,
   resourceId: string,
 ): Promise<ResourceMeta | null> => {
@@ -121,7 +121,7 @@ export const getResourceMeta = async (
  * and never re-fetched.
  */
 const resolveAgentBuiltinMarkers = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   resourceId: string,
 ): Promise<{ slug: string | null; virtual: boolean | null }> => {
   const [row] = await db
@@ -220,7 +220,7 @@ const getRequiredAccessLevel = (action: ResourceAccessAction): ResourceAccessLev
  */
 export const canPerformResourceAction = async (params: {
   action: ResourceAccessAction;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   /** A shared minimum level may skip duplicate reads only for the `view` action. */
   effectiveAccessLevel?: ResourceAccessLevel;
   grantedPermissions?: readonly string[];
@@ -374,7 +374,7 @@ export const assertCanPerformResourceAction = async (
  * client execution would resolve different models or bind the creator's device.
  */
 export const isResourceAuthorOrAdmin = async (params: {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   grantedPermissions?: readonly string[];
   meta: ResourceMeta;
   resourceType: PermissionResourceType;
@@ -398,7 +398,7 @@ export const isResourceAuthorOrAdmin = async (params: {
 };
 
 export const canManageResourcePermission = async (params: {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   grantedPermissions?: readonly string[];
   meta: ResourceMeta;
   resourceId: string;
@@ -409,7 +409,7 @@ export const canManageResourcePermission = async (params: {
 
 /** Backward-compatible helper for the first three edit call sites. */
 export const assertCanEditResource = async (params: {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   resourceId: string;
   resourceType: PermissionResourceType;
   userId: string;

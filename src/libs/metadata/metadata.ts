@@ -12,7 +12,7 @@ import { formatDescLength, formatTitleLength } from '@/utils/genOG';
 
 export class Meta {
   public generate({
-    description = 'SHAHEEN OS offers you the best ChatGPT, OLLaMA, Gemini, Claude WebUI user experience',
+    description = 'SHAHEENOS offers you the best ChatGPT, OLLaMA, Gemini, Claude WebUI user experience',
     title,
     image = OG_URL,
     url,

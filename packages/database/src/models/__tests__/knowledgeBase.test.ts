@@ -15,10 +15,10 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { KnowledgeBaseModel } from '../knowledgeBase';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'session-group-model-test-user-id';
 const knowledgeBaseModel = new KnowledgeBaseModel(serverDB, userId);

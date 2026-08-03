@@ -223,7 +223,7 @@ describe('MCPService', () => {
       args: ['--test'],
     };
 
-    it('should successfully list tools and transform to SHAHEEN OSPluginApi format', async () => {
+    it('should successfully list tools and transform to SHAHEENOSPluginApi format', async () => {
       const mockTools = [
         {
           name: 'tool1',

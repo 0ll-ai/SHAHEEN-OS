@@ -1,5 +1,5 @@
 import { builtinTools } from '@lobechat/builtin-tools';
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import {
   type ChatToolPayload,
   isWorkSkillProvider,
@@ -50,10 +50,10 @@ const collectRuntimeApiNames = (runtime: Record<string, any>): string[] => {
 
 export class BuiltinToolsExecutor implements IToolExecutor {
   private marketService: MarketService;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private userId: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
     this.marketService = new MarketService({ userInfo: { userId } });

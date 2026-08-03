@@ -15,7 +15,7 @@ import {
   sessions,
   topics,
 } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { getScopePermissions } from '@/utils/rbac';
 
 import { getActionType, getResourceType } from '../helpers/permission';
@@ -34,10 +34,10 @@ const isNilOrEmptyObject = (value: unknown): boolean => {
 export abstract class BaseService implements IBaseService {
   protected userId: string;
   protected workspaceId?: string;
-  public db: SHAHEEN OSDatabase;
+  public db: SHAHEENOSDatabase;
   private rbacModel: RbacModel;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string | null, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string | null, workspaceId?: string) {
     this.db = db;
     this.userId = userId || '';
     this.workspaceId = workspaceId;

@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { ssrfSafeFetch } from '@lobechat/ssrf-safe-fetch';
 import {
   type CreateSkillInput,
@@ -34,7 +34,7 @@ export class SkillImporter {
   private workspaceRole?: string;
 
   constructor(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
     workspaceId?: string,
     options?: { workspaceRole?: string },

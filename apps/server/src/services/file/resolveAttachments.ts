@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import type { ChatAudioItem, ChatFileItem, ChatImageItem, ChatVideoItem } from '@lobechat/types';
 import debug from 'debug';
 
@@ -23,7 +23,7 @@ export interface ResolvedAttachments {
 }
 
 interface ResolveArgs {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   fileIds: string[];
   userId: string;
   workspaceId?: string;

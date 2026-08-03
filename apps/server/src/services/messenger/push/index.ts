@@ -1,7 +1,7 @@
 import type { MessengerPlatform } from '@/config/messenger';
 import type { SafeMessengerAccountLink } from '@/database/models/messengerAccountLink';
 import { MessengerAccountLinkModel } from '@/database/models/messengerAccountLink';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import type { WechatOutboundAttachment } from '@/server/services/bot/platforms/wechat/sendAttachments';
 import { getInstallationStore } from '@/server/services/messenger/installations';
 import { getMessengerRouter } from '@/server/services/messenger/MessengerRouter';
@@ -48,7 +48,7 @@ export interface MessengerPushWindowStatus extends WechatPushWindowStatus {
 
 const resolveAccountLink = async (params: {
   platform: MessengerPushPlatform;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   tenantId?: string;
   userId: string;
 }): Promise<SafeMessengerAccountLink | undefined> => {
@@ -67,7 +67,7 @@ const resolveAccountLink = async (params: {
 const sendAlwaysAvailableMessage = async (params: {
   content?: string;
   platform: Exclude<MessengerPushPlatform, 'wechat'>;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   tenantId?: string;
   userId: string;
 }): Promise<MessengerPushResult> => {
@@ -101,7 +101,7 @@ export const sendMessengerPush = async (params: {
   attachments?: WechatOutboundAttachment[];
   content?: string;
   platform: MessengerPushPlatform;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   tenantId?: string;
   userId: string;
 }): Promise<MessengerPushResult> => {
@@ -118,7 +118,7 @@ export const sendMessengerPush = async (params: {
 
 export const getMessengerPushWindow = async (params: {
   platform: MessengerPushPlatform;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   tenantId?: string;
   userId: string;
 }): Promise<MessengerPushWindowStatus> => {

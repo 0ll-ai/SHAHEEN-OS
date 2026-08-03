@@ -1,5 +1,5 @@
 // Import zod for common schemas
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 /**
  * Standard API response format
@@ -19,7 +19,7 @@ export interface IBaseService {
   /**
    * Database instance
    */
-  db?: SHAHEEN OSDatabase;
+  db?: SHAHEENOSDatabase;
 }
 
 /**

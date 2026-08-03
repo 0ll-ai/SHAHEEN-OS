@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { BriefModel } from '@/database/models/brief';
 import type { BriefItem } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import {
   AgentSignalSelfReviewBriefService,
   type AgentSignalSelfReviewBriefServiceOptions,
@@ -76,7 +76,7 @@ vi.mock('@/server/services/taskRunner', () => ({
 }));
 
 describe('AgentSignalSelfReviewBriefService', () => {
-  const db = {} as SHAHEEN OSDatabase;
+  const db = {} as SHAHEENOSDatabase;
   const userId = 'user-1';
   const proposalMetadata = {
     actionType: 'refine_skill' as const,

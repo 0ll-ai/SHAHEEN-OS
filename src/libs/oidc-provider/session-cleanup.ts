@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { oidcSessions } from '@lobechat/database/schemas';
 import { eq } from 'drizzle-orm';
 
@@ -47,7 +47,7 @@ const getOIDCSessionCookie = (context: OIDCSessionCookieContext): OIDCSessionCoo
  * Clears the signed OIDC session referenced by the current browser.
  */
 export const clearCurrentOIDCSession = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   context: OIDCSessionCookieContext,
 ) => {
   const cookie = getOIDCSessionCookie(context);
@@ -66,7 +66,7 @@ export const clearCurrentOIDCSession = async (
  * persistent grants remain untouched.
  */
 export const clearMismatchedOIDCSession = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   context: OIDCSessionCookieContext | null,
 ) => {

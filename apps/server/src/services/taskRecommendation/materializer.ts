@@ -3,7 +3,7 @@ import { OnboardingTaskRecommendationSessionSchema } from '@lobechat/types';
 import { and, eq, isNull } from 'drizzle-orm';
 
 import { topics } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import type { CreateTaskInput } from '@/server/services/task';
 import { TaskService } from '@/server/services/task';
 
@@ -18,14 +18,14 @@ interface MaterializeTaskRecommendationInput {
 }
 
 type CreateTaskInTransaction = (
-  database: SHAHEEN OSDatabase,
+  database: SHAHEENOSDatabase,
   input: CreateTaskInput,
 ) => Promise<{ id: string }>;
 
 /** Atomically materializes one recommendation and records its task mapping. */
 export class TaskRecommendationMaterializer {
   constructor(
-    private readonly db: SHAHEEN OSDatabase,
+    private readonly db: SHAHEENOSDatabase,
     private readonly userId: string,
     private readonly createTask: CreateTaskInTransaction = (database, input) =>
       new TaskService(database, userId).createTask(input),
@@ -80,7 +80,7 @@ export class TaskRecommendationMaterializer {
       const sourceList = recommendation.sources.map(({ subject, url }) =>
         subject ? `- ${subject}: ${url}` : `- ${url}`,
       );
-      const task = await this.createTask(transaction as unknown as SHAHEEN OSDatabase, {
+      const task = await this.createTask(transaction as unknown as SHAHEENOSDatabase, {
         assigneeAgentId: input.assigneeAgentId,
         // NOTICE:
         // Task descriptions are stored in `tasks.description` as varchar(255).

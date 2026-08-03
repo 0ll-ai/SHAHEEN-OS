@@ -1,7 +1,7 @@
 import { getWorkspaceRolePermissionCodes } from '@lobechat/const/rbac';
 import { and, eq, inArray, isNull, sql } from 'drizzle-orm';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import type { RoleItem } from '../schemas/rbac';
 import { permissions, rolePermissions, roles, userRoles } from '../schemas/rbac';
@@ -45,9 +45,9 @@ const normalizeScope = (arg: string | RbacScopeOptions | undefined): RbacScopeOp
 
 export class RbacModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }
@@ -59,7 +59,7 @@ export class RbacModel {
     userIds,
     workspaceId,
   }: {
-    db: SHAHEEN OSDatabase;
+    db: SHAHEENOSDatabase;
     requireMembership?: boolean;
     userIds: string[];
     workspaceId: string;

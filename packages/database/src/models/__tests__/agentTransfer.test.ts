@@ -31,7 +31,7 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { AgentModel } from '../agent';
 import {
   TOPIC_COMMENT_TOPIC_NOT_FOUND,
@@ -39,7 +39,7 @@ import {
   TopicCommentModel,
 } from '../topicComment';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const isServerDB = process.env.TEST_SERVER_DB === '1';
 
 const userId = 'transfer-test-user';

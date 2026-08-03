@@ -16,7 +16,7 @@ import { today } from '@/utils/time';
 
 import type { NewUser, UserItem, UserSettingsItem } from '../schemas';
 import { messages, nextauthAccounts, topics, users, userSettings } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 type DecryptUserKeyVaults = (
   encryptKeyVaultsStr: string | null,
@@ -54,9 +54,9 @@ interface LastActiveAtTransition {
 
 export class UserModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }
@@ -325,11 +325,11 @@ export class UserModel {
   };
 
   // Static method
-  static makeSureUserExist = async (db: SHAHEEN OSDatabase, userId: string) => {
+  static makeSureUserExist = async (db: SHAHEENOSDatabase, userId: string) => {
     await db.insert(users).values({ id: userId }).onConflictDoNothing();
   };
 
-  static createUser = async (db: SHAHEEN OSDatabase, params: NewUser) => {
+  static createUser = async (db: SHAHEENOSDatabase, params: NewUser) => {
     // if user already exists, skip creation
     if (params.id) {
       const user = await db.query.users.findFirst({ where: eq(users.id, params.id) });
@@ -342,26 +342,26 @@ export class UserModel {
     return { duplicate: false, user };
   };
 
-  static deleteUser = async (db: SHAHEEN OSDatabase, id: string) => {
+  static deleteUser = async (db: SHAHEENOSDatabase, id: string) => {
     return db.delete(users).where(eq(users.id, id));
   };
 
-  static findById = async (db: SHAHEEN OSDatabase, id: string) => {
+  static findById = async (db: SHAHEENOSDatabase, id: string) => {
     return db.query.users.findFirst({ where: eq(users.id, id) });
   };
 
-  static findByUsername = async (db: SHAHEEN OSDatabase, username: string) => {
+  static findByUsername = async (db: SHAHEENOSDatabase, username: string) => {
     const normalizedUsername = username.trim();
     if (!normalizedUsername) return null;
 
     return db.query.users.findFirst({ where: eq(users.username, normalizedUsername) });
   };
 
-  static findByEmail = async (db: SHAHEEN OSDatabase, email: string) => {
+  static findByEmail = async (db: SHAHEENOSDatabase, email: string) => {
     return db.query.users.findFirst({ where: eq(users.email, email) });
   };
 
-  static findByIds = async (db: SHAHEEN OSDatabase, ids: string[]) => {
+  static findByIds = async (db: SHAHEENOSDatabase, ids: string[]) => {
     if (ids.length === 0) return [];
     return db.query.users.findMany({ where: inArray(users.id, ids) });
   };
@@ -375,7 +375,7 @@ export class UserModel {
    * see (e.g. userIds harvested from workspace-scoped connector rows).
    */
   static getDisplayInfoByIds = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     ids: string[],
   ): Promise<
     Array<{ avatar: string | null; fullName: string | null; id: string; username: string | null }>
@@ -393,7 +393,7 @@ export class UserModel {
   };
 
   static getUserApiKeys = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     decryptor: DecryptUserKeyVaults,
   ) => {
@@ -415,7 +415,7 @@ export class UserModel {
   };
 
   static listUsersForMemoryExtractor = (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     options: ListUsersForMemoryExtractorOptions = {},
   ) => {
     const cursorCondition = options.cursor
@@ -441,7 +441,7 @@ export class UserModel {
   };
 
   static listUsersForHourlyMemoryExtractor = (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     options: ListUsersForHourlyMemoryExtractorOptions = {},
   ) => {
     const cursorCondition = options.cursor
@@ -490,7 +490,7 @@ export class UserModel {
    * Get user info for AI generation (name and language preference)
    */
   static getInfoForAIGeneration = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
   ): Promise<UserInfoForAIGeneration> => {
     const result = await db

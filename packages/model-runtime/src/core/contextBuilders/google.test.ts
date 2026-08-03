@@ -1451,7 +1451,7 @@ describe('google contextBuilders', () => {
     it('should correctly convert full conversation with thoughtSignature', async () => {
       const messages: OpenAIChatMessage[] = [
         { content: 'system prompt', role: 'system' },
-        { content: 'SHAHEEN OS 最新版本', role: 'user' },
+        { content: 'SHAHEENOS 最新版本', role: 'user' },
         {
           content: '',
           role: 'assistant',
@@ -1492,7 +1492,7 @@ describe('google contextBuilders', () => {
           role: 'user',
         },
         {
-          parts: [{ text: 'SHAHEEN OS 最新版本', thoughtSignature: GEMINI_MAGIC_THOUGHT_SIGNATURE }],
+          parts: [{ text: 'SHAHEENOS 最新版本', thoughtSignature: GEMINI_MAGIC_THOUGHT_SIGNATURE }],
           role: 'user',
         },
         {

@@ -14,15 +14,15 @@ import { and, eq, inArray, lt, or, sql } from 'drizzle-orm';
 
 import type { AsyncTaskSelectItem, NewAsyncTaskItem } from '../schemas';
 import { asyncTasks } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export class AsyncTaskModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -57,7 +57,7 @@ export class AsyncTaskModel {
     });
   };
 
-  static findByInferenceId = async (db: SHAHEEN OSDatabase, inferenceId: string) => {
+  static findByInferenceId = async (db: SHAHEENOSDatabase, inferenceId: string) => {
     return db.query.asyncTasks.findFirst({
       where: eq(asyncTasks.inferenceId, inferenceId),
     });

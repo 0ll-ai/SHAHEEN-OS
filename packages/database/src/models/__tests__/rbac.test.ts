@@ -18,10 +18,10 @@ import {
   workspaceMembers,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { RbacModel } from '../rbac';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'rbac-model-test-user-id';
 const otherUserId = 'rbac-model-test-other-user-id';

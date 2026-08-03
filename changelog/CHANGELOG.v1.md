@@ -31290,7 +31290,7 @@
 
 #### ✨ Features
 
-- **misc**: Release SHAHEEN OS 1.0.
+- **misc**: Release SHAHEENOS 1.0.
 
 #### 🔧 Chores
 
@@ -31303,7 +31303,7 @@
 
 #### What's improved
 
-- **misc**: Release SHAHEEN OS 1.0, closes [#2897](https://github.com/lobehub/shaheen-os/issues/2897) ([97bb377](https://github.com/lobehub/shaheen-os/commit/97bb377))
+- **misc**: Release SHAHEENOS 1.0, closes [#2897](https://github.com/lobehub/shaheen-os/issues/2897) ([97bb377](https://github.com/lobehub/shaheen-os/commit/97bb377))
 
 #### Chores
 

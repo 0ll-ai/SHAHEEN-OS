@@ -1,7 +1,7 @@
 import { and, desc, eq, gte, ilike, inArray, lt, lte, or } from 'drizzle-orm';
 
 import { workspaceAuditLogs } from '../schemas/workspace';
-import type { SHAHEEN OSDatabase, Transaction } from '../type';
+import type { SHAHEENOSDatabase, Transaction } from '../type';
 
 export type WorkspaceAuditAction =
   | 'workspace.created'
@@ -105,9 +105,9 @@ interface ListAuditLogParams {
 }
 
 export class WorkspaceAuditLogModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase) {
+  constructor(db: SHAHEENOSDatabase) {
     this.db = db;
   }
 

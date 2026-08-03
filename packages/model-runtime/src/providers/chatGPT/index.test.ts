@@ -3,17 +3,17 @@ import { CURRENT_VERSION } from '@lobechat/const';
 import type { Mock } from 'vitest';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { SHAHEEN OSGPTAI } from './index';
+import { SHAHEENOSGPTAI } from './index';
 
 vi.mock('@lobechat/business-model-bank/model-config', () => ({
   loadModels: vi.fn().mockResolvedValue([]),
 }));
 
-describe('SHAHEEN OSGPTAI', () => {
-  let instance: InstanceType<typeof SHAHEEN OSGPTAI>;
+describe('SHAHEENOSGPTAI', () => {
+  let instance: InstanceType<typeof SHAHEENOSGPTAI>;
 
   beforeEach(() => {
-    instance = new SHAHEEN OSGPTAI({
+    instance = new SHAHEENOSGPTAI({
       apiKey: 'access-token',
       chatgptAccountId: 'account-id',
     });

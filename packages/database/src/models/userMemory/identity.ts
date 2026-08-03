@@ -5,14 +5,14 @@ import { and, asc, desc, eq, inArray, isNull, or, sql } from 'drizzle-orm';
 
 import type { NewUserMemoryIdentity, UserMemoryIdentity } from '../../schemas';
 import { userMemories, userMemoriesIdentities } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { normalizeBm25MatchQuery, SAFE_BM25_QUERY_OPTIONS } from '../../utils/bm25';
 
 export class UserMemoryIdentityModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }

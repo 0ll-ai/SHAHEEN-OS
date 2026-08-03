@@ -2,7 +2,7 @@
 
 import { builtinTools } from '@lobechat/builtin-tools';
 import { DEFAULT_INBOX_AVATAR } from '@lobechat/const';
-import type { BuiltinToolManifest, SHAHEEN OSPluginApi } from '@lobechat/types';
+import type { BuiltinToolManifest, SHAHEENOSPluginApi } from '@lobechat/types';
 
 import type { ToolRenderFixture } from '../lifecycleMode';
 import { buildSchemaSample, humanize, single, type ToolsetFixtureModule } from './_helpers';
@@ -33,7 +33,7 @@ import lobeWebOnboarding from './lobe-web-onboarding';
 export type { ToolRenderFixture, ToolRenderFixtureVariant } from '../lifecycleMode';
 
 export interface ToolRenderMeta {
-  api?: SHAHEEN OSPluginApi;
+  api?: SHAHEENOSPluginApi;
   apiName: string;
   description?: string;
   identifier: string;
@@ -121,7 +121,7 @@ const manifestByIdentifier = new Map<string, BuiltinToolManifest>(
 export const getToolRenderFixture = (
   identifier: string,
   apiName: string,
-  api?: SHAHEEN OSPluginApi,
+  api?: SHAHEENOSPluginApi,
 ): ToolRenderFixture => {
   const fixture = fixtureRegistry.get(`${identifier}:${apiName}`);
   if (fixture) return fixture;

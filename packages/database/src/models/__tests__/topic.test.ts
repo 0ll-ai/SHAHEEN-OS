@@ -12,10 +12,10 @@ import {
   topics,
   users,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { TopicModel } from '../topic';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'topic-model-test-user';
 const otherUserId = 'topic-model-test-other-user';

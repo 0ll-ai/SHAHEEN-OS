@@ -17,7 +17,7 @@ import { TaskModel } from '@/database/models/task';
 import { TaskTopicModel } from '@/database/models/taskTopic';
 import { TopicModel } from '@/database/models/topic';
 import { UserModel } from '@/database/models/user';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { AiAgentService } from '../aiAgent';
 import { extractFileIdsFromEditorData } from '../file/extractFileIdsFromEditorData';
@@ -86,7 +86,7 @@ export interface RunReadySubtasksResult {
 
 export class TaskService {
   private agentModel: AgentModel;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private taskModel: TaskModel;
   private taskTopicModel: TaskTopicModel;
   private topicModel: TopicModel;
@@ -94,7 +94,7 @@ export class TaskService {
 
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

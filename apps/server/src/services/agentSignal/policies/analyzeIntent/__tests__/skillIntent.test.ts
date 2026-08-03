@@ -2,7 +2,7 @@
 import { RequestTrigger } from '@lobechat/types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 import {
@@ -286,7 +286,7 @@ describe('skillIntent classifier', () => {
       route: 'direct_decision',
     });
 
-    const service = new SkillIntentClassifierAgentService({} as SHAHEEN OSDatabase, 'user_1', {
+    const service = new SkillIntentClassifierAgentService({} as SHAHEENOSDatabase, 'user_1', {
       model: 'gpt-test',
       provider: 'openai',
     });
@@ -297,7 +297,7 @@ describe('skillIntent classifier', () => {
     });
 
     expect(initModelRuntimeFromDB).toHaveBeenCalledWith(
-      {} as SHAHEEN OSDatabase,
+      {} as SHAHEENOSDatabase,
       'user_1',
       'openai',
       undefined,

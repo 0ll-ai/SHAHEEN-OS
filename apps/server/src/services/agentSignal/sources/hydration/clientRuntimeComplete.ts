@@ -5,7 +5,7 @@ import type {
 import { AGENT_SIGNAL_SOURCE_TYPES } from '@lobechat/agent-signal/source';
 
 import { MessageModel } from '@/database/models/message';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 /** Reason a `client.runtime.complete` event could not become a feedback source. */
 export type ClientRuntimeCompleteHydrationSkipReason =
@@ -78,7 +78,7 @@ const getTrustedScopeKey = (
  */
 export const resolveClientRuntimeCompleteFeedbackSource = async (
   sourceEvent: AgentSignalSourceEvent<typeof AGENT_SIGNAL_SOURCE_TYPES.clientRuntimeComplete>,
-  input: { db: SHAHEEN OSDatabase; userId: string; workspaceId?: string },
+  input: { db: SHAHEENOSDatabase; userId: string; workspaceId?: string },
 ): Promise<ClientRuntimeCompleteHydrationResult> => {
   if (sourceEvent.payload.status !== 'completed') {
     return skipped('non-completed-status');

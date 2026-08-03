@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import {
   agents,
   chatGroups,
@@ -17,7 +17,7 @@ import { aiAgentRouter } from '../../aiAgent';
 import { cleanupTestUser, createTestUser } from './setup';
 
 // Mock getServerDB to return our test database instance
-let testDB: SHAHEEN OSDatabase;
+let testDB: SHAHEENOSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -36,7 +36,7 @@ vi.mock('@/server/services/aiChat', () => ({
 }));
 
 describe('createClientGroupAgentTaskThread Integration', () => {
-  let serverDB: SHAHEEN OSDatabase;
+  let serverDB: SHAHEENOSDatabase;
   let userId: string;
   let supervisorAgentId: string;
   let workerAgentId: string;

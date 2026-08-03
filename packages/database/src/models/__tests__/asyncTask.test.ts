@@ -15,14 +15,14 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { asyncTasks, users } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import {
   AsyncTaskModel,
   initHourlyUserMemoryExtractionMetadata,
   initUserMemoryExtractionMetadata,
 } from '../asyncTask';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'async-task-model-test-user-id';
 const asyncTaskModel = new AsyncTaskModel(serverDB, userId);

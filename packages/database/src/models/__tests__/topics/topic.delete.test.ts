@@ -12,13 +12,13 @@ import {
   users,
   workspaces,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { TopicModel } from '../../topic';
 
 const userId = 'topic-delete-user';
 const userId2 = 'topic-delete-user-2';
 const sessionId = 'topic-delete-session';
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const topicModel = new TopicModel(serverDB, userId);
 
 describe('TopicModel - Delete', () => {

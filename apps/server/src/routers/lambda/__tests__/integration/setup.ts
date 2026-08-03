@@ -1,7 +1,7 @@
 /**
  * Common integration test setup
  */
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { uuid } from '@/utils/uuid';
 
 /**
@@ -15,7 +15,7 @@ export const createTestContext = (userId?: string) => ({
 /**
  * Create test user
  */
-export const createTestUser = async (serverDB: SHAHEEN OSDatabase, userId?: string) => {
+export const createTestUser = async (serverDB: SHAHEENOSDatabase, userId?: string) => {
   const id = userId || uuid();
   const { users } = await import('@/database/schemas');
 
@@ -28,7 +28,7 @@ export const createTestUser = async (serverDB: SHAHEEN OSDatabase, userId?: stri
  * Create test Agent
  */
 export const createTestAgent = async (
-  serverDB: SHAHEEN OSDatabase,
+  serverDB: SHAHEENOSDatabase,
   userId: string,
   agentId?: string,
 ) => {
@@ -44,7 +44,7 @@ export const createTestAgent = async (
  * Create test Topic
  */
 export const createTestTopic = async (
-  serverDB: SHAHEEN OSDatabase,
+  serverDB: SHAHEENOSDatabase,
   userId: string,
   topicId?: string,
 ) => {
@@ -59,7 +59,7 @@ export const createTestTopic = async (
 /**
  * Clean up test user and all associated data
  */
-export const cleanupTestUser = async (serverDB: SHAHEEN OSDatabase, userId: string) => {
+export const cleanupTestUser = async (serverDB: SHAHEENOSDatabase, userId: string) => {
   const { users } = await import('@/database/schemas');
   const { eq } = await import('drizzle-orm');
 

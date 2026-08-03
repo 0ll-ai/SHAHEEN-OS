@@ -28,7 +28,7 @@ const devtools = createDevtools('brief');
 export const useBriefStore = createWithEqualityFn<BriefStore>()(
   subscribeWithSelector(
     devtools(createStore, {
-      name: 'SHAHEEN OS_Brief' + (isDev ? '_DEV' : ''),
+      name: 'SHAHEENOS_Brief' + (isDev ? '_DEV' : ''),
     }),
   ),
   shallow,

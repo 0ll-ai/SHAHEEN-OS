@@ -5,7 +5,7 @@ import type {
 } from '@lobechat/model-runtime';
 import type { OpenAIChatMessage } from '@lobechat/types';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 export interface AiGenerationObjectInput {
@@ -46,11 +46,11 @@ export interface AiGenerationObjectOptions {
  * Construct one per request — `db` and `userId` come from the request context.
  */
 export class AiGenerationService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

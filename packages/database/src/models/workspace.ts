@@ -6,10 +6,10 @@ import {
   workspaceMembers,
   workspaces,
 } from '../schemas/workspace';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 const getActiveMembershipRole = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   params: { userId: string; workspaceId: string },
 ): Promise<string | null> => {
   const [row] = await db
@@ -38,7 +38,7 @@ const getActiveMembershipRole = async (
  * and lambda TRPC surfaces.
  */
 export const hasWorkspaceOwnerAccess = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   params: { userId: string; workspaceId: string },
 ): Promise<boolean> => {
   return (await getActiveMembershipRole(db, params)) === 'owner';
@@ -49,7 +49,7 @@ export const hasWorkspaceOwnerAccess = async (
  * and Admin pass; Member and Viewer do not.
  */
 export const hasWorkspaceAdminAccess = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   params: { userId: string; workspaceId: string },
 ): Promise<boolean> => {
   const role = await getActiveMembershipRole(db, params);
@@ -57,10 +57,10 @@ export const hasWorkspaceAdminAccess = async (
 };
 
 export class WorkspaceModel {
-  protected readonly db: SHAHEEN OSDatabase;
+  protected readonly db: SHAHEENOSDatabase;
   protected readonly userId: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
   }

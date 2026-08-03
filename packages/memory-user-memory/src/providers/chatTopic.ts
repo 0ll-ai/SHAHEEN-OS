@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { topics } from '@lobechat/database/schemas';
 import type { OpenAIChatMessage } from '@lobechat/model-runtime';
 import type { ChatTopicMetadata } from '@lobechat/types';
@@ -30,14 +30,14 @@ export interface ChatTopicProviderOptions {
 
 export interface ChatTopicResultRecorderOptions {
   currentMetadata?: ChatTopicMetadata;
-  database: SHAHEEN OSDatabase;
+  database: SHAHEENOSDatabase;
   lastMessageAt?: string;
   messageCount?: number;
   topicId: string;
   traceId?: string;
 }
 
-export class SHAHEEN OSTopicContextProvider implements MemoryContextProvider<
+export class SHAHEENOSTopicContextProvider implements MemoryContextProvider<
   Record<string, unknown>,
   Record<string, unknown>
 > {
@@ -123,7 +123,7 @@ export class SHAHEEN OSTopicContextProvider implements MemoryContextProvider<
   }
 }
 
-export class SHAHEEN OSTopicResultRecorder implements MemoryResultRecorder<{
+export class SHAHEENOSTopicResultRecorder implements MemoryResultRecorder<{
   processedMemoryCount: number;
 }> {
   private readonly options: ChatTopicResultRecorderOptions;

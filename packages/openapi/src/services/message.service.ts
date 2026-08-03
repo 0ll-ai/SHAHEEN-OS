@@ -1,7 +1,7 @@
 import { and, asc, count, desc, eq, ilike, inArray, isNull } from 'drizzle-orm';
 
 import { messages, messagesFiles } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { idGenerator } from '@/database/utils/idGenerator';
 import { FileService as CoreFileService } from '@/server/services/file';
 
@@ -33,7 +33,7 @@ export interface MessageCountResult {
 export class MessageService extends BaseService {
   private coreFileService: CoreFileService;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string | null, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string | null, workspaceId?: string) {
     super(db, userId, workspaceId);
 
     this.coreFileService = new CoreFileService(db, userId!, workspaceId);

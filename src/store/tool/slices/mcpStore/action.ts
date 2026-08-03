@@ -79,27 +79,27 @@ const buildCloudMcpManifest = (params: {
 
   log('Using cloud connection, building manifest from market data');
 
-  // Get tools (MCP format) or api (SHAHEEN OS format) from data
+  // Get tools (MCP format) or api (SHAHEENOS format) from data
   const mcpTools = data.tools;
   const lobeChatApi = data.api;
 
-  // If MCP format tools, need to convert to SHAHEEN OS api format
+  // If MCP format tools, need to convert to SHAHEENOS api format
   // MCP: { name, description, inputSchema }
-  // SHAHEEN OS: { name, description, parameters }
+  // SHAHEENOS: { name, description, parameters }
   let apiArray: any[] = [];
 
   if (lobeChatApi) {
-    // Already in SHAHEEN OS format, use directly
+    // Already in SHAHEENOS format, use directly
     apiArray = lobeChatApi;
-    log('[Cloud MCP] Using existing SHAHEEN OS API format');
+    log('[Cloud MCP] Using existing SHAHEENOS API format');
   } else if (mcpTools && Array.isArray(mcpTools)) {
-    // Convert MCP tools format to SHAHEEN OS api format
+    // Convert MCP tools format to SHAHEENOS api format
     apiArray = mcpTools.map((tool: any) => ({
       description: tool.description || '',
       name: tool.name,
       parameters: tool.inputSchema || {},
     }));
-    log('[Cloud MCP] Converted %d MCP tools to SHAHEEN OS API format', apiArray.length);
+    log('[Cloud MCP] Converted %d MCP tools to SHAHEENOS API format', apiArray.length);
   } else {
     console.warn('[Cloud MCP] No tools or api found in manifest data');
   }

@@ -28,7 +28,7 @@ import { messagePlugins, messages } from '../schemas/message';
 import { topics } from '../schemas/topic';
 import type { TopicCommentAnchorPreview, TopicCommentItem } from '../schemas/topicComment';
 import { topicCommentMentions, topicComments } from '../schemas/topicComment';
-import type { SHAHEEN OSDatabase, Transaction } from '../type';
+import type { SHAHEENOSDatabase, Transaction } from '../type';
 
 export const TOPIC_COMMENT_WORKSPACE_REQUIRED =
   'Topic comments are workspace-scoped; a workspaceId is required';
@@ -233,11 +233,11 @@ export interface TopicCommentThreadPage {
  * edited.
  */
 export class TopicCommentModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string | null;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string | null) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string | null) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -249,7 +249,7 @@ export class TopicCommentModel {
   };
 
   private resolveAnchorPreviewExcerpt = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     anchor: {
       content: string | null;
       groupId: string | null;
@@ -425,7 +425,7 @@ export class TopicCommentModel {
 
         anchorPreview = {
           excerpt: await this.resolveAnchorPreviewExcerpt(
-            tx as SHAHEEN OSDatabase,
+            tx as SHAHEENOSDatabase,
             message,
             params.topicId,
             workspaceId,
@@ -991,7 +991,7 @@ export class TopicCommentModel {
  * race the destructive transition.
  */
 export const purgeExpiredTopicCommentModeration = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   options: { limit?: number; now?: Date } = {},
 ): Promise<PurgeExpiredTopicCommentModerationResult> => {
   const { limit = 500, now = new Date() } = options;
@@ -1175,7 +1175,7 @@ export const syncTopicCommentsOnTopicTransfer = async (
  * silently skip it.
  */
 export const hasForeignTopicComments = async (
-  db: Pick<SHAHEEN OSDatabase, 'select'>,
+  db: Pick<SHAHEENOSDatabase, 'select'>,
   userId: string,
   topicWhere: SQL,
 ): Promise<boolean> => {

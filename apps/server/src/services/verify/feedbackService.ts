@@ -1,7 +1,7 @@
 import type { VerifyCheckDecisionDetail, VerifyUserDecision, VerifyVerdict } from '@lobechat/types';
 
 import { VerifyCheckResultModel } from '@/database/models/verifyCheckResult';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 /**
  * Ground-truth derived from comparing the user's decision against the verifier's
@@ -23,7 +23,7 @@ export const computeFalseFlags = (
 export class VerifyFeedbackService {
   private readonly resultModel: VerifyCheckResultModel;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.resultModel = new VerifyCheckResultModel(db, userId, workspaceId);
   }
 

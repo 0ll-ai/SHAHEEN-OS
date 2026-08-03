@@ -15,10 +15,10 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { GenerationModel } from '../generation';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 // Mock FileService
 const mockGetFileAccessUrl = vi.fn();

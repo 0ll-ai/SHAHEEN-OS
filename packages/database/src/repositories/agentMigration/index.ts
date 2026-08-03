@@ -2,7 +2,7 @@ import { and, eq, inArray, isNotNull, isNull } from 'drizzle-orm';
 import type { AnyPgColumn } from 'drizzle-orm/pg-core';
 
 import { agents, agentsToSessions, messages, sessions, topics } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 type MigrateBySessionParams = { agentId: string; sessionId: string };
@@ -17,10 +17,10 @@ type MigrateAgentIdParams = MigrateBySessionParams | MigrateInboxParams;
  */
 export class AgentMigrationRepo {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -57,7 +57,7 @@ export class AgentMigrationRepo {
    * Migrate legacy inbox topics and their messages
    * Inbox topics have: sessionId IS NULL AND groupId IS NULL AND agentId IS NULL
    */
-  private migrateInbox = async (tx: SHAHEEN OSDatabase, agentId: string) => {
+  private migrateInbox = async (tx: SHAHEENOSDatabase, agentId: string) => {
     // 1. Find all legacy inbox topics that need migration
     const legacyTopics = await tx
       .select({ id: topics.id })
@@ -112,7 +112,7 @@ export class AgentMigrationRepo {
    * Migrate legacy topics and messages for a specific session
    */
   private migrateBySession = async (
-    tx: SHAHEEN OSDatabase,
+    tx: SHAHEENOSDatabase,
     { sessionId, agentId }: MigrateBySessionParams,
   ) => {
     // 1. Find all legacy topics with sessionId that need migration

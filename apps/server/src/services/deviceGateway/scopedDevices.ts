@@ -1,5 +1,5 @@
 import { type DeviceAttachment } from '@lobechat/builtin-tool-remote-device';
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { sortDevicesByActivity } from '@lobechat/types';
 import debug from 'debug';
 
@@ -35,7 +35,7 @@ const log = debug('lobe-server:device-scope');
  * auto-activation, so it degrades to gateway-only on failure.
  */
 export const getScopedOnlineDevices = async (
-  serverDB: SHAHEEN OSDatabase,
+  serverDB: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ): Promise<DeviceAttachment[]> => {

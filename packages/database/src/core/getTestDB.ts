@@ -12,7 +12,7 @@ import { Pool as NodePool } from 'pg';
 import { serverDBEnv } from '@/config/db';
 
 import * as schema from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 const migrationsFolder = join(__dirname, '../../migrations');
 
@@ -21,10 +21,10 @@ const isServerDBMode = process.env.TEST_SERVER_DB === '1';
 let testClientDB: ReturnType<typeof pgliteDrizzle<typeof schema>> | null = null;
 let testServerDB: ReturnType<typeof nodeDrizzle<typeof schema>> | null = null;
 
-export const getTestDB = async (): Promise<SHAHEEN OSDatabase> => {
+export const getTestDB = async (): Promise<SHAHEENOSDatabase> => {
   // Server DB mode (node-postgres)
   if (isServerDBMode) {
-    if (testServerDB) return testServerDB as unknown as SHAHEEN OSDatabase;
+    if (testServerDB) return testServerDB as unknown as SHAHEENOSDatabase;
 
     const connectionString = serverDBEnv.DATABASE_TEST_URL;
 
@@ -37,11 +37,11 @@ export const getTestDB = async (): Promise<SHAHEEN OSDatabase> => {
 
     await nodeMigrate(testServerDB, { migrationsFolder });
 
-    return testServerDB as unknown as SHAHEEN OSDatabase;
+    return testServerDB as unknown as SHAHEENOSDatabase;
   }
 
   // Client DB mode (PGlite)
-  if (testClientDB) return testClientDB as unknown as SHAHEEN OSDatabase;
+  if (testClientDB) return testClientDB as unknown as SHAHEENOSDatabase;
 
   const pglite = new PGlite({ extensions: { vector } });
   testClientDB = pgliteDrizzle({ client: pglite, schema });
@@ -74,5 +74,5 @@ export const getTestDB = async (): Promise<SHAHEEN OSDatabase> => {
     );
   }
 
-  return testClientDB as unknown as SHAHEEN OSDatabase;
+  return testClientDB as unknown as SHAHEENOSDatabase;
 };

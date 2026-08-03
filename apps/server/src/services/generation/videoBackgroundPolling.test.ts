@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { AsyncTaskModel } from '@/database/models/asyncTask';
 import { GenerationModel } from '@/database/models/generation';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 import { VideoGenerationService } from '@/server/services/generation/video';
 import { processBackgroundVideoPolling } from '@/server/services/generation/videoBackgroundPolling';
@@ -50,7 +50,7 @@ describe('videoBackgroundPolling', () => {
         }),
       },
     },
-  } as any as SHAHEEN OSDatabase;
+  } as any as SHAHEENOSDatabase;
 
   const mockParams = {
     asyncTaskCreatedAt: new Date('2024-01-01T00:00:00Z'),

@@ -3,12 +3,12 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { agentOperations, users, verifyReports, verifyRuns } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { AgentOperationModel } from '../agentOperation';
 import { VerifyReportModel } from '../verifyReport';
 import { VerifyRunModel } from '../verifyRun';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'verify-report-test-user';
 const operationId = 'verify-report-test-op';

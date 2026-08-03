@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { TopicDocumentModel } from '@/database/models/topicDocument';
@@ -16,7 +16,7 @@ vi.mock('@/database/models/topicDocument', () => ({
 }));
 
 describe('archiveToolResultIfNeeded', () => {
-  const db = {} as SHAHEEN OSDatabase;
+  const db = {} as SHAHEENOSDatabase;
   const mockVfsService = {
     mkdir: vi.fn(),
     write: vi.fn(),

@@ -2,15 +2,15 @@ import { and, asc, eq, inArray, isNull } from 'drizzle-orm';
 
 import type { NewVerifyCheckResult, VerifyCheckResultItem } from '../schemas/verify';
 import { verifyCheckResults, verifyRuns } from '../schemas/verify';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export class VerifyCheckResultModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

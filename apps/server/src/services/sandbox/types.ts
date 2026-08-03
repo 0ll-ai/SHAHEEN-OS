@@ -2,7 +2,7 @@ import type {
   ISandboxService,
   SandboxExportFileResult,
 } from '@lobechat/builtin-tool-cloud-sandbox';
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 
 import type { FileService } from '@/server/services/file';
 import type { MarketService } from '@/server/services/market';
@@ -18,7 +18,7 @@ export interface SandboxServiceOptions extends SandboxSessionContext {
   fileService?: FileService;
   marketService: MarketService;
   /** Used to look up topic/session files when bootstrapping the sandbox. */
-  serverDB?: SHAHEEN OSDatabase;
+  serverDB?: SHAHEENOSDatabase;
 }
 
 export interface SandboxProviderCapabilities {

@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import {
   oidcAccessTokens,
   oidcAuthorizationCodes,
@@ -30,10 +30,10 @@ const log = debug('lobe-oidc:adapter');
 const REFRESH_TOKEN_GRACE_PERIOD_SECONDS = 180;
 
 class OIDCAdapter {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private name: string;
 
-  constructor(name: string, db: SHAHEEN OSDatabase) {
+  constructor(name: string, db: SHAHEENOSDatabase) {
     log('[%s] Constructor called with name: %s', name, name);
 
     this.name = name;
@@ -607,7 +607,7 @@ class OIDCAdapter {
   /**
    * Create adapter factory
    */
-  static createAdapterFactory = (db: SHAHEEN OSDatabase) => {
+  static createAdapterFactory = (db: SHAHEENOSDatabase) => {
     log('Creating adapter factory with database instance');
     return (name: string) => new OIDCAdapter(name, db);
   };

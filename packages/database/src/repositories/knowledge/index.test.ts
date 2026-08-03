@@ -9,7 +9,7 @@ import { chunks, embeddings } from '../../schemas/rag';
 import { fileChunks } from '../../schemas/relations';
 import { users } from '../../schemas/user';
 import { workspaces } from '../../schemas/workspace';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { KnowledgeRepo } from './index';
 
 const userId = 'knowledge-test-user';
@@ -23,7 +23,7 @@ const deleteNestedFolderFileChunkId = '55555555-5555-4555-8555-555555555555';
 let knowledgeRepo: KnowledgeRepo;
 const testEmbedding = Array.from({ length: 1024 }, () => 0.1);
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   // Clean up

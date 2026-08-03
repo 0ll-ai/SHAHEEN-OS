@@ -29,7 +29,7 @@ import { documents } from '../schemas/file';
 import type { NewTaskComment, TaskCommentItem } from '../schemas/task';
 import { taskComments, taskDependencies, taskDocuments, tasks, taskTopics } from '../schemas/task';
 import { works } from '../schemas/work';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspaceWhere } from '../utils/workspace';
 
 /**
@@ -57,10 +57,10 @@ import { buildWorkspaceWhere } from '../utils/workspace';
  */
 export class TaskModel {
   private readonly userId: string;
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
@@ -860,7 +860,7 @@ export class TaskModel {
   // Tasks eligible for cron-based dispatch.
   // Excludes terminal/paused/running — `paused` requires user attention,
   // `running` is already in flight (and `runTask` would CONFLICT anyway).
-  static async getScheduledTasks(db: SHAHEEN OSDatabase): Promise<TaskItem[]> {
+  static async getScheduledTasks(db: SHAHEENOSDatabase): Promise<TaskItem[]> {
     return db
       .select()
       .from(tasks)
@@ -875,7 +875,7 @@ export class TaskModel {
 
   // Find stuck tasks (running but heartbeat timed out)
   // Only checks tasks that have both lastHeartbeatAt and heartbeatTimeout set
-  static async findStuckTasks(db: SHAHEEN OSDatabase): Promise<TaskItem[]> {
+  static async findStuckTasks(db: SHAHEENOSDatabase): Promise<TaskItem[]> {
     return db
       .select()
       .from(tasks)
@@ -1261,7 +1261,7 @@ export class TaskModel {
    * Collect a task and all its descendants (parentTaskId-linked) via BFS.
    * Honors the current ownership scope.
    */
-  private async collectTaskSubtree(rootId: string, runner: SHAHEEN OSDatabase): Promise<TaskItem[]> {
+  private async collectTaskSubtree(rootId: string, runner: SHAHEENOSDatabase): Promise<TaskItem[]> {
     const [root] = await runner
       .select()
       .from(tasks)
@@ -1290,7 +1290,7 @@ export class TaskModel {
    * scope. Returns the next available seq baseline.
    */
   private async nextSeqIn(
-    runner: SHAHEEN OSDatabase,
+    runner: SHAHEENOSDatabase,
     targetWorkspaceId: string | null,
     targetUserId: string,
   ): Promise<number> {
@@ -1332,8 +1332,8 @@ export class TaskModel {
     targetVisibility?: 'private' | 'public',
   ): Promise<{ taskIds: string[] }> {
     return this.db.transaction(async (trx) => {
-      const scoped = new TaskModel(trx as SHAHEEN OSDatabase, this.userId, this.workspaceId);
-      const subtree = await scoped.collectTaskSubtree(taskId, trx as SHAHEEN OSDatabase);
+      const scoped = new TaskModel(trx as SHAHEENOSDatabase, this.userId, this.workspaceId);
+      const subtree = await scoped.collectTaskSubtree(taskId, trx as SHAHEENOSDatabase);
       if (subtree.length === 0) throw new Error('Task not found');
 
       const ids = subtree.map((t) => t.id);
@@ -1345,7 +1345,7 @@ export class TaskModel {
 
       // Reallocate identifier + seq in target scope to avoid collisions.
       const baseSeq = await this.nextSeqIn(
-        trx as SHAHEEN OSDatabase,
+        trx as SHAHEENOSDatabase,
         targetWorkspaceId,
         targetUserId,
       );
@@ -1353,7 +1353,7 @@ export class TaskModel {
       for (const [idx, task] of subtree.entries()) {
         const seq = baseSeq + idx;
         const identifier = `T-${seq}`;
-        await (trx as SHAHEEN OSDatabase)
+        await (trx as SHAHEENOSDatabase)
           .update(tasks)
           .set({
             // Clear cross-scope refs: agent / topic may be invalid in new scope.
@@ -1373,15 +1373,15 @@ export class TaskModel {
       // task's visibility (see schema comments on task_deps / task_docs /
       // task_comments) so cascade the new visibility here too.
       const ownershipUpdate = { userId: targetUserId, workspaceId: targetWorkspaceId };
-      await (trx as SHAHEEN OSDatabase)
+      await (trx as SHAHEENOSDatabase)
         .update(taskDependencies)
         .set({ ...ownershipUpdate, ...visibilityUpdate })
         .where(inArray(taskDependencies.taskId, ids));
-      await (trx as SHAHEEN OSDatabase)
+      await (trx as SHAHEENOSDatabase)
         .update(taskDocuments)
         .set({ ...ownershipUpdate, ...visibilityUpdate })
         .where(inArray(taskDocuments.taskId, ids));
-      await (trx as SHAHEEN OSDatabase)
+      await (trx as SHAHEENOSDatabase)
         .update(taskComments)
         .set({ ...ownershipUpdate, ...visibilityUpdate })
         .where(inArray(taskComments.taskId, ids));
@@ -1403,8 +1403,8 @@ export class TaskModel {
     targetVisibility?: 'private' | 'public',
   ): Promise<{ rootId: string }> {
     return this.db.transaction(async (trx) => {
-      const scoped = new TaskModel(trx as SHAHEEN OSDatabase, this.userId, this.workspaceId);
-      const subtree = await scoped.collectTaskSubtree(taskId, trx as SHAHEEN OSDatabase);
+      const scoped = new TaskModel(trx as SHAHEENOSDatabase, this.userId, this.workspaceId);
+      const subtree = await scoped.collectTaskSubtree(taskId, trx as SHAHEENOSDatabase);
       if (subtree.length === 0) throw new Error('Task not found');
 
       // Visibility only applies when landing in a workspace.
@@ -1418,7 +1418,7 @@ export class TaskModel {
       const queue: string[] = [taskId];
       const seen = new Set<string>();
 
-      let seq = await this.nextSeqIn(trx as SHAHEEN OSDatabase, targetWorkspaceId, targetUserId);
+      let seq = await this.nextSeqIn(trx as SHAHEENOSDatabase, targetWorkspaceId, targetUserId);
 
       while (queue.length > 0) {
         const currentId = queue.shift()!;
@@ -1431,7 +1431,7 @@ export class TaskModel {
           currentId === taskId ? null : (idMap.get(original.parentTaskId!) ?? null);
 
         const identifier = `T-${seq}`;
-        const inserted = (await (trx as SHAHEEN OSDatabase)
+        const inserted = (await (trx as SHAHEENOSDatabase)
           .insert(tasks)
           .values({
             assigneeAgentId: null,

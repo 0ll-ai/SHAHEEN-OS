@@ -47,7 +47,7 @@ describe('ToolMessageReorder', () => {
           {
             function: {
               arguments:
-                '{"query":"SHAHEEN OS","searchEngines":["brave","google","duckduckgo","qwant"]}',
+                '{"query":"SHAHEENOS","searchEngines":["brave","google","duckduckgo","qwant"]}',
               name: 'lobe-web-browsing____searchWithSearXNG',
             },
             id: 'call_6xCmrOtFOyBAcqpqO1TGfw2B',
@@ -56,7 +56,7 @@ describe('ToolMessageReorder', () => {
           {
             function: {
               arguments:
-                '{"query":"SHAHEEN OS","searchEngines":["brave","google","duckduckgo","qwant"]}',
+                '{"query":"SHAHEENOS","searchEngines":["brave","google","duckduckgo","qwant"]}',
               name: 'lobe-web-browsing____searchWithSearXNG',
             },
             id: 'tool_call_nXxXHW8Z',
@@ -108,7 +108,7 @@ describe('ToolMessageReorder', () => {
           {
             function: {
               arguments:
-                '{"query":"SHAHEEN OS","searchEngines":["brave","google","duckduckgo","qwant"]}',
+                '{"query":"SHAHEENOS","searchEngines":["brave","google","duckduckgo","qwant"]}',
               name: 'lobe-web-browsing____searchWithSearXNG',
             },
             id: 'call_6xCmrOtFOyBAcqpqO1TGfw2B',
@@ -117,7 +117,7 @@ describe('ToolMessageReorder', () => {
           {
             function: {
               arguments:
-                '{"query":"SHAHEEN OS","searchEngines":["brave","google","duckduckgo","qwant"]}',
+                '{"query":"SHAHEENOS","searchEngines":["brave","google","duckduckgo","qwant"]}',
               name: 'lobe-web-browsing____searchWithSearXNG',
             },
             id: 'tool_call_nXxXHW8Z',

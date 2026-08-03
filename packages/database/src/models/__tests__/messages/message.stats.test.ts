@@ -6,11 +6,11 @@ import { uuid } from '@/utils/uuid';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { agents, embeddings, files, messages, sessions, topics, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { MessageModel } from '../../message';
 import { codeEmbedding } from '../fixtures/embedding';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'message-stats-test';
 const otherUserId = 'message-stats-test-other';

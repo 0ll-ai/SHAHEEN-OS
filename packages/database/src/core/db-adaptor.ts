@@ -1,13 +1,13 @@
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { getDBInstance } from './web-server';
 
 /**
  * Lazy-load database instance
  * Avoid initializing the database every time the module is imported
  */
-let cachedDB: SHAHEEN OSDatabase | null = null;
+let cachedDB: SHAHEENOSDatabase | null = null;
 
-export const getServerDB = async (): Promise<SHAHEEN OSDatabase> => {
+export const getServerDB = async (): Promise<SHAHEENOSDatabase> => {
   // If there's already a cached instance, return it directly
   if (cachedDB) return cachedDB;
 

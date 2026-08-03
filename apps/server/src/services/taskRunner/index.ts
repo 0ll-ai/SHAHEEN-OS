@@ -10,7 +10,7 @@ import { AgentModel } from '@/database/models/agent';
 import { BriefModel } from '@/database/models/brief';
 import { TaskModel } from '@/database/models/task';
 import { TaskTopicModel } from '@/database/models/taskTopic';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { AiAgentService } from '@/server/services/aiAgent';
 import { TaskLifecycleService } from '@/server/services/taskLifecycle';
 
@@ -46,7 +46,7 @@ export interface RunTaskResult extends ExecAgentResult {
 export class TaskRunnerService {
   private agentModel: AgentModel;
   private briefModel: BriefModel;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private taskLifecycle: TaskLifecycleService;
   private taskModel: TaskModel;
   private taskTopicModel: TaskTopicModel;
@@ -54,7 +54,7 @@ export class TaskRunnerService {
 
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

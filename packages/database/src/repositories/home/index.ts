@@ -16,7 +16,7 @@ import {
   topics,
   workspaceUserSettings,
 } from '../../schemas';
-import { type SHAHEEN OSDatabase } from '../../type';
+import { type SHAHEENOSDatabase } from '../../type';
 import { sanitizeBm25Query } from '../../utils/bm25';
 import { normalizeInboxAgentMeta } from '../../utils/inboxAgent';
 import { buildWorkspaceWhere } from '../../utils/workspace';
@@ -40,9 +40,9 @@ export type {
 export class HomeRepository {
   private userId: string;
   private workspaceId?: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;

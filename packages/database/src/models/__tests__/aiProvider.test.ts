@@ -7,10 +7,10 @@ import { sleep } from '@/utils/sleep';
 
 import { getTestDB } from '../../core/getTestDB';
 import { aiProviders, users, workspaces } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { AiProviderModel } from '../aiProvider';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'session-group-model-test-user-id';
 const workspaceId = 'ai-provider-test-workspace-id';

@@ -20,7 +20,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { users } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import {
   AgentProviderAccountModel,
   AgentQuotaCalibrationModel,
@@ -29,7 +29,7 @@ import {
   AgentQuotaWindowModel,
 } from '../agentQuota';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const userId = 'quota-pipeline-user';
 const secret = 'ofQiJCXLF8mYemwfMWLOHoHimlPu91YmLfU7YZ4lreQ=';
 let original: string | undefined;

@@ -1,7 +1,7 @@
 import { and, eq, inArray } from 'drizzle-orm';
 
 import { agentsToSessions } from '@/database/schemas';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { buildWorkspaceWhere } from '@/database/utils/workspace';
 
 import { type ConversationContextInput } from '../_schema/context';
@@ -27,7 +27,7 @@ export interface ResolvedContext {
  */
 export const resolveContext = async (
   input: ConversationContextInput,
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ): Promise<ResolvedContext> => {
@@ -72,7 +72,7 @@ export const resolveContext = async (
  */
 export const resolveAgentIdFromSession = async (
   sessionId: string,
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ): Promise<string | undefined> => {
@@ -96,7 +96,7 @@ export const resolveAgentIdFromSession = async (
  */
 export const resolveContextWithAgentId = async (
   input: ConversationContextInput,
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ): Promise<ResolvedContext> => {
@@ -124,7 +124,7 @@ export const resolveContextWithAgentId = async (
  */
 export const batchResolveAgentIdFromSessions = async (
   sessionIds: string[],
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ): Promise<Map<string, string>> => {

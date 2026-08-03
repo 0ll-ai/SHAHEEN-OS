@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 
 import { UserModel } from '@/database/models/user';
 import { type TrustedClientUserInfo } from '@/libs/trusted-client';
@@ -7,7 +7,7 @@ import { trpc } from '../init';
 
 interface ContextWithServerDB {
   marketAccessToken?: string;
-  serverDB?: SHAHEEN OSDatabase;
+  serverDB?: SHAHEENOSDatabase;
   userId?: string | null;
   workspaceId?: string | null;
 }

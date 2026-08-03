@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { createServerSelfReflectionPolicyOptions } from '../server';
 
@@ -9,7 +9,7 @@ describe('createServerSelfReflectionPolicyOptions', () => {
   it('exposes dispatch-shaped handler deps (gate, guard, collector, db) without legacy runtime/receipt wiring', () => {
     const options = createServerSelfReflectionPolicyOptions({
       agentId: 'agent-1',
-      db: {} as unknown as SHAHEEN OSDatabase,
+      db: {} as unknown as SHAHEENOSDatabase,
       selfIterationEnabled: true,
       userId: 'user-1',
     });
@@ -30,7 +30,7 @@ describe('createServerSelfReflectionPolicyOptions', () => {
   it('rejects reviews whose payload user id does not match the policy owner', async () => {
     const options = createServerSelfReflectionPolicyOptions({
       agentId: 'agent-1',
-      db: {} as unknown as SHAHEEN OSDatabase,
+      db: {} as unknown as SHAHEENOSDatabase,
       selfIterationEnabled: true,
       userId: 'user-1',
     });

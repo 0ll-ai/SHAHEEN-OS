@@ -1,6 +1,6 @@
 import type { AgentSignalRuntimeService } from '@lobechat/builtin-tool-agent-signal';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { runMemoryActionAgent } from '@/server/services/agentSignal/policies/analyzeIntent/actions/userMemory';
 import type { SkillManagementDocumentService } from '@/server/services/skillManagement';
 
@@ -16,7 +16,7 @@ import { createMemoryService, createSkillManagementService } from './shared';
 
 export interface ResourceRuntimePrimitiveDeps {
   agentId: string;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   /** Builds the memory-candidate reason; lets each mode tag its origin. */
   memoryReason: (evidenceCount: number) => string;
   /** Agent runtime operation id, when the tool context exposes it. */

@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { assertCanPerformResourceAction } from '@/server/services/resourcePermission';
 
 import { assertCanUseWorkspaceAgent } from './workspaceAgentGuard';
@@ -20,7 +20,7 @@ const createDB = (agent: { id: string } | undefined, linkedGroups: { groupId: st
   const findFirst = vi.fn().mockResolvedValue(agent);
 
   return {
-    db: { query: { agents: { findFirst } }, select } as unknown as SHAHEEN OSDatabase,
+    db: { query: { agents: { findFirst } }, select } as unknown as SHAHEENOSDatabase,
     findFirst,
     select,
   };

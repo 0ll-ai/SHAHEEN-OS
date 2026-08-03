@@ -6,7 +6,7 @@ import { ChatErrorType } from '@lobechat/types';
 
 import { auth } from '@/auth';
 import { getServerDB } from '@/database/core/db-adaptor';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { LOBE_CHAT_OIDC_AUTH_HEADER } from '@/envs/auth';
 import { extractTraceContext, injectActiveTraceHeaders } from '@/libs/observability/traceparent';
 import { assertOIDCUserActive } from '@/libs/oidc-provider/access-control';
@@ -19,7 +19,7 @@ export type RequestHandler = (
   req: Request,
   options: RequestOptions & {
     jwtPayload: ClientSecretPayload;
-    serverDB: SHAHEEN OSDatabase;
+    serverDB: SHAHEENOSDatabase;
     userId: string;
   },
 ) => Promise<Response>;

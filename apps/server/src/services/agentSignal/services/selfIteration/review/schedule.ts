@@ -6,7 +6,7 @@ import timezonePlugin from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 
 import { AgentSignalNightlyReviewModel } from '@/database/models/agentSignal/nightlyReview';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import type { AgentSignalSourceEventInput } from '@/server/services/agentSignal/emitter';
 import { enqueueAgentSignalSourceEvent } from '@/server/services/agentSignal/emitter';
 
@@ -279,13 +279,13 @@ export const createSelfReviewScheduleService = (
  * - Server should enqueue AgentSignal source events without running review handlers inline
  *
  * Expects:
- * - `db` points at the main SHAHEEN OS database
+ * - `db` points at the main SHAHEENOS database
  *
  * Returns:
  * - A scheduler service wired to {@link AgentSignalNightlyReviewModel} and AgentSignal enqueueing
  */
 export const createServerNightlyReviewScheduleService = (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
 ): NightlyReviewScheduleService => {
   const model = new AgentSignalNightlyReviewModel(db);
 

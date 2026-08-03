@@ -2,17 +2,17 @@ import { and, eq } from 'drizzle-orm';
 
 import type { PermissionResourceType, ResourceAccessLevel } from '../schemas';
 import { getDefaultResourceAccessLevel, resourcePermissions } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 /**
  * Workspace-wide access policy for public resources. All methods are scoped
  * to one workspace; the table is meaningless in personal mode.
  */
 export class ResourcePermissionModel {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId: string;
 
-  constructor(db: SHAHEEN OSDatabase, workspaceId: string) {
+  constructor(db: SHAHEENOSDatabase, workspaceId: string) {
     this.db = db;
     this.workspaceId = workspaceId;
   }

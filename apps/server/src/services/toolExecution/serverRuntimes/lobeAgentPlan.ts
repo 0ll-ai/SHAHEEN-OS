@@ -1,6 +1,6 @@
 import { type PlanDocument, type PlanRuntimeService } from '@lobechat/builtin-tool-lobe-agent';
 import { AGENT_PLAN_FILE_TYPE } from '@lobechat/const';
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 
 import { DocumentModel } from '@/database/models/document';
 import { TopicDocumentModel } from '@/database/models/topicDocument';
@@ -13,7 +13,7 @@ import { TopicDocumentModel } from '@/database/models/topicDocument';
  * registry has a single runtime per identifier.
  */
 export const createServerPlanRuntimeService = (
-  serverDB: SHAHEEN OSDatabase,
+  serverDB: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
   callerAgentVisibility?: 'private' | 'public' | null,

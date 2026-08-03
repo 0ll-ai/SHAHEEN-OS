@@ -51,7 +51,7 @@ export function getWorkflowFilenamePrefix(workflowName: string, variant?: string
       : WORKFLOW_DEFAULT_TYPE[workflowName];
 
   if (!type) {
-    return 'SHAHEEN OS/%year%-%month%-%day%/Unknown';
+    return 'SHAHEENOS/%year%-%month%-%day%/Unknown';
   }
 
   // 2. Get filename prefix based on type
@@ -67,5 +67,5 @@ export function getWorkflowFilenamePrefix(workflowName: string, variant?: string
     ];
   }
 
-  return 'SHAHEEN OS/%year%-%month%-%day%/Unknown';
+  return 'SHAHEENOS/%year%-%month%-%day%/Unknown';
 }

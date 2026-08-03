@@ -9,7 +9,7 @@ import { createHeadlessEditor, type HeadlessEditor } from '@lobehub/editor/headl
 import type { SerializedEditorState, SerializedLexicalNode } from 'lexical';
 
 import { DocumentModel } from '@/database/models/document';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { isValidEditorData } from '@/libs/editor/isValidEditorData';
 import { DocumentService } from '@/server/services/document';
 
@@ -279,7 +279,7 @@ const withEditor = async (
 };
 
 const buildService = (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ): PageAgentRuntimeService => {

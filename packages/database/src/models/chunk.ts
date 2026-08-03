@@ -4,16 +4,16 @@ import { chunk } from 'es-toolkit/compat';
 
 import type { NewChunkItem, NewUnstructuredChunkItem } from '../schemas';
 import { chunks, embeddings, fileChunks, files, unstructuredChunks } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export class ChunkModel {
   private userId: string;
 
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

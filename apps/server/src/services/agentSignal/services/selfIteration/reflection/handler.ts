@@ -4,7 +4,7 @@ import { BUILTIN_AGENT_SLUGS } from '@lobechat/builtin-agents';
 import { createAgentSignalSelfIterationPrompt } from '@lobechat/prompts';
 import { isNonEmptyString } from '@lobechat/utils';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { defineSourceHandler } from '../../../runtime/middleware';
 import { enqueueSelfIterationRun } from '../dispatch/enqueueSelfIterationRun';
@@ -122,7 +122,7 @@ export interface CreateSelfReflectionSourceHandlerDependencies {
     input: CollectSelfReflectionContextInput,
   ) => Promise<SelfReflectionReviewContext>;
   /** Postgres handle used by the dispatch helper to enqueue the execAgent run. */
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   /** Enqueues the async self-iteration run. Overridable for tests. */
   dispatch?: typeof enqueueSelfIterationRun;
   /**

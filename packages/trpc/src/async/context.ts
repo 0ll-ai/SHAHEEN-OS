@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import debug from 'debug';
 import { type NextRequest } from 'next/server';
 
@@ -9,7 +9,7 @@ const log = debug('lobe-async:context');
 
 export interface AsyncAuthContext {
   authorizationToken?: string;
-  serverDB?: SHAHEEN OSDatabase;
+  serverDB?: SHAHEENOSDatabase;
   userId?: string | null;
 }
 
@@ -36,7 +36,7 @@ export const createAsyncRouteContext = async (request: NextRequest): Promise<Asy
   const lobeChatAuthorization = request.headers.get(LOBE_CHAT_AUTH_HEADER);
 
   log('Authorization header present: %s', !!authorization);
-  log('SHAHEEN OS auth header present: %s', !!lobeChatAuthorization);
+  log('SHAHEENOS auth header present: %s', !!lobeChatAuthorization);
 
   if (!authorization) {
     log('No authorization header found');
@@ -44,15 +44,15 @@ export const createAsyncRouteContext = async (request: NextRequest): Promise<Asy
   }
 
   if (!lobeChatAuthorization) {
-    log('No SHAHEEN OS authorization header found');
-    throw new Error('No SHAHEEN OS authorization header found');
+    log('No SHAHEENOS authorization header found');
+    throw new Error('No SHAHEENOS authorization header found');
   }
 
   try {
     log('Initializing KeyVaultsGateKeeper');
     const gateKeeper = await KeyVaultsGateKeeper.initWithEnvKey();
 
-    log('Decrypting SHAHEEN OS authorization');
+    log('Decrypting SHAHEENOS authorization');
     const { plaintext } = await gateKeeper.decrypt(lobeChatAuthorization);
 
     log('Parsing decrypted authorization data');

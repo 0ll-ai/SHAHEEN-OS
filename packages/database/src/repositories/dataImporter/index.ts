@@ -4,7 +4,7 @@ import { and, eq, inArray } from 'drizzle-orm';
 import { uuid } from '@/utils/uuid';
 
 import * as EXPORT_TABLES from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 import { DeprecatedDataImporterRepos } from './deprecated';
 
@@ -262,12 +262,12 @@ const IMPORT_TABLE_CONFIG: TableImportConfig[] = [
 export class DataImporterRepos {
   private userId: string;
   private workspaceId?: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private deprecatedDataImporterRepos: DeprecatedDataImporterRepos;
   private idMaps: Record<string, Record<string, string>> = {};
   private conflictRecords: Record<string, { field: string; value: any }[]> = {};
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;

@@ -4,7 +4,7 @@ import { AgentOperationModel } from '@/database/models/agentOperation';
 import { DocumentModel } from '@/database/models/document';
 import { TaskModel } from '@/database/models/task';
 import { VerifyRunModel } from '@/database/models/verifyRun';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { createVerifierAgentRunner } from './agentVerifier';
 import { VerifyExecutorService } from './executor';
@@ -15,7 +15,7 @@ const log = debug('lobe-server:verify-lifecycle');
 const MAX_TASK_DOCUMENT_CHARS = 80_000;
 
 export const resolveVerificationDeliverable = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   deliverable: string,
   taskId?: string | null,
@@ -72,7 +72,7 @@ export interface RunVerifyOnCompletionParams {
  * those items degrade gracefully (skipped / no repair).
  */
 export const runVerifyOnCompletion = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   params: RunVerifyOnCompletionParams,
   workspaceId?: string,

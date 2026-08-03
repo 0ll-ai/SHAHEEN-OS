@@ -3,7 +3,7 @@ import debug from 'debug';
 import { VerifyCheckResultModel } from '@/database/models/verifyCheckResult';
 import { VerifyEvidenceModel } from '@/database/models/verifyEvidence';
 import { VerifyReportModel } from '@/database/models/verifyReport';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { AiGenerationService } from '@/server/services/aiGeneration';
 
 import { buildReportPrompt, type JudgeEvidence } from './prompts';
@@ -31,13 +31,13 @@ export interface GenerateReportParams {
  * which lets a standalone harness write a report it computed itself.
  */
 export class VerifyReporterService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly resultModel: VerifyCheckResultModel;
   private readonly evidenceModel: VerifyEvidenceModel;
   private readonly reportModel: VerifyReportModel;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.resultModel = new VerifyCheckResultModel(db, userId, workspaceId);

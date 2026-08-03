@@ -14,7 +14,7 @@ import { merge } from '@/utils/merge';
 
 import type { AiProviderSelectItem } from '../schemas';
 import { aiModels, aiProviders } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 type DecryptUserKeyVaults = (encryptKeyVaultsStr: string | null) => Promise<any>;
@@ -24,9 +24,9 @@ type EncryptUserKeyVaults = (keyVaults: string) => Promise<string>;
 export class AiProviderModel {
   private userId: string;
   private workspaceId?: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.workspaceId = workspaceId;
     this.db = db;

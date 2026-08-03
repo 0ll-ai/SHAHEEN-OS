@@ -12,7 +12,7 @@ import {
   type WorkSkillProvider,
 } from '@lobechat/types';
 
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import type { WorkContext } from './context';
 import { registerDocumentWork } from './document';
 import { registerExternalWork } from './external';
@@ -47,7 +47,7 @@ const SKILL_TOOL_RESULT_NORMALIZERS = {
 export class WorkModel {
   private readonly ctx: WorkContext;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.ctx = { db, userId, workspaceId };
   }
 

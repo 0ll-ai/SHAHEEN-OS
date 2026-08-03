@@ -2,7 +2,7 @@ import { and, eq, gt, isNotNull, isNull, lte, type SQL } from 'drizzle-orm';
 
 import type { MessengerInstallationItem, NewMessengerInstallation } from '../schemas';
 import { messengerInstallations } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 interface GateKeeper {
   decrypt: (ciphertext: string) => Promise<{ plaintext: string }>;
@@ -46,7 +46,7 @@ export class MessengerInstallationModel {
   // --------------- Lookup ---------------
 
   static findByTenant = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     platform: string,
     tenantId: string,
     applicationId?: string,
@@ -72,7 +72,7 @@ export class MessengerInstallationModel {
   };
 
   static findById = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedMessengerInstallation | null> => {
@@ -87,7 +87,7 @@ export class MessengerInstallationModel {
   };
 
   static listByInstallerUserId = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedMessengerInstallation[]> => {
@@ -111,7 +111,7 @@ export class MessengerInstallationModel {
    * the row id (and `created_at`).
    */
   static upsert = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     params: UpsertParams,
     gateKeeper?: GateKeeper,
   ): Promise<MessengerInstallationItem> => {
@@ -155,7 +155,7 @@ export class MessengerInstallationModel {
     return result;
   };
 
-  static markRevoked = async (db: SHAHEEN OSDatabase, id: string): Promise<void> => {
+  static markRevoked = async (db: SHAHEENOSDatabase, id: string): Promise<void> => {
     await db
       .update(messengerInstallations)
       .set({ revokedAt: new Date(), updatedAt: new Date() })
@@ -168,7 +168,7 @@ export class MessengerInstallationModel {
    * one round-trip so a rotation never leaves the row in a torn state.
    */
   static updateRotatedToken = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     params: RotatedTokenParams,
     gateKeeper?: GateKeeper,
@@ -192,7 +192,7 @@ export class MessengerInstallationModel {
    * Used by the rotation background job to refresh proactively.
    */
   static listExpiringSoon = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     withinMs: number,
   ): Promise<MessengerInstallationItem[]> => {
     const cutoff = new Date(Date.now() + withinMs);

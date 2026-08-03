@@ -6,10 +6,10 @@ import { hashApiKey } from '@/utils/server/apiKeyHash';
 
 import { getTestDB } from '../../core/getTestDB';
 import { apiKeys, users } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { ApiKeyModel } from '../apiKey';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'api-key-model-test-user-id';
 const validKeyVaultsSecret = 'ofQiJCXLF8mYemwfMWLOHoHimlPu91YmLfU7YZ4lreQ=';

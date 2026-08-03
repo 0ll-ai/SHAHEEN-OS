@@ -4,7 +4,7 @@ import { CHAT_GROUP_SESSION_ID_PREFIX } from '@lobechat/types';
 import { eq } from 'drizzle-orm';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { getTestDB } from '../../core/getTestDB';
 import type { NewChatGroup } from '../../schemas';
@@ -21,7 +21,7 @@ const userId = 'test-user';
 const otherUserId = 'other-user';
 const workspaceId = 'chat-group-workspace';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 type RelationAgent = {
   agentId: string;

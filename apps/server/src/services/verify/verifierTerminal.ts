@@ -2,7 +2,7 @@ import debug from 'debug';
 
 import { VerifyCheckResultModel } from '@/database/models/verifyCheckResult';
 import { VerifyRunModel } from '@/database/models/verifyRun';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { finalizeVerifyRun } from './settle';
 import { VerifyStatusService } from './statusService';
@@ -25,7 +25,7 @@ export interface SettleVerifierCheckFromTerminalParams {
  * still stuck in pending/running once the verifier child op is terminal.
  */
 export const settleVerifierCheckFromTerminal = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   params: SettleVerifierCheckFromTerminalParams,
   workspaceId?: string,

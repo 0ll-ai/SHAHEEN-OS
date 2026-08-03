@@ -1,5 +1,5 @@
 import { HETERO_CONTINUE_PROMPT, LOADING_FLAT } from '@lobechat/const';
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import type { ExecAgentResult, TopicScheduledRun, TopicScheduledRunKind } from '@lobechat/types';
 import { RequestTrigger } from '@lobechat/types';
 
@@ -11,7 +11,7 @@ import { AiAgentService } from '@/server/services/aiAgent';
 export interface ScheduledRunContext {
   /** The dispatcher's claim lease id — fences post-dispatch writes against stale attempts. */
   claimId: string;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   topic: TopicItem;
   workspaceId?: string;
 }

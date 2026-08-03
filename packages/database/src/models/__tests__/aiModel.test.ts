@@ -7,7 +7,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getTestDB } from '../../core/getTestDB';
 import type { NewAiModelItem } from '../../schemas';
 import { aiModels, users, workspaces } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { AiModelModel } from '../aiModel';
 
 vi.mock('@lobechat/business-model-bank/model-config', () => ({
@@ -18,7 +18,7 @@ vi.mock('@lobechat/business-model-bank/model-config', () => ({
   ]),
 }));
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'ai-model-test-user-id';
 const workspaceId = 'ai-model-test-workspace-id';

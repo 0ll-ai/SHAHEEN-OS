@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MessageModel } from '@/database/models/message';
@@ -11,13 +11,13 @@ vi.mock('@/server/services/file');
 
 describe('MessageService', () => {
   let messageService: MessageService;
-  let mockDB: SHAHEEN OSDatabase;
+  let mockDB: SHAHEENOSDatabase;
   let mockMessageModel: MessageModel;
   let mockFileService: FileService;
   const userId = 'test-user-id';
 
   beforeEach(() => {
-    mockDB = {} as SHAHEEN OSDatabase;
+    mockDB = {} as SHAHEENOSDatabase;
     mockMessageModel = {
       create: vi.fn(),
       deleteMessage: vi.fn(),

@@ -1,5 +1,5 @@
 import type { PermissionResourceType } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import {
   canPerformResourceAction,
   getResourceMeta,
@@ -10,7 +10,7 @@ import {
 import { getWorkspaceAgentParentGroupIds } from './workspaceAgentGuard';
 
 interface ResourceConfigGuardCtx {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   grantedPermissions?: readonly string[];
   userId: string;
   workspaceId?: string | null;

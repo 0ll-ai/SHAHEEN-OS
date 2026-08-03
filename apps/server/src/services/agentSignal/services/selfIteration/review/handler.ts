@@ -6,7 +6,7 @@ import { tracer } from '@lobechat/observability-otel/modules/agent-signal';
 import { createAgentSignalSelfIterationPrompt } from '@lobechat/prompts';
 import { isNonEmptyString } from '@lobechat/utils';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { defineSourceHandler } from '../../../runtime/middleware';
 import { enqueueSelfIterationRun } from '../dispatch/enqueueSelfIterationRun';
@@ -80,7 +80,7 @@ export interface CreateNightlyReviewSourceHandlerDependencies {
   /** Collects bounded digest context without mutating shared resources. */
   collectContext: (input: CollectNightlyReviewContextInput) => Promise<NightlyReviewContext>;
   /** Postgres handle used by the dispatch helper to enqueue the execAgent run. */
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   /** Enqueues the async self-iteration run. Overridable for tests. */
   dispatch?: typeof enqueueSelfIterationRun;
   /**

@@ -9,10 +9,10 @@ import {
   verifyRubrics,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { VerifyCriterionModel } from '../verifyCriterion';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'verify-criterion-test-user';
 const otherUserId = 'verify-criterion-test-other-user';

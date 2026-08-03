@@ -7,7 +7,7 @@ import { getBotFeatureAccessState } from '@/business/server/bot/featureAccess';
 import { getServerDB } from '@/database/core/db-adaptor';
 import type { DecryptedBotProvider } from '@/database/models/agentBotProvider';
 import { AgentBotProviderModel } from '@/database/models/agentBotProvider';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { appEnv } from '@/envs/app';
 import { getAgentRuntimeRedisClient } from '@/server/modules/AgentRuntime/redis';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
@@ -310,7 +310,7 @@ export class BotMessageRouter {
   private async createAndRegisterBot(
     entry: PlatformDefinition,
     provider: DecryptedBotProvider,
-    serverDB: SHAHEEN OSDatabase,
+    serverDB: SHAHEENOSDatabase,
   ): Promise<RegisteredBot> {
     const { agentId, userId, applicationId, workspaceId } = provider;
     const platform = entry.id;
@@ -534,7 +534,7 @@ export class BotMessageRouter {
 
   private registerHandlers(
     bot: Chat<any>,
-    serverDB: SHAHEEN OSDatabase,
+    serverDB: SHAHEENOSDatabase,
     client: PlatformClient,
     commands: BotCommand[],
     info: ResolvedAgentInfo & {
@@ -1574,7 +1574,7 @@ export class BotMessageRouter {
    * needing every command entry threaded through CommandContext.
    */
   private buildCommands(
-    serverDB: SHAHEEN OSDatabase,
+    serverDB: SHAHEENOSDatabase,
     info: {
       agentId: string;
       applicationId: string;

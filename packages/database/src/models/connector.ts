@@ -2,7 +2,7 @@ import { and, eq, inArray, isNotNull, isNull, or, sql } from 'drizzle-orm';
 
 import type { ConnectorCredentials, NewUserConnector, UserConnectorItem } from '../schemas';
 import { ConnectorStatus, userConnectors, userConnectorTools } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 interface GateKeeper {
@@ -37,11 +37,11 @@ type UpdateConnectorParams = Partial<
 
 export class ConnectorModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private gateKeeper?: GateKeeper;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string, gateKeeper?: GateKeeper) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string, gateKeeper?: GateKeeper) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

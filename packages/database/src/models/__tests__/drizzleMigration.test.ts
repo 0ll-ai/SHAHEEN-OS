@@ -6,10 +6,10 @@ import { readMigrationFiles } from 'drizzle-orm/migrator';
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { DrizzleMigrationModel } from '../drizzleMigration';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const drizzleMigrationModel = new DrizzleMigrationModel(serverDB);
 

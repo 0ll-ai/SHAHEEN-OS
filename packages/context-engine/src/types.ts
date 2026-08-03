@@ -54,7 +54,7 @@ export interface Message {
 /**
  * Metadata shared across pipeline processors.
  * Consumers can extend this through declaration merging on
- * `SHAHEEN OSContextEngine.PipelineContextMetadataOverrides`.
+ * `SHAHEENOSContextEngine.PipelineContextMetadataOverrides`.
  */
 export interface PipelineContextMetadata extends PipelineContextMetadataOverrides {
   [key: `${string}InjectedCount`]: number | undefined;

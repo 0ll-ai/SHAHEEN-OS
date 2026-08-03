@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { resolveValidWorkspaceIdFromRequest, WORKSPACE_ID_HEADER } from './workspace';
 
@@ -17,7 +17,7 @@ const serverDB = {
       findFirst: workspaceFindFirst,
     },
   },
-} as unknown as SHAHEEN OSDatabase;
+} as unknown as SHAHEENOSDatabase;
 
 const createRequest = (workspaceId?: string | null) => {
   const headers = new Headers();

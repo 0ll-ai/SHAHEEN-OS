@@ -14,11 +14,11 @@ import {
   topics,
   users,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { idGenerator } from '../../utils/idGenerator';
 import { SessionModel } from '../session';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'session-user';
 const sessionModel = new SessionModel(serverDB, userId);

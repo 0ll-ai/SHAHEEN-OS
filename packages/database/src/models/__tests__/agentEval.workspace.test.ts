@@ -13,7 +13,7 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import {
   AgentEvalBenchmarkModel,
   AgentEvalDatasetModel,
@@ -22,7 +22,7 @@ import {
   AgentEvalTestCaseModel,
 } from '../agentEval';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'agent-eval-workspace-user';
 const workspaceId = 'agent-eval-workspace';

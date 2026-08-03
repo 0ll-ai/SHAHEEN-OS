@@ -44,7 +44,7 @@ const devtools = createDevtools('session');
 export const useSessionStore = createWithEqualityFn<SessionStore>()(
   subscribeWithSelector(
     devtools(createStore, {
-      name: 'SHAHEEN OS_Session' + (isDev ? '_DEV' : ''),
+      name: 'SHAHEENOS_Session' + (isDev ? '_DEV' : ''),
     }),
   ),
   shallow,

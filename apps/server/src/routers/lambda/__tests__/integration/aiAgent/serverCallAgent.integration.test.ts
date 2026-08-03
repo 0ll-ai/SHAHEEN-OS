@@ -11,7 +11,7 @@
  *   4. The completion bridge backfills the placeholder and resumes the parent.
  *   5. The parent reaches `done`.
  */
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { agentOperations, agents, messagePlugins, messages } from '@lobechat/database/schemas';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { and, eq } from 'drizzle-orm';
@@ -27,7 +27,7 @@ import { createMockResponsesStream, waitForOperationComplete } from './helpers';
 
 process.env.OPENAI_API_KEY = 'sk-test-fake-api-key-for-testing';
 
-let testDB: SHAHEEN OSDatabase;
+let testDB: SHAHEENOSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -39,7 +39,7 @@ vi.mock('@/server/services/file', () => ({
 }));
 
 let mockResponsesCreate: any;
-let serverDB: SHAHEEN OSDatabase;
+let serverDB: SHAHEENOSDatabase;
 let userId: string;
 let parentAgentId: string;
 let targetAgentId: string;

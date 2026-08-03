@@ -1,7 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { rollbackAgentSignalReceipt } from '../receiptRollbackService';
 
@@ -39,7 +39,7 @@ vi.mock('@/server/services/agentSignal/services/receiptService', () => ({
   updateAgentSignalReceiptMetadata: mocks.receiptService.updateAgentSignalReceiptMetadata,
 }));
 
-const db = {} as SHAHEEN OSDatabase;
+const db = {} as SHAHEENOSDatabase;
 const baseInput = {
   agentDocumentId: 'adoc-1',
   documentId: 'doc-1',

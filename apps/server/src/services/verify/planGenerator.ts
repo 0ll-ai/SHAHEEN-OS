@@ -10,7 +10,7 @@ import { VerifyCriterionModel } from '@/database/models/verifyCriterion';
 import { VerifyRubricModel } from '@/database/models/verifyRubric';
 import { VerifyRunModel } from '@/database/models/verifyRun';
 import type { VerifyCriterionItem } from '@/database/schemas/verify';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { AiGenerationService } from '@/server/services/aiGeneration';
 
 import { buildPlanPrompt, VERIFY_PLAN_PROMPT_VERSION } from './prompts';
@@ -112,7 +112,7 @@ const criterionToCheckItem = (
 });
 
 export class VerifyPlanGeneratorService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly criterionModel: VerifyCriterionModel;
   private readonly rubricModel: VerifyRubricModel;
@@ -127,7 +127,7 @@ export class VerifyPlanGeneratorService {
   private readonly callerAgentVisibility?: 'private' | 'public' | null;
 
   constructor(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
     workspaceId?: string,
     callerAgentVisibility?: 'private' | 'public' | null,

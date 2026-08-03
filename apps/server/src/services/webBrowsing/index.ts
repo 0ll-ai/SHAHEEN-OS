@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { Md5 } from 'ts-md5';
 
 import { DocumentModel } from '@/database/models/document';
@@ -44,7 +44,7 @@ const hashContent = (content: string): string => Md5.hashStr(content);
  * fresh row every crawl while the server path was being patched to dedupe).
  */
 export class WebBrowsingDocumentService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
   private readonly documentModel: DocumentModel;
@@ -58,7 +58,7 @@ export class WebBrowsingDocumentService {
   private readonly callerAgentVisibility?: 'private' | 'public' | null;
 
   constructor(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
     workspaceId?: string,
     callerAgentVisibility?: 'private' | 'public' | null,

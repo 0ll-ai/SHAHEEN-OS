@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 
 import type { AgentDocumentSourceType } from '@/database/models/agentDocuments/types';
 import { DocumentModel } from '@/database/models/document';
@@ -25,7 +25,7 @@ export interface NotebookRuntimeServiceOptions {
    * the caller's private Pages bucket rather than the workspace bucket.
    */
   callerAgentVisibility?: 'private' | 'public' | null;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   userId: string;
   workspaceId?: string;
 }

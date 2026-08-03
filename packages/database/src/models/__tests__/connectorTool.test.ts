@@ -11,10 +11,10 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { ConnectorToolModel, type SyncToolInput } from '../connectorTool';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'connector-tool-user';
 const otherUserId = 'connector-tool-other-user';

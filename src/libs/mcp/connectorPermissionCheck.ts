@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 
 import { ConnectorModel } from '@/database/models/connector';
 import { ConnectorToolModel } from '@/database/models/connectorTool';
@@ -21,7 +21,7 @@ export { patchManifestWithPermissions } from './patchManifestPermissions';
  * Returns the stored permission, or null if no connector/tool entry exists.
  */
 export async function getConnectorToolPermission(
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   identifier: string,
   toolName: string,

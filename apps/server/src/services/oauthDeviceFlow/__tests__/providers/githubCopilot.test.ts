@@ -50,7 +50,7 @@ describe('GithubCopilotOAuthService', () => {
           headers: {
             'Accept': 'application/json',
             'Authorization': 'token oauth-token-123',
-            'User-Agent': 'SHAHEEN OS/1.0',
+            'User-Agent': 'SHAHEENOS/1.0',
           },
           method: 'GET',
         }),

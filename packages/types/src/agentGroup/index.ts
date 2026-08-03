@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 import type { AgentItem } from '../agent';
 
-export interface SHAHEEN OSGroupMetaConfig {
+export interface SHAHEENOSGroupMetaConfig {
   avatar?: string;
   backgroundColor?: string;
   description: string;
@@ -10,7 +10,7 @@ export interface SHAHEEN OSGroupMetaConfig {
   title: string;
 }
 
-export interface SHAHEEN OSGroupChatConfig {
+export interface SHAHEENOSGroupChatConfig {
   allowDM?: boolean;
   forkedFromIdentifier?: string;
   openingMessage?: string;
@@ -20,7 +20,7 @@ export interface SHAHEEN OSGroupChatConfig {
 }
 
 // Database config type (flat structure)
-export type SHAHEEN OSGroupConfig = SHAHEEN OSGroupChatConfig;
+export type SHAHEENOSGroupConfig = SHAHEENOSGroupChatConfig;
 
 // Zod schema for ChatGroupConfig (database insert)
 export const ChatGroupConfigSchema = z.object({
@@ -57,9 +57,9 @@ export const InsertChatGroupSchema = z.object({
 export type InsertChatGroup = z.infer<typeof InsertChatGroupSchema>;
 
 // Full group type with nested structure for UI components
-export interface SHAHEEN OSGroupFullConfig {
-  chat: SHAHEEN OSGroupChatConfig;
-  meta: SHAHEEN OSGroupMetaConfig;
+export interface SHAHEENOSGroupFullConfig {
+  chat: SHAHEENOSGroupChatConfig;
+  meta: SHAHEENOSGroupMetaConfig;
 }
 
 // Chat Group Agent types (independent from schema)
@@ -88,7 +88,7 @@ export interface NewChatGroup {
   avatar?: string | null;
   backgroundColor?: string | null;
   clientId?: string | null;
-  config?: SHAHEEN OSGroupConfig | null;
+  config?: SHAHEENOSGroupConfig | null;
   description?: string | null;
   groupId?: string | null;
   id?: string;
@@ -104,7 +104,7 @@ export interface ChatGroupItem {
   avatar?: string | null;
   backgroundColor?: string | null;
   clientId?: string | null;
-  config?: SHAHEEN OSGroupConfig | null;
+  config?: SHAHEENOSGroupConfig | null;
   content?: string | null;
   createdAt: Date;
   description?: string | null;

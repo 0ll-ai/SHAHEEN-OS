@@ -12,7 +12,7 @@ import {
   userMemoriesPreferences,
   users,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { UserMemoryModel } from '../model';
 import type { LayerBaseMemorySignals } from '../query';
 import { scoreHybridCandidates } from '../query';
@@ -20,7 +20,7 @@ import { scoreHybridCandidates } from '../query';
 const userId = 'memory-query-ext-user';
 const otherUserId = 'memory-query-ext-other-user';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 let memoryModel: UserMemoryModel;
 

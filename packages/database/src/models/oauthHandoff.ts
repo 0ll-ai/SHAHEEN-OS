@@ -2,12 +2,12 @@ import { and, eq, lt, sql } from 'drizzle-orm';
 
 import type { NewOAuthHandoff, OAuthHandoffItem } from '../schemas';
 import { oauthHandoffs } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 export class OAuthHandoffModel {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase) {
+  constructor(db: SHAHEENOSDatabase) {
     this.db = db;
   }
 

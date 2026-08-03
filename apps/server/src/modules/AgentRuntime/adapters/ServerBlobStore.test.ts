@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { FileService } from '@/server/services/file';
@@ -24,7 +24,7 @@ describe('ServerBlobStore', () => {
   });
 
   it('defers FileService construction until the first blob operation', async () => {
-    const store = new ServerBlobStore({} as SHAHEEN OSDatabase, 'user-1', 'workspace-1');
+    const store = new ServerBlobStore({} as SHAHEENOSDatabase, 'user-1', 'workspace-1');
 
     expect(FileService).not.toHaveBeenCalled();
 
@@ -40,7 +40,7 @@ describe('ServerBlobStore', () => {
     vi.mocked(FileService).mockImplementationOnce(() => {
       throw new Error('S3 environment variables are not set completely');
     });
-    const createStore = () => new ServerBlobStore({} as SHAHEEN OSDatabase, 'user-1');
+    const createStore = () => new ServerBlobStore({} as SHAHEENOSDatabase, 'user-1');
 
     expect(createStore).not.toThrow();
     const store = createStore();

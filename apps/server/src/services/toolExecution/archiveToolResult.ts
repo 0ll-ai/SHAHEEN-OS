@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 
 import { TopicDocumentModel } from '@/database/models/topicDocument';
 import { AgentDocumentVfsService } from '@/server/services/agentDocumentVfs';
@@ -24,7 +24,7 @@ interface ArchiveToolResultParams {
   content: string;
   identifier?: string;
   limit?: number;
-  serverDB?: SHAHEEN OSDatabase;
+  serverDB?: SHAHEENOSDatabase;
   toolCallId?: string;
   topicId?: string | null;
   userId?: string;

@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import debug from 'debug';
 import type { Configuration, KoaContextWithOIDC } from 'oidc-provider';
 import Provider, { errors } from 'oidc-provider';
@@ -42,7 +42,7 @@ export const oidcArtifactTTL = {
  * @param db - Database instance
  * @returns Configured OIDC Provider instance
  */
-export const createOIDCProvider = async (db: SHAHEEN OSDatabase): Promise<Provider> => {
+export const createOIDCProvider = async (db: SHAHEENOSDatabase): Promise<Provider> => {
   // Get JWKS
   const jwks = getJWKS();
 

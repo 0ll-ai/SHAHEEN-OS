@@ -2,13 +2,13 @@ import { and, eq, inArray } from 'drizzle-orm';
 
 import type { NewPushToken, PushTokenItem } from '../schemas/pushToken';
 import { pushTokens } from '../schemas/pushToken';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 export class PushTokenModel {
   private readonly userId: string;
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
   }
@@ -54,7 +54,7 @@ export class PushTokenModel {
  * Not bound to a userId — operates across all users at once.
  */
 export async function deletePushTokensByExpoTokens(
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   tokens: string[],
 ): Promise<void> {
   if (tokens.length === 0) return;
@@ -68,7 +68,7 @@ export async function deletePushTokensByExpoTokens(
  * match so a stale row for a different device can't be deleted by accident.
  */
 export async function deletePushTokenByExpoTokenAndDevice(
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   args: { deviceId: string; expoToken: string },
 ): Promise<void> {
   await db

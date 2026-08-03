@@ -2,7 +2,7 @@ import type { AgentRuntimeContext } from '@lobechat/agent-runtime';
 import debug from 'debug';
 
 import type { MessageModel } from '@/database/models/message';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { hookDispatcher } from './hooks';
 
@@ -39,7 +39,7 @@ export interface InterventionResult {
  */
 export class HumanInterventionHandler {
   constructor(
-    private readonly serverDB: SHAHEEN OSDatabase,
+    private readonly serverDB: SHAHEENOSDatabase,
     private readonly messageModel: MessageModel,
   ) {}
 

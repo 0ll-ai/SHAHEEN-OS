@@ -7,8 +7,8 @@ import {
   ActivityMemoryItemSchema,
   BenchmarkLocomoContextProvider,
   type BenchmarkLocomoPart,
-  SHAHEEN OSTopicContextProvider,
-  SHAHEEN OSTopicResultRecorder,
+  SHAHEENOSTopicContextProvider,
+  SHAHEENOSTopicResultRecorder,
   type MemoryExtractionAgent,
   type MemoryExtractionJob,
   type MemoryExtractionResult,
@@ -1517,7 +1517,7 @@ export class MemoryExtractionExecutor {
         const startTime = Date.now();
         let extractionJob: MemoryExtractionJob | null = null;
         let extraction: MemoryExtractionResult | null = null;
-        let resultRecorder: SHAHEEN OSTopicResultRecorder | null = null;
+        let resultRecorder: SHAHEENOSTopicResultRecorder | null = null;
         let tracePayload: MemoryExtractionTracePayload<
           MemoryExtractionResult,
           MemoryExtractionJob | null,
@@ -1626,14 +1626,14 @@ export class MemoryExtractionExecutor {
 
           const messageIds = extractorConversations.map((item) => item.id);
 
-          const topicContextProvider = new SHAHEEN OSTopicContextProvider({
+          const topicContextProvider = new SHAHEENOSTopicContextProvider({
             conversations: extractorConversations,
             topic,
             topicId: topic.id,
           });
           const topicContext = await topicContextProvider.buildContext(extractionJob.userId);
 
-          resultRecorder = new SHAHEEN OSTopicResultRecorder({
+          resultRecorder = new SHAHEENOSTopicResultRecorder({
             currentMetadata: topic.metadata || {},
             database: db,
             lastMessageAt: (conversations?.at(-1)?.createdAt || topic.updatedAt).toISOString(),

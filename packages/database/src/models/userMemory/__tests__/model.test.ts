@@ -21,14 +21,14 @@ import {
   userMemoriesPreferences,
   users,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { UserMemoryModel } from '../model';
 
 const userId = 'memory-model-test-user';
 const otherUserId = 'other-memory-model-user';
 
 let memoryModel: UserMemoryModel;
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   await serverDB.delete(userMemoriesActivities);

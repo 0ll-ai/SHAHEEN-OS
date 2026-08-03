@@ -8,7 +8,7 @@ import { getBusinessModelRuntimeHooks } from '@/business/server/model-runtime';
 import { DEFAULT_AGENT_CHAT_CONFIG, DEFAULT_SYSTEM_AGENT_CONFIG } from '@/const/settings';
 import { UserModel } from '@/database/models/user';
 import { agents, agentsToSessions, aiModels, aiProviders } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 import { initModelRuntimeWithUserPayload } from '@/server/modules/ModelRuntime';
 import { createLLMGenerationTracingHook } from '@/server/services/llmGenerationTracing/hook';
@@ -32,7 +32,7 @@ export class ChatService extends BaseService {
   private config: ChatServiceConfig;
 
   constructor(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string | null,
     workspaceIdOrConfig?: string | ChatServiceConfig,
     config?: ChatServiceConfig,

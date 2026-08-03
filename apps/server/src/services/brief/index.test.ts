@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { AgentModel } from '@/database/models/agent';
 import { BriefModel } from '@/database/models/brief';
 import { TaskModel } from '@/database/models/task';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import { BriefService } from './index';
 
@@ -28,7 +28,7 @@ vi.mock('@/server/services/taskRunner', () => ({
 }));
 
 describe('BriefService', () => {
-  const db = {} as SHAHEEN OSDatabase;
+  const db = {} as SHAHEENOSDatabase;
   const userId = 'user-1';
 
   const mockAgentModel = {

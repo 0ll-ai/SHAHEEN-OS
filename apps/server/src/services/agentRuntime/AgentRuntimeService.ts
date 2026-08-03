@@ -41,7 +41,7 @@ import urlJoin from 'url-join';
 
 import { AgentOperationModel } from '@/database/models/agentOperation';
 import { MessageModel } from '@/database/models/message';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { appEnv } from '@/envs/app';
 import { type AgentRuntimeCoordinatorOptions } from '@/server/modules/AgentRuntime';
 import { AgentRuntimeCoordinator, createStreamEventManager } from '@/server/modules/AgentRuntime';
@@ -295,7 +295,7 @@ export class AgentRuntimeService {
 
     return urlJoin(baseUrl, '/api/agent');
   }
-  private serverDB: SHAHEEN OSDatabase;
+  private serverDB: SHAHEENOSDatabase;
   private userId: string;
   private workspaceId?: string;
   private messageModel: MessageModel;
@@ -315,7 +315,7 @@ export class AgentRuntimeService {
     return this.messageServiceInstance;
   }
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, options?: AgentRuntimeServiceOptions) {
+  constructor(db: SHAHEENOSDatabase, userId: string, options?: AgentRuntimeServiceOptions) {
     // Use factory function to auto-select Redis or InMemory implementation
     this.streamManager =
       options?.streamEventManager ??

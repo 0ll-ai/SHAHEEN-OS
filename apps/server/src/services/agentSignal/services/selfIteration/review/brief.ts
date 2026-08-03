@@ -4,7 +4,7 @@ import type { BriefArtifactDocument, BriefMetadata } from '@lobechat/types';
 
 import { BriefModel } from '@/database/models/brief';
 import type { BriefItem, NewBrief } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 
 import type { EvidenceRef, RunResult } from '../types';
 import { ActionStatus, ReviewRunStatus } from '../types';
@@ -558,7 +558,7 @@ export const createBriefSelfReviewService = () => ({
  * - A writer whose `writeDailyBrief` method creates or refreshes proposal briefs
  */
 export const createServerSelfReviewBriefWriter = (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId?: string,
 ) => {

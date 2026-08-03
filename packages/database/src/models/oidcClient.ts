@@ -8,7 +8,7 @@ import {
   oidcGrants,
   oidcRefreshTokens,
 } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { createNanoId } from '../utils/idGenerator';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
@@ -30,11 +30,11 @@ const DEFAULT_SCOPES = ['openid', 'profile', 'email', 'offline_access'];
 const generateClientId = () => `lca_${createNanoId(24)()}`;
 
 export class OidcClientModel {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private userId: string;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

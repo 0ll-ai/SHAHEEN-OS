@@ -15,7 +15,7 @@ import {
   userMemoriesPreferences,
   users,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import type {
   BaseCreateUserMemoryParams,
   CreateUserMemoryContextParams,
@@ -25,7 +25,7 @@ import type {
 } from '../userMemory';
 import { UserMemoryModel } from '../userMemory';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = idGenerator('user');
 const userId2 = idGenerator('user');

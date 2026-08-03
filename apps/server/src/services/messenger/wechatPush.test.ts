@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import {
   consumeSendCredits,
   enqueuePendingPush,
@@ -142,7 +142,7 @@ class FakeRedis implements WechatWindowRedis {
 const APP = 'bot@im.wechat';
 const WECHAT_USER = 'alice@im.wechat';
 const LOBE_USER = 'user-1';
-const serverDB = { kind: 'db' } as unknown as SHAHEEN OSDatabase;
+const serverDB = { kind: 'db' } as unknown as SHAHEENOSDatabase;
 
 const safeLink = { applicationId: APP, id: 'link-1' };
 const decryptedLink = {

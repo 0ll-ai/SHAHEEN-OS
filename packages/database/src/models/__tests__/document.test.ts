@@ -11,11 +11,11 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { DocumentModel } from '../document';
 import { FileModel } from '../file';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'document-model-test-user-id';
 const userId2 = 'document-model-test-user-id-2';

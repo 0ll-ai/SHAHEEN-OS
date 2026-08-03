@@ -1,4 +1,4 @@
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 
 import { S3StaticFileImpl } from './s3';
 import { type FileServiceImpl } from './type';
@@ -7,6 +7,6 @@ import { type FileServiceImpl } from './type';
  * Create file service module
  * Returns S3 file implementation for cloud storage
  */
-export const createFileServiceModule = (db: SHAHEEN OSDatabase): FileServiceImpl => {
+export const createFileServiceModule = (db: SHAHEENOSDatabase): FileServiceImpl => {
   return new S3StaticFileImpl(db);
 };

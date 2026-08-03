@@ -4,7 +4,7 @@ import debug from 'debug';
 import { and, asc, eq, gte, isNull } from 'drizzle-orm';
 
 import { MessageModel } from '@/database/models/message';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { buildWorkspaceWhere } from '@/database/utils/workspace';
 
 import type { RuntimeProcessorContext } from '../../runtime/context';
@@ -53,7 +53,7 @@ interface CompletedTurnAnchors {
  * assistant turn, or has no user ancestor with content.
  */
 const resolveCompletedTurnAnchors = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   workspaceId: string | undefined,
   assistantMessageId: string,
@@ -131,7 +131,7 @@ const renderTrajectoryMessage = (message: CompletedTurnMessage): string => {
  * sequence + final product, not just the user prompt).
  */
 const assembleTrajectoryContext = async (input: {
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   threadId?: string;
   topicId: string;
   turnStartAt: Date;

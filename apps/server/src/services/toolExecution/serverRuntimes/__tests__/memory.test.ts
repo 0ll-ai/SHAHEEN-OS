@@ -1,4 +1,4 @@
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { ToolExecutionContext } from '../../types';
@@ -57,7 +57,7 @@ const createContext = (): ToolExecutionContext => ({
         findFirst: vi.fn(async () => undefined),
       },
     },
-  } as unknown as SHAHEEN OSDatabase,
+  } as unknown as SHAHEENOSDatabase,
   toolManifestMap: {},
   userId: 'synthetic-user',
 });

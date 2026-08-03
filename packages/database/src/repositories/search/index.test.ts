@@ -20,7 +20,7 @@ import { messages } from '../../schemas/message';
 import type { NewTopic } from '../../schemas/topic';
 import { topics } from '../../schemas/topic';
 import { users } from '../../schemas/user';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import type { SearchResult } from './index';
 import { SearchRepo } from './index';
 
@@ -29,7 +29,7 @@ const otherUserId = 'other-search-user';
 
 let searchRepo: SearchRepo;
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   // Clean up
@@ -1664,7 +1664,7 @@ describe.skipIf(!isServerDB)('SearchRepo', () => {
         schema,
       });
 
-      await new SearchRepo(db as unknown as SHAHEEN OSDatabase, userId, options?.workspaceId).search({
+      await new SearchRepo(db as unknown as SHAHEENOSDatabase, userId, options?.workspaceId).search({
         agentId: options?.agentId,
         query: 'kubernetes',
       });

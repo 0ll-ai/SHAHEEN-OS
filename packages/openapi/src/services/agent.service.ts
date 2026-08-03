@@ -3,7 +3,7 @@ import { and, count, desc, eq, ilike, inArray, isNull, or } from 'drizzle-orm';
 import { AgentModel } from '@/database/models/agent';
 import type { NewAgent } from '@/database/schemas';
 import { agents, agentsToSessions } from '@/database/schemas';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { idGenerator, randomSlug } from '@/database/utils/idGenerator';
 
 import { BaseService } from '../common/base.service';
@@ -22,7 +22,7 @@ import type {
  * Agent service implementation class
  */
 export class AgentService extends BaseService {
-  constructor(db: SHAHEEN OSDatabase, userId: string | null, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string | null, workspaceId?: string) {
     super(db, userId, workspaceId);
   }
 

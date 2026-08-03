@@ -10,7 +10,7 @@ export const params = {
   constructorOptions: {
     defaultHeaders: {
       'HTTP-Referer': 'https://chat-preview.lobehub.com',
-      'X-Title': 'SHAHEEN OS',
+      'X-Title': 'SHAHEENOS',
     },
   },
   debug: {

@@ -10,7 +10,7 @@ import { agentsToSessions } from '../../schemas/relations';
 import { sessionGroups, sessions } from '../../schemas/session';
 import { users } from '../../schemas/user';
 import { workspaces } from '../../schemas/workspace';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { HomeRepository } from './index';
 
 const userId = 'home-test-user';
@@ -18,7 +18,7 @@ const otherUserId = 'other-home-user';
 
 let homeRepo: HomeRepository;
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   // Clean up

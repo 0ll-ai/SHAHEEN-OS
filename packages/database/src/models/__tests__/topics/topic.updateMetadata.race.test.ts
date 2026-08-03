@@ -3,7 +3,7 @@ import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { topics, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { TopicModel } from '../../topic';
 
 // Real-Postgres reproduction of the lost-update race on `topic.metadata` that
@@ -27,7 +27,7 @@ import { TopicModel } from '../../topic';
 // TRIALS).
 
 const userId = 'updatemeta-race-user';
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const topicModel = new TopicModel(serverDB, userId);
 
 const cleanup = async () => {

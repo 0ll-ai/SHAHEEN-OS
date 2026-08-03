@@ -1,5 +1,5 @@
 import { LOADING_FLAT } from '@lobechat/const';
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { evaluate } from '@lobechat/eval-rubric';
 import type {
   EvalBenchmarkRubric,
@@ -90,7 +90,7 @@ const resetResumedThreadResult = (thread: EvalThreadResult): EvalThreadResult =>
 });
 
 export class AgentEvalRunService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly runModel: AgentEvalRunModel;
   private readonly benchmarkModel: AgentEvalBenchmarkModel;
@@ -105,7 +105,7 @@ export class AgentEvalRunService {
 
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

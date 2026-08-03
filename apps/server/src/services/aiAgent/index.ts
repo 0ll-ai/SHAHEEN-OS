@@ -35,7 +35,7 @@ import {
   type ToolsEngine,
   type ToolSource,
 } from '@lobechat/context-engine';
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { isRemoteHeterogeneousType } from '@lobechat/heterogeneous-agents';
 import { buildTaskManagerDefaultsPrompt, resourcesTreePrompt } from '@lobechat/prompts';
 import type {
@@ -512,7 +512,7 @@ const resolveHeteroDispatchErrorType = (raw?: string): ErrorType =>
  */
 export class AiAgentService {
   private readonly userId: string;
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly agentDocumentsService: AgentDocumentsService;
   private readonly agentModel: AgentModel;
   private readonly agentOperationModel: AgentOperationModel;
@@ -531,7 +531,7 @@ export class AiAgentService {
   private readonly workspaceId?: string;
 
   constructor(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
     options?: { runtimeOptions?: AgentRuntimeServiceOptions; workspaceId?: string },
   ) {

@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import { agentSkills, files, globalFiles, users, workspaces } from '@lobechat/database/schemas';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { and, eq } from 'drizzle-orm';
@@ -92,7 +92,7 @@ vi.mock('node:fs/promises', () => ({
 }));
 
 describe('SkillImporter', () => {
-  let db: SHAHEEN OSDatabase;
+  let db: SHAHEENOSDatabase;
   let userId: string;
   let importer: SkillImporter;
 

@@ -18,10 +18,10 @@ import {
   userSettings,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { DATA_EXPORT_CONFIG, DataExporterRepos } from './index';
 
-let db: SHAHEEN OSDatabase;
+let db: SHAHEENOSDatabase;
 
 // Set up test data
 describe('DataExporterRepos', () => {

@@ -16,7 +16,7 @@ import {
 } from '@lobechat/builtin-tool-lobe-agent';
 import { PlanExecutionRuntime } from '@lobechat/builtin-tool-lobe-agent/planRuntime';
 import { UserInteractionExecutionRuntime } from '@lobechat/builtin-tool-user-interaction/executionRuntime';
-import type { SHAHEEN OSDatabase } from '@lobechat/database';
+import type { SHAHEENOSDatabase } from '@lobechat/database';
 import type { ChatStreamPayload } from '@lobechat/model-runtime';
 import { consumeStreamUntilDone } from '@lobechat/model-runtime';
 import type { BuiltinServerRuntimeOutput } from '@lobechat/types';
@@ -48,7 +48,7 @@ interface LobeAgentRuntimeContext {
   messageId: string;
   /** The current Agent Run (`agent_operations.id`). */
   operationId?: string;
-  serverDB: SHAHEEN OSDatabase;
+  serverDB: SHAHEENOSDatabase;
   threadId?: string | null;
   topicId?: string;
   userId: string;
@@ -81,7 +81,7 @@ interface ServerVisualSourceMessage extends VisualSourceMessage {
 
 class LobeAgentExecutionRuntime {
   private agentId?: string | null;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private groupId?: string | null;
   private userId: string;
   private messageId: string;

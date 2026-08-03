@@ -10,13 +10,13 @@ import {
   verifyEvidence,
   verifyRuns,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { AgentOperationModel } from '../agentOperation';
 import { VerifyCheckResultModel } from '../verifyCheckResult';
 import { VerifyEvidenceModel } from '../verifyEvidence';
 import { VerifyRunModel } from '../verifyRun';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'verify-evidence-test-user';
 const operationId = 'verify-evidence-test-op';

@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { generationBatches, generations, generationTopics, users, workspaces } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { GenerationTopicModel } from '../generationTopic';
 
 // Mock FileService
@@ -16,7 +16,7 @@ vi.mock('@/server/services/file', () => ({
   })),
 }));
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const userId = 'generation-topic-test-user';
 const otherUserId = 'other-user';

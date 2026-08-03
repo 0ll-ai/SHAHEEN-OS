@@ -2,18 +2,18 @@ import type { VerifyReport } from '@lobechat/types';
 import { and, eq, inArray } from 'drizzle-orm';
 
 import { verifyReports, verifyRuns } from '../schemas/verify';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 /** Caller-supplied fields when writing a report (ownership + timestamps are injected). */
 type CreateVerifyReport = Omit<VerifyReport, 'id' | 'createdAt' | 'generatedAt'>;
 
 export class VerifyReportModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

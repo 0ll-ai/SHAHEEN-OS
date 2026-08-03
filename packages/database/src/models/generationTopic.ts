@@ -10,7 +10,7 @@ import { FileService } from '@/server/services/file';
 import type { GenerationTopicItem } from '../schemas/generation';
 import { generationTopics } from '../schemas/generation';
 import { users } from '../schemas/user';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import type { GenerationTopicType } from '../types/generation';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
@@ -20,11 +20,11 @@ type GenerationTopicUpdate = Pick<Partial<ImageGenerationTopic>, 'coverUrl' | 't
 
 export class GenerationTopicModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
   private fileService: FileService;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

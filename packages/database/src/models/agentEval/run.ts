@@ -1,15 +1,15 @@
 import { and, count, desc, eq, inArray } from 'drizzle-orm';
 
 import { agentEvalDatasets, agentEvalRuns, type NewAgentEvalRun } from '../../schemas';
-import { type SHAHEEN OSDatabase } from '../../type';
+import { type SHAHEENOSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 export class AgentEvalRunModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

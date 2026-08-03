@@ -24,7 +24,7 @@ import {
   threads,
   topics,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { idGenerator } from '../../utils/idGenerator';
 import { normalizeInboxAgentMeta } from '../../utils/inboxAgent';
 import { buildWorkspaceWhere } from '../../utils/workspace';
@@ -84,10 +84,10 @@ export interface CreateGroupWithSupervisorResult {
  */
 export class AgentGroupRepository {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -170,7 +170,7 @@ export class AgentGroupRepository {
     targetWorkspaceId,
   }: {
     agentIdMap: Map<string, string>;
-    executor: SHAHEEN OSDatabase;
+    executor: SHAHEENOSDatabase;
     newGroupId: string;
     sourceGroupId: string;
     targetUserId: string;

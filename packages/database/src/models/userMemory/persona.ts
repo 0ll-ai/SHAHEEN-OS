@@ -9,7 +9,7 @@ import type {
   UserPersonaDocumentHistoriesItem,
 } from '../../schemas';
 import { userPersonaDocumentHistories, userPersonaDocuments, users } from '../../schemas';
-import type { SHAHEEN OSDatabase, Transaction } from '../../type';
+import type { SHAHEENOSDatabase, Transaction } from '../../type';
 
 export interface UpsertUserPersonaParams {
   capturedAt?: Date;
@@ -178,10 +178,10 @@ export const upsertUserPersonaInTransaction = async (
 };
 
 export class UserPersonaModel {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
   }

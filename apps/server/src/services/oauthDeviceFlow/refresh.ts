@@ -3,7 +3,7 @@ import { AgentRuntimeErrorType } from '@lobechat/types';
 import debug from 'debug';
 
 import { AiProviderModel } from '@/database/models/aiProvider';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 import { type OAuthDeviceFlowConfig } from '@/types/aiProvider';
 
@@ -32,7 +32,7 @@ export interface OAuthTokenKeyVaults {
 
 interface EnsureFreshOAuthTokenParams {
   config: OAuthDeviceFlowConfig;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   keyVaults: OAuthTokenKeyVaults;
   providerId: string;
   userId: string;
@@ -66,7 +66,7 @@ const isExpiring = (keyVaults: OAuthTokenKeyVaults): boolean => {
 };
 
 const readStoredKeyVaults = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   providerId: string,
   workspaceId?: string,
@@ -81,7 +81,7 @@ const readStoredKeyVaults = async (
 };
 
 const persistKeyVaults = async (
-  db: SHAHEEN OSDatabase,
+  db: SHAHEENOSDatabase,
   userId: string,
   providerId: string,
   keyVaults: OAuthTokenKeyVaults,

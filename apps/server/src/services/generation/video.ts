@@ -7,7 +7,7 @@ import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { promisify } from 'node:util';
 
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import debug from 'debug';
 import { nanoid } from 'nanoid';
 import sharp from 'sharp';
@@ -48,7 +48,7 @@ export interface VideoProcessResult {
 export class VideoGenerationService {
   private fileService: FileService;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.fileService = new FileService(db, userId, workspaceId);
   }
 

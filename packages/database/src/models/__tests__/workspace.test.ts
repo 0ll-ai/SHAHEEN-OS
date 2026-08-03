@@ -10,12 +10,12 @@ import {
   workspaceMembers,
   workspaces,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { hasWorkspaceAdminAccess, WorkspaceModel } from '../workspace';
 import { WorkspaceAuditLogModel } from '../workspaceAuditLog';
 import { WorkspaceMemberModel } from '../workspaceMember';
 
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 const ownerId = 'workspace-model-owner';
 const memberId = 'workspace-model-member';

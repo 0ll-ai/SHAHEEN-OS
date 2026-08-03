@@ -45,7 +45,7 @@ import {
   userMemoriesIdentities,
   userMemoriesPreferences,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { normalizeBm25MatchQuery, SAFE_BM25_QUERY_OPTIONS } from '../../utils/bm25';
 import { selectNonVectorColumns } from '../../utils/columns';
 import { TopicModel } from '../topic';
@@ -93,7 +93,7 @@ const buildContainsCondition = (column: unknown, q?: string) => {
   return sql<boolean>`${column} ILIKE ${`%${escapeLikePattern(normalized)}%`} ESCAPE '\\'`;
 };
 
-const isPGliteDatabase = (db: SHAHEEN OSDatabase) => {
+const isPGliteDatabase = (db: SHAHEENOSDatabase) => {
   const client = (
     db as unknown as {
       $client?: {
@@ -543,11 +543,11 @@ export class UserMemoryModel {
   }
 
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private topicModel: TopicModel;
   private queryModel: UserMemoryQueryModel;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
     this.queryModel = new UserMemoryQueryModel(db, userId);

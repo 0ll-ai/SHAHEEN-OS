@@ -242,7 +242,7 @@ Next steps:
 
 // Main function
 async function main(): Promise<void> {
-  consola.info('🚀 SHAHEEN OS Release Script\n');
+  consola.info('🚀 SHAHEENOS Release Script\n');
 
   // 1. Check Git repository
   checkGitRepo();

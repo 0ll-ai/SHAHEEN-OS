@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { type SHAHEEN OSDatabase } from '@lobechat/database';
+import { type SHAHEENOSDatabase } from '@lobechat/database';
 import { messages, sessions, topics } from '@lobechat/database/schemas';
 import { getTestDB } from '@lobechat/database/test-utils';
 import { eq } from 'drizzle-orm';
@@ -9,7 +9,7 @@ import { topicRouter } from '../../topic';
 import { cleanupTestUser, createTestAgent, createTestContext, createTestUser } from './setup';
 
 // We need to mock getServerDB to return our test database instance
-let testDB: SHAHEEN OSDatabase;
+let testDB: SHAHEENOSDatabase;
 vi.mock('@/database/core/db-adaptor', () => ({
   getServerDB: vi.fn(() => testDB),
 }));
@@ -27,7 +27,7 @@ vi.mock('@/server/utils/scheduleAfterResponse', () => ({
  * 3. Verify database constraints and associations
  */
 describe('Topic Router Integration Tests', () => {
-  let serverDB: SHAHEEN OSDatabase;
+  let serverDB: SHAHEENOSDatabase;
   let userId: string;
   let otherUserId: string | undefined;
   let testSessionId: string;

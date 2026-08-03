@@ -16,7 +16,7 @@ import type {
   NewGenerationBatch,
 } from '../schemas/generation';
 import { generationBatches, generationTopics } from '../schemas/generation';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 import { GenerationModel } from './generation';
 
@@ -35,13 +35,13 @@ interface BatchUser {
 }
 
 export class GenerationBatchModel {
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
   private userId: string;
   private workspaceId?: string;
   private fileService: FileService;
   private generationModel: GenerationModel;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

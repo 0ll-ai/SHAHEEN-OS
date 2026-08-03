@@ -2,7 +2,7 @@ import { eq } from 'drizzle-orm';
 
 import type { NewSystemBotProvider, SystemBotProviderItem } from '../schemas';
 import { systemBotProviders } from '../schemas';
-import type { SHAHEEN OSDatabase } from '../type';
+import type { SHAHEENOSDatabase } from '../type';
 
 interface GateKeeper {
   decrypt: (ciphertext: string) => Promise<{ plaintext: string }>;
@@ -48,7 +48,7 @@ export class SystemBotProviderModel {
   // --------------- Lookup ---------------
 
   static findEnabledByPlatform = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     platform: string,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedSystemBotProvider | null> => {
@@ -64,7 +64,7 @@ export class SystemBotProviderModel {
   };
 
   static findByPlatform = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     platform: string,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedSystemBotProvider | null> => {
@@ -79,7 +79,7 @@ export class SystemBotProviderModel {
   };
 
   static findById = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedSystemBotProvider | null> => {
@@ -94,7 +94,7 @@ export class SystemBotProviderModel {
   };
 
   static listAll = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     gateKeeper?: GateKeeper,
   ): Promise<DecryptedSystemBotProvider[]> => {
     const rows = await db.select().from(systemBotProviders);
@@ -109,7 +109,7 @@ export class SystemBotProviderModel {
    * The unique index on `(platform)` makes this safe under concurrency.
    */
   static upsertByPlatform = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     params: UpsertParams,
     gateKeeper?: GateKeeper,
   ): Promise<SystemBotProviderItem> => {
@@ -147,7 +147,7 @@ export class SystemBotProviderModel {
    * re-encrypted; omit it to leave the existing ciphertext alone.
    */
   static update = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     params: UpdateParams,
     gateKeeper?: GateKeeper,
@@ -172,7 +172,7 @@ export class SystemBotProviderModel {
   };
 
   static setEnabled = async (
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     id: string,
     enabled: boolean,
   ): Promise<SystemBotProviderItem | undefined> => {
@@ -184,7 +184,7 @@ export class SystemBotProviderModel {
     return updated;
   };
 
-  static delete = async (db: SHAHEEN OSDatabase, id: string): Promise<void> => {
+  static delete = async (db: SHAHEENOSDatabase, id: string): Promise<void> => {
     await db.delete(systemBotProviders).where(eq(systemBotProviders.id, id));
   };
 }

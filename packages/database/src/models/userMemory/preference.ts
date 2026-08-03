@@ -2,13 +2,13 @@ import { and, desc, eq } from 'drizzle-orm';
 
 import type { NewUserMemoryPreference, UserMemoryPreference } from '../../schemas';
 import { userMemories, userMemoriesPreferences } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 
 export class UserMemoryPreferenceModel {
   private userId: string;
-  private db: SHAHEEN OSDatabase;
+  private db: SHAHEENOSDatabase;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }

@@ -200,7 +200,7 @@ function extractVersionFromBranch(branchName: string): string | null {
 }
 
 async function main(): Promise<void> {
-  consola.info('🩹 SHAHEEN OS Hotfix Script\n');
+  consola.info('🩹 SHAHEENOS Hotfix Script\n');
 
   checkGitRepo();
 

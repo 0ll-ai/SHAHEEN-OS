@@ -35,7 +35,7 @@ import {
   userMemoriesIdentities,
   userMemoriesPreferences,
 } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import { normalizeBm25MatchQuery, SAFE_BM25_QUERY_OPTIONS } from '../../utils/bm25';
 
 const DEFAULT_HYBRID_SEARCH_LIMIT = 5;
@@ -660,7 +660,7 @@ export const scoreHybridCandidates = <T extends { id: string; tags?: string[] | 
 
 export class UserMemoryQueryModel {
   constructor(
-    private readonly db: SHAHEEN OSDatabase,
+    private readonly db: SHAHEENOSDatabase,
     private readonly userId: string,
   ) {}
 

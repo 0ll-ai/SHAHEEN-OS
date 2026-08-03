@@ -11,13 +11,13 @@ import {
   topics,
   users,
 } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { AgentMigrationRepo } from '../index';
 
 const userId = 'agent-migration-user';
 const userId2 = 'agent-migration-user-2';
 const sessionId = 'agent-migration-session';
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 const agentMigrationRepo = new AgentMigrationRepo(serverDB, userId);
 
 describe('AgentMigrationRepo', () => {

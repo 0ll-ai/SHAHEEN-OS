@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { userPersonaDocumentHistories, userPersonaDocuments, users } from '../../../schemas';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { UserPersonaModel } from '../persona';
 
 const userId = 'persona-user';
@@ -60,7 +60,7 @@ const metadataMergeCases: MetadataMergeCase[] = [
 ];
 
 let personaModel: UserPersonaModel;
-const serverDB: SHAHEEN OSDatabase = await getTestDB();
+const serverDB: SHAHEENOSDatabase = await getTestDB();
 
 beforeEach(async () => {
   await serverDB.delete(userPersonaDocumentHistories);

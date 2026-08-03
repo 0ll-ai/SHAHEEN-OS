@@ -2,7 +2,7 @@ import type { AiProviderModelListItem } from 'model-bank';
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
-import type { SHAHEEN OSDatabase } from '../../../type';
+import type { SHAHEENOSDatabase } from '../../../type';
 import { AiInfraRepos } from '../index';
 
 const userId = 'test-user-id';
@@ -18,7 +18,7 @@ vi.mock('@lobechat/business-model-bank/model-config', async () => {
   };
 });
 
-let serverDB: SHAHEEN OSDatabase;
+let serverDB: SHAHEENOSDatabase;
 let repo: AiInfraRepos;
 
 beforeAll(async () => {

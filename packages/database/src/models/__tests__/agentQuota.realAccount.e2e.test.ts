@@ -29,7 +29,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { users } from '../../schemas';
-import type { SHAHEEN OSDatabase } from '../../type';
+import type { SHAHEENOSDatabase } from '../../type';
 import {
   AgentProviderAccountModel,
   AgentQuotaSnapshotModel,
@@ -55,7 +55,7 @@ const readToken = (): string => {
 };
 
 describe.skipIf(!RUN)('quota real-account E2E (local DB)', () => {
-  let db: SHAHEEN OSDatabase;
+  let db: SHAHEENOSDatabase;
   let identity: QuotaAccountIdentity;
   let readings: QuotaLimitReading[];
 

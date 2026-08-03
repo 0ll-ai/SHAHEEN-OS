@@ -5,7 +5,7 @@ import { RequestTrigger } from '@lobechat/types';
 import debug from 'debug';
 import { z } from 'zod';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 import type {
@@ -270,13 +270,13 @@ export interface SkillIntentClassifierAgentModelConfig {
  * - One parsed skill-intent classification
  */
 export class SkillIntentClassifierAgentService implements SkillIntentClassifierService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly modelConfig: SkillIntentClassifierAgentModelConfig;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
   constructor(
-    db: SHAHEEN OSDatabase,
+    db: SHAHEENOSDatabase,
     userId: string,
     modelConfig: Partial<SkillIntentClassifierAgentModelConfig> = {},
     workspaceId?: string,

@@ -3,7 +3,7 @@ import type { TracingOptions } from '@lobechat/llm-generation-tracing';
 import type { FollowUpChip, FollowUpExtractInput, FollowUpExtractResult } from '@lobechat/types';
 import debug from 'debug';
 
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { AiGenerationService } from '@/server/services/aiGeneration';
 
 import { buildSuggestionPrompt, FOLLOW_UP_PROMPT_VERSION } from './prompts';
@@ -14,11 +14,11 @@ const log = debug('lobe-server:follow-up-action-service');
 const EMPTY_RESULT = (messageId: string): FollowUpExtractResult => ({ chips: [], messageId });
 
 export class FollowUpActionService {
-  private readonly db: SHAHEEN OSDatabase;
+  private readonly db: SHAHEENOSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEENOSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

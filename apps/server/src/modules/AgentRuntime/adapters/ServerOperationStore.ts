@@ -1,7 +1,7 @@
 import type { AgentState, OperationStore } from '@lobechat/agent-runtime';
 
 import { TopicModel } from '@/database/models/topic';
-import { type SHAHEEN OSDatabase } from '@/database/type';
+import { type SHAHEENOSDatabase } from '@/database/type';
 
 /**
  * Server {@link OperationStore} adapter. `clearRunningMark` drops the topic's
@@ -11,7 +11,7 @@ import { type SHAHEEN OSDatabase } from '@/database/type';
  */
 export class ServerOperationStore implements OperationStore {
   constructor(
-    private readonly serverDB: SHAHEEN OSDatabase,
+    private readonly serverDB: SHAHEENOSDatabase,
     private readonly userId: string | undefined,
     private readonly workspaceId: string | undefined,
     private readonly topicId: string | undefined,

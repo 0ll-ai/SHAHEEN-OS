@@ -14,7 +14,7 @@ import {
 import debug from 'debug';
 
 import { getServerDB } from '@/database/server';
-import type { SHAHEEN OSDatabase } from '@/database/type';
+import type { SHAHEENOSDatabase } from '@/database/type';
 import { assertAgentUsableBy } from '@/database/utils/agent-access';
 import { AgentSignalWorkflow } from '@/server/workflows/agentSignal';
 
@@ -26,7 +26,7 @@ const log = debug('lobe-server:agent-signal:service');
 
 export interface AgentSignalExecutionContext {
   agentId?: string;
-  db: SHAHEEN OSDatabase;
+  db: SHAHEENOSDatabase;
   userId: string;
   /**
    * Workspace id when the originating producer ran inside a team workspace.
