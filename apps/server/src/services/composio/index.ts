@@ -1,6 +1,6 @@
 import { COMPOSIO_APP_TYPES } from '@lobechat/const';
 import type { LobeToolManifest } from '@lobechat/context-engine';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import debug from 'debug';
 
 import { ConnectorModel } from '@/database/models/connector';
@@ -31,7 +31,7 @@ export interface ComposioToolExecuteParams {
 }
 
 export interface ComposioServiceOptions {
-  db?: LobeChatDatabase;
+  db?: SHAHEEN OSDatabase;
   userId?: string;
   /**
    * Workspace scope. When set, connector/plugin rows resolve within the team

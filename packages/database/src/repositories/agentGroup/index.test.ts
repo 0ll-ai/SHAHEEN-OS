@@ -17,7 +17,7 @@ import { threads, topics } from '../../schemas/topic';
 import { topicCommentMentions, topicComments } from '../../schemas/topicComment';
 import { users } from '../../schemas/user';
 import { workspaces } from '../../schemas/workspace';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { AgentGroupRepository } from './index';
 
 const userId = 'agent-group-test-user';
@@ -25,7 +25,7 @@ const otherUserId = 'other-agent-group-user';
 
 let agentGroupRepo: AgentGroupRepository;
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 const isServerDB = process.env.TEST_SERVER_DB === '1';
 
 beforeEach(async () => {

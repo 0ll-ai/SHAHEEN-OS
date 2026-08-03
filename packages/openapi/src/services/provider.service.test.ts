@@ -3,7 +3,7 @@ import type * as BusinessConst from '@lobechat/business-const';
 import { OFFICIAL_PROVIDER_DISABLE_ERROR } from '@lobechat/business-const';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { ProviderService } from './provider.service';
 
@@ -57,7 +57,7 @@ describe('ProviderService', () => {
     vi.restoreAllMocks();
   });
 
-  const createService = () => new ProviderService({} as LobeChatDatabase, 'test-user-id');
+  const createService = () => new ProviderService({} as SHAHEEN OSDatabase, 'test-user-id');
 
   describe('official provider guard', () => {
     it('should reject creating the official provider as disabled', async () => {

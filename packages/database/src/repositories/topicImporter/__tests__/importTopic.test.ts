@@ -7,12 +7,12 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../../core/getTestDB';
 import { agents, messagePlugins, messages, topics, users } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { TopicImporterRepo } from '../index';
 
 const userId = 'topic-importer-user';
 const agentId = 'topic-importer-agent';
-let serverDB: LobeChatDatabase;
+let serverDB: SHAHEEN OSDatabase;
 
 describe('TopicImporterRepo.importTopic', () => {
   beforeEach(async () => {

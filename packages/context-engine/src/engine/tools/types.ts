@@ -1,6 +1,6 @@
 import type { ExtendedHumanInterventionConfig } from '@/types/index';
 
-export interface LobeChatPluginApi {
+export interface SHAHEEN OSPluginApi {
   /**
    * Default execution timeout in milliseconds for this API.
    * Falls back to the global default (120_000 ms) when omitted.
@@ -27,7 +27,7 @@ export interface LobeChatPluginApi {
 }
 
 export interface LobeToolManifest {
-  api: LobeChatPluginApi[];
+  api: SHAHEEN OSPluginApi[];
   identifier: string;
   meta: any;
   systemRole?: string;

@@ -1,5 +1,5 @@
 import { UserModel } from '@/database/models/user';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 /**
  * Connector provenance helpers — "who authorized this connector".
@@ -76,7 +76,7 @@ const pickDisplayName = (u: { fullName: string | null; username: string | null }
  * authorized to see (harvested from scope-checked connector rows).
  */
 export const resolveUserDisplayMap = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userIds: Array<string | null | undefined>,
 ): Promise<Map<string, UserDisplayInfo>> => {
   const ids = [...new Set(userIds.filter((id): id is string => !!id))];

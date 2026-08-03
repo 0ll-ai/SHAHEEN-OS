@@ -13,7 +13,7 @@ import {
   topics,
   userMemories,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { sanitizeBm25Query } from '../../utils/bm25';
 import { normalizeInboxAgentMeta, normalizeInboxAgentTitle } from '../../utils/inboxAgent';
 import { buildWorkspaceWhere } from '../../utils/workspace';
@@ -288,10 +288,10 @@ interface WorkspaceScopedColumns {
  */
 export class SearchRepo {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;

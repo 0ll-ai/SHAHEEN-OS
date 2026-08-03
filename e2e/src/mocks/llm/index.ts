@@ -54,7 +54,7 @@ const defaultConfig: LLMMockConfig = {
 
 /**
  * Build SSE formatted response chunks
- * Follows LobeChat's actual streaming format
+ * Follows SHAHEEN OS's actual streaming format
  */
 export function buildSSEChunks(content: string, chunkSize: number): string[] {
   const chunks: string[] = [];

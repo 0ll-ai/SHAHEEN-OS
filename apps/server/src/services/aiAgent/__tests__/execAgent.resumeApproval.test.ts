@@ -1,4 +1,4 @@
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import type * as ModelBankModule from 'model-bank';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -180,8 +180,8 @@ describe('AiAgentService.execAgent - resumeApproval', () => {
     mockUpdateToolMessage.mockResolvedValue(undefined);
     // `MessageModel` is fully mocked above, so the service never touches the
     // raw `db` arg — cast an empty stub through `unknown` to satisfy the
-    // `LobeChatDatabase` parameter type without dragging the real schema.
-    service = new AiAgentService({} as unknown as LobeChatDatabase, 'user-1');
+    // `SHAHEEN OSDatabase` parameter type without dragging the real schema.
+    service = new AiAgentService({} as unknown as SHAHEEN OSDatabase, 'user-1');
   });
 
   const baseParams = {

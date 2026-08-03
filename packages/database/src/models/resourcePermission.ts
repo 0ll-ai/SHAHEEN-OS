@@ -2,17 +2,17 @@ import { and, eq } from 'drizzle-orm';
 
 import type { PermissionResourceType, ResourceAccessLevel } from '../schemas';
 import { getDefaultResourceAccessLevel, resourcePermissions } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 /**
  * Workspace-wide access policy for public resources. All methods are scoped
  * to one workspace; the table is meaningless in personal mode.
  */
 export class ResourcePermissionModel {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId: string;
 
-  constructor(db: LobeChatDatabase, workspaceId: string) {
+  constructor(db: SHAHEEN OSDatabase, workspaceId: string) {
     this.db = db;
     this.workspaceId = workspaceId;
   }

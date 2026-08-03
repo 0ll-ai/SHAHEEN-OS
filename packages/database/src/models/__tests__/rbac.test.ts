@@ -18,10 +18,10 @@ import {
   workspaceMembers,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { RbacModel } from '../rbac';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'rbac-model-test-user-id';
 const otherUserId = 'rbac-model-test-other-user-id';

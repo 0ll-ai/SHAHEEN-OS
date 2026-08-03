@@ -6,10 +6,10 @@ import {
   workspaceMembers,
   workspaces,
 } from '../schemas/workspace';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 const getActiveMembershipRole = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   params: { userId: string; workspaceId: string },
 ): Promise<string | null> => {
   const [row] = await db
@@ -38,7 +38,7 @@ const getActiveMembershipRole = async (
  * and lambda TRPC surfaces.
  */
 export const hasWorkspaceOwnerAccess = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   params: { userId: string; workspaceId: string },
 ): Promise<boolean> => {
   return (await getActiveMembershipRole(db, params)) === 'owner';
@@ -49,7 +49,7 @@ export const hasWorkspaceOwnerAccess = async (
  * and Admin pass; Member and Viewer do not.
  */
 export const hasWorkspaceAdminAccess = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   params: { userId: string; workspaceId: string },
 ): Promise<boolean> => {
   const role = await getActiveMembershipRole(db, params);
@@ -57,10 +57,10 @@ export const hasWorkspaceAdminAccess = async (
 };
 
 export class WorkspaceModel {
-  protected readonly db: LobeChatDatabase;
+  protected readonly db: SHAHEEN OSDatabase;
   protected readonly userId: string;
 
-  constructor(db: LobeChatDatabase, userId: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string) {
     this.db = db;
     this.userId = userId;
   }

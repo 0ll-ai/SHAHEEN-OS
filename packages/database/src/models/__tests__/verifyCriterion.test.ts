@@ -9,10 +9,10 @@ import {
   verifyRubrics,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { VerifyCriterionModel } from '../verifyCriterion';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'verify-criterion-test-user';
 const otherUserId = 'verify-criterion-test-other-user';

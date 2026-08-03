@@ -1,4 +1,4 @@
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 import { sha256 } from 'js-sha256';
 
 import { AgentDocumentModel, PolicyLoad } from '@/database/models/agentDocuments';
@@ -100,7 +100,7 @@ export class SkillManagementDocumentService {
   >;
 
   constructor(
-    private db: LobeChatDatabase,
+    private db: SHAHEEN OSDatabase,
     userId: string,
     workspaceId?: string,
     deps?: SkillManagementDocumentServiceDeps,

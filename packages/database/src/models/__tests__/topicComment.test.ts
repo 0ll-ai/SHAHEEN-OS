@@ -12,7 +12,7 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import {
   purgeExpiredTopicCommentModeration,
   TOPIC_COMMENT_MESSAGE_NOT_IN_TOPIC,
@@ -24,7 +24,7 @@ import {
   TopicCommentModel,
 } from '../topicComment';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const authorId = 'tc-author';
 const memberId = 'tc-member';

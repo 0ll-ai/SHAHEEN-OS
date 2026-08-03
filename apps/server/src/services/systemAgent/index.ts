@@ -14,7 +14,7 @@ import { RequestTrigger } from '@lobechat/types';
 import debug from 'debug';
 
 import { UserModel } from '@/database/models/user';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { initModelRuntimeFromDB } from '@/server/modules/ModelRuntime';
 
 import { resolveSystemAgentModelConfig } from './modelConfig';
@@ -44,11 +44,11 @@ const TOPIC_TITLE_SCHEMA = {
  * (topic, translation, agentMeta, etc.).
  */
 export class SystemAgentService {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

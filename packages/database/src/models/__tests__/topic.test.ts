@@ -12,10 +12,10 @@ import {
   topics,
   users,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { TopicModel } from '../topic';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'topic-model-test-user';
 const otherUserId = 'topic-model-test-other-user';

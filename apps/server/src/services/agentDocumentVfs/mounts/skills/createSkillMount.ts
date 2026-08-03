@@ -1,4 +1,4 @@
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 
 import { AgentModel } from '@/database/models/agent';
 import { AgentDocumentModel } from '@/database/models/agentDocuments';
@@ -25,7 +25,7 @@ import { SkillMount } from './SkillMount';
  * Returns:
  * - A skill mount that routes unified skill paths to namespace-specific providers.
  */
-export const createSkillMount = (db: LobeChatDatabase, userId: string, workspaceId?: string) => {
+export const createSkillMount = (db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) => {
   const agentModel = new AgentModel(db, userId, workspaceId);
   const agentDocumentModel = new AgentDocumentModel(db, userId, workspaceId);
   const documentService = new DocumentService(db, userId, workspaceId);

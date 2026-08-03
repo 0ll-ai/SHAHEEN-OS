@@ -4,7 +4,7 @@ import { and, desc, eq, ilike, inArray, or, sql } from 'drizzle-orm';
 
 import type { NewAgentSkill } from '../schemas';
 import { agentSkills } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 const skillItemColumns = {
@@ -41,9 +41,9 @@ const skillListColumns = {
 export class AgentSkillModel {
   private userId: string;
   private workspaceId?: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

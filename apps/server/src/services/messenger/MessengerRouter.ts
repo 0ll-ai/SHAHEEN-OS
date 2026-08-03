@@ -15,7 +15,7 @@ import { AgentModel } from '@/database/models/agent';
 import type { SafeMessengerAccountLink } from '@/database/models/messengerAccountLink';
 import { MessengerAccountLinkModel } from '@/database/models/messengerAccountLink';
 import { WorkspaceModel } from '@/database/models/workspace';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { getServerFeatureFlagsStateFromRuntimeConfig } from '@/server/featureFlags';
 import { getAgentRuntimeRedisClient } from '@/server/modules/AgentRuntime/redis';
 import { AiAgentService } from '@/server/services/aiAgent';
@@ -108,7 +108,7 @@ interface MessengerCommandContext {
   /** Platform-aware reply: ephemeral on Slack slash, DM on Discord slash,
    *  `binder.sendDmText` on text dispatch. */
   reply: (text: string) => Promise<void>;
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   source: 'text' | 'slash';
   tenantId: string;
   thread?: any;
@@ -188,7 +188,7 @@ const reconstructRequest = (req: Request, rawBody: string): Request =>
  * re-check before running that workspace's agent.
  */
 const userIsWorkspaceMember = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userId: string,
   workspaceId: string,
 ): Promise<boolean> => {
@@ -459,7 +459,7 @@ export class MessengerRouter {
 
   private registerHandlers(
     bot: Chat<any>,
-    serverDB: LobeChatDatabase,
+    serverDB: SHAHEEN OSDatabase,
     client: PlatformClient,
     binder: MessengerPlatformBinder,
     creds: InstallationCredentials,
@@ -1016,7 +1016,7 @@ export class MessengerRouter {
     client: PlatformClient;
     creds: InstallationCredentials;
     event: SlashCommandEvent;
-    serverDB: LobeChatDatabase;
+    serverDB: SHAHEEN OSDatabase;
   }): Promise<void> {
     const { binder, bot, client, creds, event, serverDB } = params;
     const senderId = event.user.userId;
@@ -1305,7 +1305,7 @@ export class MessengerRouter {
    * each workspace they belong to.
    */
   private async fetchUserScopes(
-    serverDB: LobeChatDatabase,
+    serverDB: SHAHEEN OSDatabase,
     userId: string,
     platform: MessengerPlatform,
   ): Promise<{ id: string | null; name: string }[]> {
@@ -1323,7 +1323,7 @@ export class MessengerRouter {
    * scope has no agents yet.
    */
   private async applyScopeSwitch(
-    serverDB: LobeChatDatabase,
+    serverDB: SHAHEEN OSDatabase,
     linkId: string,
     userId: string,
     target: { id: string | null; name: string },
@@ -1598,7 +1598,7 @@ export class MessengerRouter {
    *    "Custom Agent" fallback for agents without a title
    */
   private async fetchUserAgents(
-    serverDB: LobeChatDatabase,
+    serverDB: SHAHEEN OSDatabase,
     userId: string,
     workspaceId?: string | null,
   ): Promise<AgentSummary[]> {

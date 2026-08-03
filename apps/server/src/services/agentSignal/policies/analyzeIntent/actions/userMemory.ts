@@ -16,7 +16,7 @@ import { nanoid } from '@lobechat/utils';
 
 import { PluginModel } from '@/database/models/plugin';
 import { ThreadModel } from '@/database/models/thread';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import {
   InMemoryAgentStateManager,
   InMemoryStreamEventManager,
@@ -59,7 +59,7 @@ export { resolveMemoryActionResultFromState, resolveMemoryActionTargetFromState 
 
 export interface UserMemoryActionHandlerOptions {
   agentService?: Pick<AgentService, 'getAgentConfig'>;
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   memoryActionRunner?: (input: {
     agentId?: string;
     conflictPolicy?: AgentSignalFeedbackDomainConflictPolicy;

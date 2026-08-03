@@ -31,7 +31,7 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { AgentModel } from '../agent';
 import {
   TOPIC_COMMENT_TOPIC_NOT_FOUND,
@@ -39,7 +39,7 @@ import {
   TopicCommentModel,
 } from '../topicComment';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 const isServerDB = process.env.TEST_SERVER_DB === '1';
 
 const userId = 'transfer-test-user';

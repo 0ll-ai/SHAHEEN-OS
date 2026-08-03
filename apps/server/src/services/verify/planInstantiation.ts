@@ -2,7 +2,7 @@ import debug from 'debug';
 
 import { TaskModel } from '@/database/models/task';
 import { VerifyRunModel } from '@/database/models/verifyRun';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { AcceptanceService } from './acceptanceService';
 import { VerifyPlanGeneratorService } from './planGenerator';
@@ -28,7 +28,7 @@ export interface InstantiateVerifyPlanParams {
  * and skips when a plan already exists (recordStart can re-fire).
  */
 export const instantiateVerifyPlanOnStart = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userId: string,
   params: InstantiateVerifyPlanParams,
   workspaceId?: string,

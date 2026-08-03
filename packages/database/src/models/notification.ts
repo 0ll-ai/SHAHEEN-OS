@@ -2,7 +2,7 @@ import { and, count, desc, eq, inArray, isNull, lt, or, type SQL } from 'drizzle
 
 import type { NewNotification, NewNotificationDelivery } from '../schemas/notification';
 import { notificationDeliveries, notifications } from '../schemas/notification';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 export interface NotificationModelOptions {
   /**
@@ -16,10 +16,10 @@ export interface NotificationModelOptions {
 
 export class NotificationModel {
   private readonly userId: string;
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly workspaceId?: string | null;
 
-  constructor(db: LobeChatDatabase, userId: string, options?: NotificationModelOptions) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, options?: NotificationModelOptions) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = options?.workspaceId;

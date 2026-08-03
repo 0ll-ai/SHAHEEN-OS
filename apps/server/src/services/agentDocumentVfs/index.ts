@@ -1,4 +1,4 @@
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 
 import type { AgentDocument } from '@/database/models/agentDocuments';
 import {
@@ -96,7 +96,7 @@ export class AgentDocumentVfsService {
   private agentDocumentModel: AgentDocumentModel;
   private skillMount: SkillMount;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.agentDocumentModel = new AgentDocumentModel(db, userId, workspaceId);
     this.skillMount = createSkillMount(db, userId, workspaceId);
   }

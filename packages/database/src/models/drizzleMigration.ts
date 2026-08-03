@@ -1,12 +1,12 @@
 import type { MigrationTableItem } from '@lobechat/types';
 import { sql } from 'drizzle-orm';
 
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
 export class DrizzleMigrationModel {
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase) {
+  constructor(db: SHAHEEN OSDatabase) {
     this.db = db;
   }
 

@@ -42,7 +42,7 @@ import { AgentModel } from '@/database/models/agent';
 import { MessageModel } from '@/database/models/message';
 import { TopicModel } from '@/database/models/topic';
 import { UserPersonaModel } from '@/database/models/userMemory/persona';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { AiGenerationService } from '@/server/services/aiGeneration';
 import { ConnectorDataService } from '@/server/services/connectorData';
 
@@ -1037,7 +1037,7 @@ export class UnderstandingService {
 }
 
 interface CreateUnderstandingServiceOptions {
-  db: LobeChatDatabase;
+  db: SHAHEEN OSDatabase;
   providers?: readonly UnderstandingProvider[];
   userId: string;
   workspaceId?: string;

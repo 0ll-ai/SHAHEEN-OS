@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 
 import { CUSTOM_DOCUMENT_FILE_TYPE, CUSTOM_FOLDER_FILE_TYPE } from '@lobechat/const';
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import { type DocumentItem } from '@lobechat/database/schemas';
 import { documents, files } from '@lobechat/database/schemas';
 import { loadFile, UnsupportedFileTypeError } from '@lobechat/file-loaders';
@@ -58,13 +58,13 @@ export class DocumentService {
   private fileServiceInstance?: FileService;
   private knowledgeBaseModel: KnowledgeBaseModel;
   private editLockService: EditLockService;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private callerAgentVisibility?: 'private' | 'public' | null;
 
   private workspaceId?: string;
 
   constructor(
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     userId: string,
     workspaceId?: string,
     callerAgentVisibility?: 'private' | 'public' | null,
@@ -623,7 +623,7 @@ export class DocumentService {
   async updateDocument(id: string, params: UpdateDocumentParams): Promise<UpdateDocumentResult> {
     let changed = false;
     const result = await this.db.transaction(async (tx) => {
-      const transactionDb = tx as unknown as LobeChatDatabase;
+      const transactionDb = tx as unknown as SHAHEEN OSDatabase;
       const documentModel = new DocumentModel(
         transactionDb,
         this.userId,

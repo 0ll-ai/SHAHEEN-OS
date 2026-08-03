@@ -1,4 +1,4 @@
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import { type UserGeneralConfig } from '@lobechat/types';
 
 import { UserModel } from '@/database/models/user';
@@ -7,7 +7,7 @@ import { appEnv } from '@/envs/app';
 import { trpc } from '../init';
 
 export interface TelemetryContext {
-  serverDB?: LobeChatDatabase;
+  serverDB?: SHAHEEN OSDatabase;
   userId?: string | null;
 }
 

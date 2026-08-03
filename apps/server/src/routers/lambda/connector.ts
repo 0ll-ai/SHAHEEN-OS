@@ -17,7 +17,7 @@ import {
   ConnectorStatus,
   ConnectorToolPermission,
 } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { inferCrudType } from '@/libs/mcp/utils';
 import { router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
@@ -988,7 +988,7 @@ export const connectorRouter = router({
 async function upsertConnectorEntry(
   ctx: {
     connectorModel: ConnectorModel;
-    serverDB: LobeChatDatabase;
+    serverDB: SHAHEEN OSDatabase;
     userId: string;
     workspaceId?: string | null;
     workspaceRole?: string;

@@ -3,7 +3,7 @@ import { DEFAULT_PROVIDER } from '@lobechat/business-const';
 import { DEFAULT_MODEL } from '@lobechat/const';
 
 import { AgentModel } from '@/database/models/agent';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 export interface VerifyModelConfig {
   model: string;
@@ -39,7 +39,7 @@ const isUsableVerifyModelConfig = (
  * runtime providers, so Verify must resolve its own runnable provider/model.
  */
 export const resolveVerifyModelConfig = async (
-  db: LobeChatDatabase,
+  db: SHAHEEN OSDatabase,
   userId: string,
   params: ResolveVerifyModelConfigParams,
   workspaceId?: string,

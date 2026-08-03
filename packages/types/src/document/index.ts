@@ -1,7 +1,7 @@
 export * from './share';
 
 /**
- * Document object in LobeChat
+ * Document object in SHAHEEN OS
  */
 export interface LobeDocument {
   /**

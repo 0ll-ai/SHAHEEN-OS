@@ -4,14 +4,14 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { getTestDB } from '../../core/getTestDB';
 import { pushTokens, users } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import {
   deletePushTokenByExpoTokenAndDevice,
   deletePushTokensByExpoTokens,
   PushTokenModel,
 } from '../pushToken';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'push-token-model-test-user-id';
 const otherUserId = 'push-token-model-test-other-user';

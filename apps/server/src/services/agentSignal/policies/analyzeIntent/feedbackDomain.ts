@@ -1,6 +1,6 @@
 import type { RuntimeProcessorResult } from '@lobechat/agent-signal';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { classifyDomain, transitionToSignals } from '../../processors';
 import { defineSignalHandler } from '../../runtime/middleware';
@@ -46,12 +46,12 @@ export interface CreateFeedbackDomainJudgeSignalHandlerOptions {
  */
 export interface CreateFeedbackDomainJudgePolicyOptions {
   feedbackDomainJudge?: Partial<FeedbackDomainJudgeAgentModelConfig> & {
-    db: LobeChatDatabase;
+    db: SHAHEEN OSDatabase;
     userId: string;
     workspaceId?: string;
   };
   skillIntentClassifier?: Partial<FeedbackDomainJudgeAgentModelConfig> & {
-    db: LobeChatDatabase;
+    db: SHAHEEN OSDatabase;
     userId: string;
     workspaceId?: string;
   };

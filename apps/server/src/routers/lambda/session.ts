@@ -9,7 +9,7 @@ import { ResourcePermissionModel } from '@/database/models/resourcePermission';
 import { SessionModel } from '@/database/models/session';
 import { SessionGroupModel } from '@/database/models/sessionGroup';
 import { insertAgentSchema, insertSessionSchema } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
 import { assertCanEditResource } from '@/server/services/resourcePermission';
@@ -32,7 +32,7 @@ import {
  */
 const assertCanEditSessionAgent = async (
   ctx: {
-    serverDB: LobeChatDatabase;
+    serverDB: SHAHEEN OSDatabase;
     sessionModel: SessionModel;
     userId: string;
     workspaceId?: string | null;

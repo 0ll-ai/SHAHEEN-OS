@@ -2,7 +2,7 @@ import { and, eq, inArray } from 'drizzle-orm';
 import pMap from 'p-map';
 
 import * as EXPORT_TABLES from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 interface BaseTableConfig {
@@ -83,10 +83,10 @@ export const DATA_EXPORT_CONFIG = {
 
 export class DataExporterRepos {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

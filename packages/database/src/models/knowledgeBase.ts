@@ -3,16 +3,16 @@ import { and, count, desc, eq, inArray, ne, or, sum } from 'drizzle-orm';
 
 import type { NewDocument, NewFile, NewKnowledgeBase } from '../schemas';
 import { documents, files, knowledgeBaseFiles, knowledgeBases } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 import { FileModel } from './file';
 
 export class KnowledgeBaseModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.userId = userId;
     this.db = db;
     this.workspaceId = workspaceId;
@@ -357,7 +357,7 @@ export class KnowledgeBaseModel {
   };
 
   private resolveAvailableName = async (
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     name: string,
     targetWorkspaceId: string | null,
     targetUserId: string,
@@ -449,7 +449,7 @@ export class KnowledgeBaseModel {
       const visibilityUpdate =
         targetWorkspaceId && targetVisibility ? { visibility: targetVisibility } : {};
       const targetName = await this.resolveAvailableName(
-        trx as LobeChatDatabase,
+        trx as SHAHEEN OSDatabase,
         knowledgeBase.name,
         targetWorkspaceId,
         targetUserId,
@@ -504,7 +504,7 @@ export class KnowledgeBaseModel {
       const visibilityOverride =
         targetWorkspaceId && targetVisibility ? { visibility: targetVisibility } : {};
       const targetName = await this.resolveAvailableName(
-        trx as LobeChatDatabase,
+        trx as SHAHEEN OSDatabase,
         knowledgeBase.name,
         targetWorkspaceId,
         targetUserId,
@@ -779,7 +779,7 @@ export class KnowledgeBaseModel {
     return { deletedFiles };
   };
 
-  static findById = async (db: LobeChatDatabase, id: string) =>
+  static findById = async (db: SHAHEEN OSDatabase, id: string) =>
     db.query.knowledgeBases.findFirst({
       where: eq(knowledgeBases.id, id),
     });

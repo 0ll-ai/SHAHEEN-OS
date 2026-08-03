@@ -3,7 +3,7 @@ import { and, desc, eq, inArray, isNull, notInArray, type SQL, sql } from 'drizz
 import { agents } from '../schemas/agent';
 import type { BriefItem, NewBrief } from '../schemas/task';
 import { briefs, tasks } from '../schemas/task';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { normalizeInboxAgentAvatar, normalizeInboxAgentTitle } from '../utils/inboxAgent';
 import { buildWorkspacePayload } from '../utils/workspace';
 
@@ -21,10 +21,10 @@ export interface UnresolvedBriefRow {
 
 export class BriefModel {
   private readonly userId: string;
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

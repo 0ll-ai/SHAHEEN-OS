@@ -11,7 +11,7 @@ import type {
 } from '@lobechat/agent-runtime';
 import { chainCompressContext } from '@lobechat/prompts';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { MessageService } from '@/server/services/message';
 
 /**
@@ -20,7 +20,7 @@ import { MessageService } from '@/server/services/message';
  */
 export class ServerCompressionTransport implements CompressionTransport {
   constructor(
-    private readonly serverDB: LobeChatDatabase,
+    private readonly serverDB: SHAHEEN OSDatabase,
     private readonly userId: string,
     private readonly defaultWorkspaceId?: string,
   ) {}

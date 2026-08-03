@@ -2,7 +2,7 @@ import { and, count, desc, eq, inArray, isNull, ne, notInArray, sum } from 'driz
 
 import type { DocumentItem, NewDocument } from '../schemas';
 import { DOCUMENT_FOLDER_TYPE, documents, files, works } from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export interface QueryDocumentParams {
@@ -14,7 +14,7 @@ export interface QueryDocumentParams {
 
 export class DocumentModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
   /**
    * Visibility of the agent that owns the calling tool execution, when this
@@ -28,7 +28,7 @@ export class DocumentModel {
   private callerAgentVisibility?: 'private' | 'public' | null;
 
   constructor(
-    db: LobeChatDatabase,
+    db: SHAHEEN OSDatabase,
     userId: string,
     workspaceId?: string,
     callerAgentVisibility?: 'private' | 'public' | null,
@@ -268,7 +268,7 @@ export class DocumentModel {
     visibility: 'private' | 'public',
   ): Promise<{ documentIds: string[] }> => {
     return this.db.transaction(async (trx) => {
-      const result = await (trx as LobeChatDatabase)
+      const result = await (trx as SHAHEEN OSDatabase)
         .update(documents)
         .set({ updatedAt: new Date(), visibility })
         .where(and(eq(documents.id, rootId), this.ownership(), eq(documents.userId, this.userId)))
@@ -279,7 +279,7 @@ export class DocumentModel {
       // Mirror visibility onto existing Work projections in the same
       // transaction. Scope without works.visibility so a promotion can
       // update rows that are currently private.
-      await (trx as LobeChatDatabase)
+      await (trx as SHAHEEN OSDatabase)
         .update(works)
         .set({ visibility })
         .where(
@@ -303,7 +303,7 @@ export class DocumentModel {
    */
   private collectSubtree = async (
     rootId: string,
-    runner: LobeChatDatabase = this.db,
+    runner: SHAHEEN OSDatabase = this.db,
   ): Promise<DocumentItem[]> => {
     const root = await runner.query.documents.findFirst({
       where: and(this.ownership(), eq(documents.id, rootId)),
@@ -327,7 +327,7 @@ export class DocumentModel {
 
   countFileUsageInSubtree = async (
     rootId: string,
-    runner: LobeChatDatabase = this.db,
+    runner: SHAHEEN OSDatabase = this.db,
   ): Promise<number> => {
     const subtree = await this.collectSubtree(rootId, runner);
     if (subtree.length === 0) return 0;
@@ -378,8 +378,8 @@ export class DocumentModel {
     targetVisibility?: 'private' | 'public',
   ): Promise<{ documentIds: string[] }> => {
     return this.db.transaction(async (trx) => {
-      const scopedTrx = new DocumentModel(trx as LobeChatDatabase, this.userId, this.workspaceId);
-      const subtree = await scopedTrx.collectSubtree(documentId, trx as LobeChatDatabase);
+      const scopedTrx = new DocumentModel(trx as SHAHEEN OSDatabase, this.userId, this.workspaceId);
+      const subtree = await scopedTrx.collectSubtree(documentId, trx as SHAHEEN OSDatabase);
       if (subtree.length === 0) throw new Error('Document not found');
 
       const ids = subtree.map((d) => d.id);
@@ -394,28 +394,28 @@ export class DocumentModel {
       for (const doc of subtree) {
         if (!doc.slug) continue;
         const slug = await this.findAvailableSlug(
-          trx as LobeChatDatabase,
+          trx as SHAHEEN OSDatabase,
           doc.slug,
           targetWorkspaceId,
           targetUserId,
           doc.id,
         );
         if (slug !== doc.slug) {
-          await (trx as LobeChatDatabase)
+          await (trx as SHAHEEN OSDatabase)
             .update(documents)
             .set({ slug })
             .where(eq(documents.id, doc.id));
         }
       }
 
-      await (trx as LobeChatDatabase)
+      await (trx as SHAHEEN OSDatabase)
         .update(documents)
         .set({ ...ownershipUpdate, ...visibilityUpdate, updatedAt: new Date() })
         .where(inArray(documents.id, ids));
 
       // Move files anchored to these documents; their visibility mirrors the
       // document subtree in workspace scope.
-      await (trx as LobeChatDatabase)
+      await (trx as SHAHEEN OSDatabase)
         .update(files)
         .set({ ...ownershipUpdate, ...visibilityUpdate })
         .where(inArray(files.parentId, ids));
@@ -435,8 +435,8 @@ export class DocumentModel {
     targetVisibility?: 'private' | 'public',
   ): Promise<{ rootId: string }> => {
     return this.db.transaction(async (trx) => {
-      const scopedTrx = new DocumentModel(trx as LobeChatDatabase, this.userId, this.workspaceId);
-      const subtree = await scopedTrx.collectSubtree(documentId, trx as LobeChatDatabase);
+      const scopedTrx = new DocumentModel(trx as SHAHEEN OSDatabase, this.userId, this.workspaceId);
+      const subtree = await scopedTrx.collectSubtree(documentId, trx as SHAHEEN OSDatabase);
       if (subtree.length === 0) throw new Error('Document not found');
 
       // Visibility only applies when landing in a workspace.
@@ -463,14 +463,14 @@ export class DocumentModel {
         let newSlug = original.slug;
         if (newSlug) {
           newSlug = await this.findAvailableSlug(
-            trx as LobeChatDatabase,
+            trx as SHAHEEN OSDatabase,
             newSlug,
             targetWorkspaceId,
             targetUserId,
           );
         }
 
-        const inserted = (await (trx as LobeChatDatabase)
+        const inserted = (await (trx as SHAHEEN OSDatabase)
           .insert(documents)
           .values({
             accessedAt: original.accessedAt,
@@ -512,7 +512,7 @@ export class DocumentModel {
    * Tries `slug`, `slug-1`, …, `slug-99`. Mirrors the agent transfer behavior.
    */
   private findAvailableSlug = async (
-    runner: LobeChatDatabase,
+    runner: SHAHEEN OSDatabase,
     baseSlug: string,
     targetWorkspaceId: string | null,
     targetUserId: string,

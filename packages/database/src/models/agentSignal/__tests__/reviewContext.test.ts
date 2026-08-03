@@ -13,10 +13,10 @@ import {
   userMemories,
   users,
 } from '../../../schemas';
-import type { LobeChatDatabase } from '../../../type';
+import type { SHAHEEN OSDatabase } from '../../../type';
 import { AgentSignalReviewContextModel } from '../reviewContext';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'agent-signal-review-context-user';
 const agentId = 'agent-signal-review-context-agent';

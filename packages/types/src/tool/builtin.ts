@@ -168,7 +168,7 @@ export const PluginApiWorkConfigSchema = z.object({
   resourceType: z.enum(['document', 'task']),
 });
 
-export interface LobeChatPluginApi {
+export interface SHAHEEN OSPluginApi {
   /**
    * Default execution timeout in milliseconds for this API.
    *
@@ -217,7 +217,7 @@ export interface LobeChatPluginApi {
   work?: PluginApiWorkConfig;
 }
 
-export const LobeChatPluginApiSchema = z.object({
+export const SHAHEEN OSPluginApiSchema = z.object({
   defaultTimeoutMs: z.number().int().positive().optional(),
   description: z.string(),
   humanIntervention: ExtendedHumanInterventionConfigSchema.optional(),
@@ -229,7 +229,7 @@ export const LobeChatPluginApiSchema = z.object({
 });
 
 export interface BuiltinToolManifest {
-  api: LobeChatPluginApi[];
+  api: SHAHEEN OSPluginApi[];
 
   /**
    * Supported execution environments for this tool.
@@ -269,7 +269,7 @@ export interface BuiltinToolManifest {
 }
 
 export const BuiltinToolManifestSchema = z.object({
-  api: z.array(LobeChatPluginApiSchema),
+  api: z.array(SHAHEEN OSPluginApiSchema),
   executors: z.array(z.enum(['client', 'server'])).optional(),
   humanIntervention: ExtendedHumanInterventionConfigSchema.optional(),
   identifier: z.string(),

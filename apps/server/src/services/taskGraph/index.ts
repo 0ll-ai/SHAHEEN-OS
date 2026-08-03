@@ -1,7 +1,7 @@
 import type { TaskItem } from '@lobechat/types';
 
 import { TaskModel } from '@/database/models/task';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 export type SubtaskRunnableStatus = 'backlog' | 'paused' | 'failed';
 
@@ -223,7 +223,7 @@ const findCycleMembers = (unplaced: string[], downstream: Map<string, string[]>)
 export class TaskGraphService {
   private taskModel: TaskModel;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.taskModel = new TaskModel(db, userId, workspaceId);
   }
 

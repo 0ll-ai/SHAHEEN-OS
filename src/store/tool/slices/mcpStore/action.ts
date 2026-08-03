@@ -79,27 +79,27 @@ const buildCloudMcpManifest = (params: {
 
   log('Using cloud connection, building manifest from market data');
 
-  // Get tools (MCP format) or api (LobeChat format) from data
+  // Get tools (MCP format) or api (SHAHEEN OS format) from data
   const mcpTools = data.tools;
   const lobeChatApi = data.api;
 
-  // If MCP format tools, need to convert to LobeChat api format
+  // If MCP format tools, need to convert to SHAHEEN OS api format
   // MCP: { name, description, inputSchema }
-  // LobeChat: { name, description, parameters }
+  // SHAHEEN OS: { name, description, parameters }
   let apiArray: any[] = [];
 
   if (lobeChatApi) {
-    // Already in LobeChat format, use directly
+    // Already in SHAHEEN OS format, use directly
     apiArray = lobeChatApi;
-    log('[Cloud MCP] Using existing LobeChat API format');
+    log('[Cloud MCP] Using existing SHAHEEN OS API format');
   } else if (mcpTools && Array.isArray(mcpTools)) {
-    // Convert MCP tools format to LobeChat api format
+    // Convert MCP tools format to SHAHEEN OS api format
     apiArray = mcpTools.map((tool: any) => ({
       description: tool.description || '',
       name: tool.name,
       parameters: tool.inputSchema || {},
     }));
-    log('[Cloud MCP] Converted %d MCP tools to LobeChat API format', apiArray.length);
+    log('[Cloud MCP] Converted %d MCP tools to SHAHEEN OS API format', apiArray.length);
   } else {
     console.warn('[Cloud MCP] No tools or api found in manifest data');
   }

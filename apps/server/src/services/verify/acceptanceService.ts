@@ -27,7 +27,7 @@ import type {
   VerifyCheckResultItem,
   VerifyRunItem,
 } from '@/database/schemas/verify';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { TaskService } from '@/server/services/task';
 
 import { computeFalseFlags } from './feedbackService';
@@ -394,7 +394,7 @@ export interface AcceptanceSubjectSummary {
 }
 
 export class AcceptanceService {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
@@ -404,7 +404,7 @@ export class AcceptanceService {
   private readonly evidenceModel: VerifyEvidenceModel;
   private readonly reportModel: VerifyReportModel;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

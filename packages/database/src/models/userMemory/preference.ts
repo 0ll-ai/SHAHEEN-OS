@@ -2,13 +2,13 @@ import { and, desc, eq } from 'drizzle-orm';
 
 import type { NewUserMemoryPreference, UserMemoryPreference } from '../../schemas';
 import { userMemories, userMemoriesPreferences } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 
 export class UserMemoryPreferenceModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
 
-  constructor(db: LobeChatDatabase, userId: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string) {
     this.userId = userId;
     this.db = db;
   }

@@ -11,11 +11,11 @@ import {
   users,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { DocumentModel } from '../document';
 import { FileModel } from '../file';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'document-model-test-user-id';
 const userId2 = 'document-model-test-user-id-2';

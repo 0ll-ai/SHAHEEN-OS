@@ -11,7 +11,7 @@ import {
   topics,
   userMemories,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 const parseAggregateTimestamp = (value: Date | string) =>
@@ -99,11 +99,11 @@ export interface AgentSignalDocumentActivityRow {
 
 /** Database-backed context queries for Agent Signal self-review policies. */
 export class AgentSignalReviewContextModel {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

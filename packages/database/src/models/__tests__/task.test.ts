@@ -6,11 +6,11 @@ import { getTestDB } from '../../core/getTestDB';
 import { agents, briefs, documents, tasks, topics, users, workspaces } from '../../schemas';
 import { taskTopics } from '../../schemas/task';
 import { works } from '../../schemas/work';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { TaskModel } from '../task';
 import { WorkModel } from '../work';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'task-test-user-id';
 const userId2 = 'task-test-user-id-2';

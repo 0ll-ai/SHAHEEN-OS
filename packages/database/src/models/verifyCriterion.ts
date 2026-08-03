@@ -2,15 +2,15 @@ import { and, desc, eq, inArray } from 'drizzle-orm';
 
 import type { NewVerifyCriterion, VerifyCriterionItem } from '../schemas/verify';
 import { verifyCriteria, verifyRubricCriteria } from '../schemas/verify';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 export class VerifyCriterionModel {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

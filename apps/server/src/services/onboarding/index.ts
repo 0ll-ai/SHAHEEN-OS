@@ -34,7 +34,7 @@ import {
   userPersonaDocumentHistories,
   userPersonaDocuments,
 } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 import { AgentService } from '@/server/services/agent';
 import { AgentDocumentsService } from '@/server/services/agentDocuments';
@@ -131,7 +131,7 @@ export class OnboardingService {
   private readonly userModel: UserModel;
 
   constructor(
-    private readonly db: LobeChatDatabase,
+    private readonly db: SHAHEEN OSDatabase,
     userId: string,
   ) {
     this.userId = userId;
@@ -590,7 +590,7 @@ export class OnboardingService {
         sql`SELECT pg_advisory_xact_lock(hashtext(${this.userId + ':' + input.agentId})::bigint)`,
       );
 
-      const trxDb = trx as unknown as LobeChatDatabase;
+      const trxDb = trx as unknown as SHAHEEN OSDatabase;
       const trxTopicModel = new TopicModel(trxDb, this.userId);
       const trxUserModel = new UserModel(trxDb, this.userId);
 

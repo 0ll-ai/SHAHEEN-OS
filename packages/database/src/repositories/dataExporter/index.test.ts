@@ -18,10 +18,10 @@ import {
   userSettings,
   workspaces,
 } from '../../schemas';
-import type { LobeChatDatabase } from '../../type';
+import type { SHAHEEN OSDatabase } from '../../type';
 import { DATA_EXPORT_CONFIG, DataExporterRepos } from './index';
 
-let db: LobeChatDatabase;
+let db: SHAHEEN OSDatabase;
 
 // Set up test data
 describe('DataExporterRepos', () => {

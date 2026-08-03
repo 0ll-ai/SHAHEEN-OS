@@ -8,7 +8,7 @@ import {
 import type { SearchDecision } from 'model-bank';
 
 import { type MessageModel } from '@/database/models/message';
-import { type LobeChatDatabase } from '@/database/type';
+import { type SHAHEEN OSDatabase } from '@/database/type';
 import { type EvalContext } from '@/server/modules/Mecha/ContextEngineering/types';
 import type { HookDispatcher } from '@/server/services/agentRuntime/hooks/HookDispatcher';
 import type {
@@ -55,7 +55,7 @@ export interface RuntimeExecutorContext {
   messageModel: MessageModel;
   operationId: string;
   searchDecision?: SearchDecision;
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   stepIndex: number;
   stream?: boolean;
   streamManager: IStreamEventManager;

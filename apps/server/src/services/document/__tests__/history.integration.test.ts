@@ -10,11 +10,11 @@ import {
 import { getTestDB } from '@/database/core/getTestDB';
 import { DocumentModel } from '@/database/models/document';
 import { FileModel } from '@/database/models/file';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { DocumentHistoryService } from '../history';
 
-const serverDB: LobeChatDatabase = await getTestDB();
+const serverDB: SHAHEEN OSDatabase = await getTestDB();
 
 const userId = 'document-history-service-test-user-id';
 const userId2 = 'document-history-service-test-user-id-2';

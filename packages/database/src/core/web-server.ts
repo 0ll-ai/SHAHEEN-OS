@@ -7,11 +7,11 @@ import ws from 'ws';
 import { serverDBEnv } from '@/config/db';
 
 import * as schema from '../schemas';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 
-export const getDBInstance = (): LobeChatDatabase => {
+export const getDBInstance = (): SHAHEEN OSDatabase => {
   // In test environment, return a mock instance to avoid initialization errors
-  if (process.env.NODE_ENV === 'test') return {} as LobeChatDatabase;
+  if (process.env.NODE_ENV === 'test') return {} as SHAHEEN OSDatabase;
 
   if (!serverDBEnv.KEY_VAULTS_SECRET) {
     throw new Error(

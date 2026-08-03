@@ -1,5 +1,5 @@
 import type { BlobRef, BlobStore } from '@lobechat/agent-runtime';
-import type { LobeChatDatabase } from '@lobechat/database';
+import type { SHAHEEN OSDatabase } from '@lobechat/database';
 
 import { FileService } from '@/server/services/file';
 
@@ -7,7 +7,7 @@ export class ServerBlobStore implements BlobStore {
   private fileService?: FileService;
 
   constructor(
-    private readonly db: LobeChatDatabase,
+    private readonly db: SHAHEEN OSDatabase,
     private readonly userId: string,
     private readonly workspaceId?: string,
   ) {}

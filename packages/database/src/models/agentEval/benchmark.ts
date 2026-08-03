@@ -7,15 +7,15 @@ import {
   agentEvalTestCases,
   type NewAgentEvalBenchmark,
 } from '../../schemas';
-import { type LobeChatDatabase } from '../../type';
+import { type SHAHEEN OSDatabase } from '../../type';
 import { buildWorkspaceWhere } from '../../utils/workspace';
 
 export class AgentEvalBenchmarkModel {
   private userId: string;
-  private db: LobeChatDatabase;
+  private db: SHAHEEN OSDatabase;
   private workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;

@@ -29,7 +29,7 @@ import { AgentMigrationRepo } from '@/database/repositories/agentMigration';
 import { HeteroSessionImporterRepo } from '@/database/repositories/heteroSessionImporter';
 import { TopicImporterRepo } from '@/database/repositories/topicImporter';
 import { chatGroups } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 import { router } from '@/libs/trpc/lambda';
 import { serverDatabase } from '@/libs/trpc/lambda/middleware';
 import { FileService } from '@/server/services/file';
@@ -55,7 +55,7 @@ import { basicContextSchema } from './_schema/context';
 
 /** Ctx slice consumed by the conversation General-access guards. */
 const guardCtx = (ctx: {
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   userId: string;
   workspaceId?: string | null;
 }) => ({ db: ctx.serverDB, userId: ctx.userId, workspaceId: ctx.workspaceId });
@@ -83,7 +83,7 @@ const topicProcedure = wsCompatProcedure.use(serverDatabase).use(async (opts) =>
 const topicBulkDeleteScopeSchema = z.enum(['own', 'workspace']).default('own');
 
 interface TopicShareCtx {
-  serverDB: LobeChatDatabase;
+  serverDB: SHAHEEN OSDatabase;
   topicModel: TopicModel;
   userId: string;
   workspaceId?: string | null;

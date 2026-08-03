@@ -38,7 +38,7 @@ interface FetchMarketUserInfoOptions {
 
 /**
  * Fetch Market user info using either trustedClientToken or accessToken
- * Returns the Market accountId which is different from LobeChat userId
+ * Returns the Market accountId which is different from SHAHEEN OS userId
  *
  * Priority:
  * 1. trustedClientToken (if userInfo is provided and TRUSTED_CLIENT_SECRET is configured)

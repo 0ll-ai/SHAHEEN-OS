@@ -1,4 +1,4 @@
-import { type LobeChatDatabase } from '@lobechat/database';
+import { type SHAHEEN OSDatabase } from '@lobechat/database';
 import {
   type SkillResourceContent,
   type SkillResourceMeta,
@@ -31,7 +31,7 @@ function isTextMimeType(mimeType: string): boolean {
 export class SkillResourceService {
   private fileService: FileService;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.fileService = new FileService(db, userId, workspaceId);
   }
 

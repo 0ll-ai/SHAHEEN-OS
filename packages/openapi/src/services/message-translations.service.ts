@@ -1,7 +1,7 @@
 import { and, eq } from 'drizzle-orm';
 
 import { messages, messageTranslates } from '@/database/schemas';
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { BaseService } from '../common/base.service';
 import { removeSystemContext } from '../helpers/translate';
@@ -16,7 +16,7 @@ import { ChatService } from './chat.service';
 type MessageTranslateItem = typeof messageTranslates.$inferSelect;
 
 export class MessageTranslateService extends BaseService {
-  constructor(db: LobeChatDatabase, userId: string | null, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string | null, workspaceId?: string) {
     super(db, userId, workspaceId);
   }
 

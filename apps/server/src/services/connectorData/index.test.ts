@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { LobeChatDatabase } from '@/database/type';
+import type { SHAHEEN OSDatabase } from '@/database/type';
 
 import { ConnectorDataService } from './index';
 
@@ -60,7 +60,7 @@ const authDb = (
         })),
       })),
     })),
-  }) as unknown as LobeChatDatabase;
+  }) as unknown as SHAHEEN OSDatabase;
 
 describe('ConnectorDataService', () => {
   beforeEach(() => {

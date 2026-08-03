@@ -12,7 +12,7 @@ import {
 import { MessageModel } from '@/database/models/message';
 import { recomputeTopicUsage } from '@/database/models/topicUsage';
 import { VerifyRunModel } from '@/database/models/verifyRun';
-import { type LobeChatDatabase } from '@/database/type';
+import { type SHAHEEN OSDatabase } from '@/database/type';
 import { formatErrorForState } from '@/server/modules/AgentRuntime/formatErrorForState';
 import { buildFinalSnapshotKey } from '@/server/modules/AgentTracing';
 import { emitAgentSignalSourceEvent } from '@/server/services/agentSignal';
@@ -128,7 +128,7 @@ export class CompletionLifecycle {
   private readonly verifyPlanInstantiations = new Map<string, Promise<void>>();
 
   constructor(
-    private readonly serverDB: LobeChatDatabase,
+    private readonly serverDB: SHAHEEN OSDatabase,
     private readonly userId: string,
     workspaceId?: string,
   ) {

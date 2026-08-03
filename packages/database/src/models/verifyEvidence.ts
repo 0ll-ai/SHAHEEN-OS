@@ -2,7 +2,7 @@ import type { VerifyEvidence } from '@lobechat/types';
 import { and, asc, eq, inArray } from 'drizzle-orm';
 
 import { verifyCheckResults, verifyEvidence } from '../schemas/verify';
-import type { LobeChatDatabase } from '../type';
+import type { SHAHEEN OSDatabase } from '../type';
 import { buildWorkspacePayload, buildWorkspaceWhere } from '../utils/workspace';
 
 /** Caller-supplied fields when recording one evidence artifact (ownership is injected). */
@@ -15,11 +15,11 @@ export type VerifyEvidenceForRun = VerifyEvidence & { checkItemId: string };
 export type VerifyEvidenceForRuns = VerifyEvidenceForRun & { verifyRunId: string };
 
 export class VerifyEvidenceModel {
-  private readonly db: LobeChatDatabase;
+  private readonly db: SHAHEEN OSDatabase;
   private readonly userId: string;
   private readonly workspaceId?: string;
 
-  constructor(db: LobeChatDatabase, userId: string, workspaceId?: string) {
+  constructor(db: SHAHEEN OSDatabase, userId: string, workspaceId?: string) {
     this.db = db;
     this.userId = userId;
     this.workspaceId = workspaceId;
