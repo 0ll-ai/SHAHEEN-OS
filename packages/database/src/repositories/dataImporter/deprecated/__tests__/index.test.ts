@@ -900,7 +900,7 @@ describe('DataImporter', () => {
                   'Technical Introduction',
                   'next-js',
                   'react',
-                  'lobe-chat',
+                  'shaheen-os',
                 ],
                 title: 'SHAHEEN OS Technical Documentation Expert',
               },

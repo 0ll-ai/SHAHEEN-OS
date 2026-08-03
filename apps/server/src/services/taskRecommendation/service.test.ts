@@ -19,8 +19,8 @@ const session: OnboardingTaskRecommendationSession = {
       providerId: 'github',
       reason: 'The pull request was updated recently.',
       sources: [
-        { type: 'github', url: 'https://github.com/lobehub/lobe-chat/pull/1' },
-        { type: 'github', url: 'https://github.com/lobehub/lobe-chat/issues/2' },
+        { type: 'github', url: 'https://github.com/lobehub/shaheen-os/pull/1' },
+        { type: 'github', url: 'https://github.com/lobehub/shaheen-os/issues/2' },
       ],
       title: 'Review the open pull request',
     },
@@ -104,12 +104,12 @@ describe('TaskRecommendationService', () => {
           'github',
           {
             collect: vi.fn(async () => ({
-              context: '{"sourceUrl":"https://github.com/lobehub/lobe-chat/pull/1"}',
+              context: '{"sourceUrl":"https://github.com/lobehub/shaheen-os/pull/1"}',
               diagnostics: { errors: [], evidenceCount: 1, failedCount: 0, succeededCount: 1 },
               signalCount: 1,
               sources: [
-                { type: 'github', url: 'https://github.com/lobehub/lobe-chat/pull/1' },
-                { type: 'github', url: 'https://github.com/lobehub/lobe-chat/issues/2' },
+                { type: 'github', url: 'https://github.com/lobehub/shaheen-os/pull/1' },
+                { type: 'github', url: 'https://github.com/lobehub/shaheen-os/issues/2' },
               ],
             })),
             id: 'github',
@@ -125,8 +125,8 @@ describe('TaskRecommendationService', () => {
             instruction: 'Review the pull request.',
             reason: 'It changed recently.',
             sourceUrls: [
-              'https://github.com/lobehub/lobe-chat/pull/1',
-              'https://github.com/lobehub/lobe-chat/issues/2',
+              'https://github.com/lobehub/shaheen-os/pull/1',
+              'https://github.com/lobehub/shaheen-os/issues/2',
               'https://example.com/invented',
             ],
             title: 'Review the pull request',
@@ -137,8 +137,8 @@ describe('TaskRecommendationService', () => {
 
     const result = await service.generateProvider('github', 2, 'en-US');
     expect(result.recommendations[0].sources).toEqual([
-      { type: 'github', url: 'https://github.com/lobehub/lobe-chat/pull/1' },
-      { type: 'github', url: 'https://github.com/lobehub/lobe-chat/issues/2' },
+      { type: 'github', url: 'https://github.com/lobehub/shaheen-os/pull/1' },
+      { type: 'github', url: 'https://github.com/lobehub/shaheen-os/issues/2' },
     ]);
   });
 
@@ -153,10 +153,10 @@ describe('TaskRecommendationService', () => {
           'github',
           {
             collect: vi.fn(async () => ({
-              context: '{"sourceUrl":"https://github.com/lobehub/lobe-chat/pull/1"}',
+              context: '{"sourceUrl":"https://github.com/lobehub/shaheen-os/pull/1"}',
               diagnostics: { errors: [], evidenceCount: 1, failedCount: 0, succeededCount: 1 },
               signalCount: 1,
-              sources: [{ type: 'github', url: 'https://github.com/lobehub/lobe-chat/pull/1' }],
+              sources: [{ type: 'github', url: 'https://github.com/lobehub/shaheen-os/pull/1' }],
             })),
             id: 'github',
           },

@@ -29,10 +29,10 @@ export default defineFixtures({
     }),
     run_command: single({
       args: {
-        command: 'gh api /repos/lobehub/lobe-chat/issues?state=open',
+        command: 'gh api /repos/lobehub/shaheen-os/issues?state=open',
       },
       pluginState: {
-        command: 'gh api /repos/lobehub/lobe-chat/issues?state=open',
+        command: 'gh api /repos/lobehub/shaheen-os/issues?state=open',
         exitCode: 0,
         success: true,
       },

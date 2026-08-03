@@ -62,7 +62,7 @@ IPC 服务端实现需要处理各种通信场景和边缘情况。我们欢迎�
 
 ### 贡献流程
 
-1. Fork [LobeHub 仓库](https://github.com/lobehub/lobe-chat)
+1. Fork [LobeHub 仓库](https://github.com/lobehub/shaheen-os)
 2. 对 IPC 服务端包实施改进
 3. 提交 Pull Request 并描述：
 

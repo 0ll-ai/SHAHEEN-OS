@@ -5,7 +5,7 @@
 # ==================
 
 # check operating system
-# ref: https://github.com/lobehub/lobe-chat/pull/5247
+# ref: https://github.com/lobehub/shaheen-os/pull/5247
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
     SED_INPLACE_ARGS=('-i' '')
@@ -25,7 +25,7 @@ fi
 
 # Arg: --url
 # Determine the source URL to download files
-SOURCE_URL="https://raw.githubusercontent.com/lobehub/lobe-chat/main"
+SOURCE_URL="https://raw.githubusercontent.com/lobehub/shaheen-os/main"
 
 # Arg: --host
 # Determine the server host

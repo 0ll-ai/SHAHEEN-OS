@@ -148,7 +148,7 @@ describe('createAsyncServerClient - INTERNAL_APP_URL Tests', () => {
       expect(httpLinkOptions.headers.Authorization).toBe('mock-internal-jwt-token');
     });
 
-    it('should encrypt and include userId in x-lobe-chat-auth header', async () => {
+    it('should encrypt and include userId in x-shaheen-os-auth header', async () => {
       const mockEncrypt = vi.fn().mockResolvedValue('test-encrypted-auth-data');
       vi.mocked(KeyVaultsGateKeeper.initWithEnvKey).mockResolvedValueOnce({
         encrypt: mockEncrypt,
@@ -164,9 +164,9 @@ describe('createAsyncServerClient - INTERNAL_APP_URL Tests', () => {
 
       // The header name is from LOBE_CHAT_AUTH_HEADER constant
       expect(httpLinkOptions.headers).toHaveProperty('Authorization');
-      // The X-lobe-chat-auth header should be present
-      expect(Object.keys(httpLinkOptions.headers)).toContain('X-lobe-chat-auth');
-      expect(httpLinkOptions.headers['X-lobe-chat-auth']).toBe('test-encrypted-auth-data');
+      // The X-shaheen-os-auth header should be present
+      expect(Object.keys(httpLinkOptions.headers)).toContain('X-shaheen-os-auth');
+      expect(httpLinkOptions.headers['X-shaheen-os-auth']).toBe('test-encrypted-auth-data');
     });
 
     it('should include Vercel bypass secret when available', async () => {

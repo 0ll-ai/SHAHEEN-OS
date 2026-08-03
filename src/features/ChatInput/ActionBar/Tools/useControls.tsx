@@ -64,7 +64,7 @@ import ToolItem from './ToolItem';
 import ToolItemDetailPopover from './ToolItemDetailPopover';
 
 const SKILL_ICON_SIZE = 18;
-const CLOSE_TOOL_DETAIL_POPOVER_EVENT = 'lobe-chat-tool-detail-popover-close';
+const CLOSE_TOOL_DETAIL_POPOVER_EVENT = 'shaheen-os-tool-detail-popover-close';
 
 const officialTag = (
   <Tooltip placement={'top'} title={'LobeHub'}>

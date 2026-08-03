@@ -80,7 +80,7 @@ export function defineConfig(config: CustomNextConfig) {
       // oidc provider depend on constructor.name
       // but swc minification will remove the name
       // so we need to disable it
-      // refs: https://github.com/lobehub/lobe-chat/pull/7430
+      // refs: https://github.com/lobehub/shaheen-os/pull/7430
       serverMinification: false,
       webVitalsAttribution: ['CLS', 'LCP'],
       ...config.experimental,

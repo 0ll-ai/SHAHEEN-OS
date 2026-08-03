@@ -18,7 +18,7 @@ LobeHub 内置的网页抓取模块，用于智能提取网页内容并转换为
 
 ### 如何贡献 URL 规则
 
-1. 在 [urlRules.ts](https://github.com/lobehub/lobe-chat/blob/main/packages/web-crawler/src/urlRules.ts) 文件中添加新规则
+1. 在 [urlRules.ts](https://github.com/lobehub/shaheen-os/blob/main/packages/web-crawler/src/urlRules.ts) 文件中添加新规则
 2. 规则示例：
 
 ```typescript
@@ -48,7 +48,7 @@ const url = [
 
 ### 规则提交流程
 
-1. Fork [LobeHub 仓库](https://github.com/lobehub/lobe-chat)
+1. Fork [LobeHub 仓库](https://github.com/lobehub/shaheen-os)
 2. 添加或修改 URL 规则
 3. 提交 Pull Request 并描述：
 

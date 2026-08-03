@@ -636,7 +636,7 @@ export default defineFixtures({
     WebFetch: single({
       args: {
         prompt: 'Summarize the key changes in the latest release.',
-        url: 'https://github.com/lobehub/lobe-chat/releases/latest',
+        url: 'https://github.com/lobehub/shaheen-os/releases/latest',
       },
       content:
         '## SHAHEEN OS v1.0\n\n- New agent runtime with tool streaming\n- Faster cold start\n- Fixed a memory leak in the chat store',

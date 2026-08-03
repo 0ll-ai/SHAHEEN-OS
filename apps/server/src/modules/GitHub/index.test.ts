@@ -14,32 +14,32 @@ describe('GitHub', () => {
     const gh = new GitHub();
 
     it('should parse standard GitHub URL', () => {
-      const result = gh.parseRepoUrl('https://github.com/lobehub/lobe-chat');
+      const result = gh.parseRepoUrl('https://github.com/lobehub/shaheen-os');
       expect(result).toEqual({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
     it('should parse GitHub URL with tree/branch', () => {
-      const result = gh.parseRepoUrl('https://github.com/lobehub/lobe-chat/tree/develop');
+      const result = gh.parseRepoUrl('https://github.com/lobehub/shaheen-os/tree/develop');
       expect(result).toEqual({
         branch: 'develop',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
     it('should parse GitHub URL with tree/branch and path', () => {
       const result = gh.parseRepoUrl(
-        'https://github.com/lobehub/lobe-chat/tree/feature/new-ui/src/components',
+        'https://github.com/lobehub/shaheen-os/tree/feature/new-ui/src/components',
       );
       expect(result).toEqual({
         branch: 'feature',
         owner: 'lobehub',
         path: 'new-ui/src/components',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
@@ -70,11 +70,11 @@ describe('GitHub', () => {
     });
 
     it('should not have path when URL has no subdirectory', () => {
-      const result = gh.parseRepoUrl('https://github.com/lobehub/lobe-chat/tree/main');
+      const result = gh.parseRepoUrl('https://github.com/lobehub/shaheen-os/tree/main');
       expect(result).toEqual({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
       expect(result.path).toBeUndefined();
     });
@@ -114,38 +114,38 @@ describe('GitHub', () => {
     });
 
     it('should parse GitHub URL without protocol', () => {
-      const result = gh.parseRepoUrl('github.com/lobehub/lobe-chat');
+      const result = gh.parseRepoUrl('github.com/lobehub/shaheen-os');
       expect(result).toEqual({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
     it('should parse GitHub URL with .git suffix', () => {
-      const result = gh.parseRepoUrl('https://github.com/lobehub/lobe-chat.git');
+      const result = gh.parseRepoUrl('https://github.com/lobehub/shaheen-os.git');
       expect(result).toEqual({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
     it('should parse shorthand format (owner/repo)', () => {
-      const result = gh.parseRepoUrl('lobehub/lobe-chat');
+      const result = gh.parseRepoUrl('lobehub/shaheen-os');
       expect(result).toEqual({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
     it('should use custom default branch', () => {
-      const result = gh.parseRepoUrl('https://github.com/lobehub/lobe-chat', 'dev');
+      const result = gh.parseRepoUrl('https://github.com/lobehub/shaheen-os', 'dev');
       expect(result).toEqual({
         branch: 'dev',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
     });
 
@@ -172,19 +172,19 @@ describe('GitHub', () => {
       const url = gh.buildRepoZipUrl({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
-      expect(url).toBe('https://github.com/lobehub/lobe-chat/archive/refs/heads/main.zip');
+      expect(url).toBe('https://github.com/lobehub/shaheen-os/archive/refs/heads/main.zip');
     });
 
     it('should handle different branches', () => {
       const url = gh.buildRepoZipUrl({
         branch: 'feature/new-ui',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
       expect(url).toBe(
-        'https://github.com/lobehub/lobe-chat/archive/refs/heads/feature/new-ui.zip',
+        'https://github.com/lobehub/shaheen-os/archive/refs/heads/feature/new-ui.zip',
       );
     });
   });
@@ -197,9 +197,9 @@ describe('GitHub', () => {
         branch: 'main',
         filePath: 'README.md',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
-      expect(url).toBe('https://raw.githubusercontent.com/lobehub/lobe-chat/main/README.md');
+      expect(url).toBe('https://raw.githubusercontent.com/lobehub/shaheen-os/main/README.md');
     });
 
     it('should handle nested file paths', () => {
@@ -207,10 +207,10 @@ describe('GitHub', () => {
         branch: 'develop',
         filePath: 'src/components/Button/index.tsx',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
       expect(url).toBe(
-        'https://raw.githubusercontent.com/lobehub/lobe-chat/develop/src/components/Button/index.tsx',
+        'https://raw.githubusercontent.com/lobehub/shaheen-os/develop/src/components/Button/index.tsx',
       );
     });
   });
@@ -237,12 +237,12 @@ describe('GitHub', () => {
       const result = await gh.downloadRepoZip({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
 
       expect(result).toBeInstanceOf(Buffer);
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://github.com/lobehub/lobe-chat/archive/refs/heads/main.zip',
+        'https://github.com/lobehub/shaheen-os/archive/refs/heads/main.zip',
         {
           headers: {
             'User-Agent': 'LobeHub',
@@ -278,7 +278,7 @@ describe('GitHub', () => {
         gh.downloadRepoZip({
           branch: 'main',
           owner: 'lobehub',
-          repo: 'lobe-chat',
+          repo: 'shaheen-os',
         }),
       ).rejects.toThrow(GitHubDownloadError);
     });
@@ -294,7 +294,7 @@ describe('GitHub', () => {
       await customGh.downloadRepoZip({
         branch: 'main',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
 
       expect(mockFetch).toHaveBeenCalledWith(expect.any(String), {
@@ -328,12 +328,12 @@ describe('GitHub', () => {
         branch: 'main',
         filePath: 'README.md',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
 
       expect(result).toBe(mockContent);
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://raw.githubusercontent.com/lobehub/lobe-chat/main/README.md',
+        'https://raw.githubusercontent.com/lobehub/shaheen-os/main/README.md',
         {
           headers: {
             'User-Agent': 'LobeHub',
@@ -354,7 +354,7 @@ describe('GitHub', () => {
           branch: 'main',
           filePath: 'non-existent.md',
           owner: 'lobehub',
-          repo: 'lobe-chat',
+          repo: 'shaheen-os',
         }),
       ).rejects.toThrow(GitHubNotFoundError);
     });
@@ -383,7 +383,7 @@ describe('GitHub', () => {
         branch: 'main',
         filePath: 'image.png',
         owner: 'lobehub',
-        repo: 'lobe-chat',
+        repo: 'shaheen-os',
       });
 
       expect(result).toBeInstanceOf(Buffer);

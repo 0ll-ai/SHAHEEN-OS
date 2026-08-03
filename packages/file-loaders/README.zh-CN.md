@@ -73,7 +73,7 @@
 
 ### 贡献流程
 
-1. Fork [LobeHub 仓库](https://github.com/lobehub/lobe-chat)
+1. Fork [LobeHub 仓库](https://github.com/lobehub/shaheen-os)
 2. 添加新格式支持或改进现有解析器
 3. 提交 Pull Request 并描述：
 
@@ -86,4 +86,4 @@
 
 这是 LobeHub 的内部模块（`"private": true`），专为 LobeHub 设计，不作为独立包发布。
 
-如果你对我们的项目感兴趣，欢迎在 [GitHub](https://github.com/lobehub/lobe-chat) 上查看、点赞或贡献代码！
+如果你对我们的项目感兴趣，欢迎在 [GitHub](https://github.com/lobehub/shaheen-os) 上查看、点赞或贡献代码！

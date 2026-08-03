@@ -785,7 +785,7 @@ export const createOpenAICompatibleRuntime = <T extends Record<string, any> = an
           }
 
           response = (await this.client.chat.completions.create(requestPayload, {
-            // https://github.com/lobehub/lobe-chat/pull/318
+            // https://github.com/lobehub/shaheen-os/pull/318
             headers: { Accept: '*/*', ...options?.requestHeaders },
             signal: options?.signal,
           })) as unknown as Stream<OpenAI.Chat.Completions.ChatCompletionChunk>;
@@ -1317,7 +1317,7 @@ export const createOpenAICompatibleRuntime = <T extends Record<string, any> = an
 
       let desensitizedEndpoint = this.baseURL;
 
-      // refs: https://github.com/lobehub/lobe-chat/issues/842
+      // refs: https://github.com/lobehub/shaheen-os/issues/842
       if (this.baseURL !== DEFAULT_BASE_URL) {
         desensitizedEndpoint = desensitizeUrl(this.baseURL);
       }

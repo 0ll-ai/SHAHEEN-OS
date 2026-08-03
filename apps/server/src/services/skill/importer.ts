@@ -21,7 +21,7 @@ import { SkillImportError, SkillManifestError } from './errors';
 import { SkillParser } from './parser';
 import { SkillResourceService } from './resource';
 
-const log = debug('lobe-chat:service:skill-importer');
+const log = debug('shaheen-os:service:skill-importer');
 
 export class SkillImporter {
   private skillModel: AgentSkillModel;

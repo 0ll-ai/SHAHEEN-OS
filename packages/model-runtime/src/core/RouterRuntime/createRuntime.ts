@@ -1,5 +1,5 @@
 /**
- * @see https://github.com/lobehub/lobe-chat/discussions/6563
+ * @see https://github.com/lobehub/shaheen-os/discussions/6563
  */
 import type { GoogleGenAIOptions } from '@google/genai';
 import type { ChatModelCard } from '@lobechat/types';

@@ -108,7 +108,7 @@ export function defineConfig() {
     logDefault('Serialized route variant: %s', route);
 
     // if app is in docker, rewrite to self container
-    // https://github.com/lobehub/lobe-chat/issues/5876
+    // https://github.com/lobehub/shaheen-os/issues/5876
     if (appEnv.MIDDLEWARE_REWRITE_THROUGH_LOCAL) {
       logDefault('Local container rewrite enabled: %O', {
         host: '127.0.0.1',

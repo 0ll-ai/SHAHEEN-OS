@@ -2792,7 +2792,7 @@ describe('ClaudeCodeAdapter', () => {
         mainAssistant('msg_main', {
           id: 'toolu_agent',
           input: {
-            description: 'Find git remote url lobe-chat',
+            description: 'Find git remote url shaheen-os',
             prompt: 'locate the remote',
             subagent_type: 'Explore',
           },
@@ -2809,7 +2809,7 @@ describe('ClaudeCodeAdapter', () => {
         (e) => e.type === 'stream_chunk' && e.data.chunkType === 'reasoning',
       );
       expect(reasoningChunk!.data.subagent.spawnMetadata).toEqual({
-        description: 'Find git remote url lobe-chat',
+        description: 'Find git remote url shaheen-os',
         prompt: 'locate the remote',
         subagentType: 'Explore',
       });
@@ -2841,7 +2841,7 @@ describe('ClaudeCodeAdapter', () => {
         mainAssistant('msg_main', {
           id: 'toolu_agent',
           input: {
-            description: 'Find git remote url lobe-chat',
+            description: 'Find git remote url shaheen-os',
             prompt: 'locate the remote',
             subagent_type: 'Explore',
           },
@@ -2866,7 +2866,7 @@ describe('ClaudeCodeAdapter', () => {
         (e) => e.type === 'stream_chunk' && e.data.chunkType === 'reasoning',
       );
       expect(reasoningChunk!.data.subagent.spawnMetadata).toEqual({
-        description: 'Find git remote url lobe-chat',
+        description: 'Find git remote url shaheen-os',
         prompt: 'locate the remote',
         subagentType: 'Explore',
       });

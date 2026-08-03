@@ -229,7 +229,7 @@ describe('UpdaterManager', () => {
 
     it('should set stage to latest when missing manifest 404 (gap period)', async () => {
       const error = new Error(
-        'Cannot find latest-mac.yml in the latest release artifacts (https://github.com/lobehub/lobe-chat/releases/download/v2.0.0-next.311/latest-mac.yml): HttpError: 404',
+        'Cannot find latest-mac.yml in the latest release artifacts (https://github.com/lobehub/shaheen-os/releases/download/v2.0.0-next.311/latest-mac.yml): HttpError: 404',
       );
       vi.mocked(autoUpdater.checkForUpdates).mockRejectedValueOnce(error);
 
@@ -635,7 +635,7 @@ describe('UpdaterManager', () => {
         await updaterManager.checkForUpdates({ manual: true });
 
         const error = new Error(
-          'Cannot find latest-mac.yml in the latest release artifacts (https://github.com/lobehub/lobe-chat/releases/download/v2.0.0-next.311/latest-mac.yml): HttpError: 404',
+          'Cannot find latest-mac.yml in the latest release artifacts (https://github.com/lobehub/shaheen-os/releases/download/v2.0.0-next.311/latest-mac.yml): HttpError: 404',
         );
         const handler = registeredEvents.get('error');
         await handler?.(error);

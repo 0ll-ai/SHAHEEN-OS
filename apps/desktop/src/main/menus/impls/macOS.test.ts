@@ -267,7 +267,7 @@ describe('MacOSMenu', () => {
 
       expect(githubItem).toBeDefined();
       await githubItem.click();
-      expect(shell.openExternal).toHaveBeenCalledWith('https://github.com/lobehub/lobe-chat');
+      expect(shell.openExternal).toHaveBeenCalledWith('https://github.com/lobehub/shaheen-os');
     });
 
     it('should handle open logs directory click', () => {

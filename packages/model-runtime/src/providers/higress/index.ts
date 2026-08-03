@@ -20,7 +20,7 @@ export const params = {
     defaultHeaders: {
       'HTTP-Referer': 'https://lobehub.com',
       'X-Title': 'LobeHub',
-      'x-Request-Id': uniqueId('lobe-chat-'),
+      'x-Request-Id': uniqueId('shaheen-os-'),
     },
   },
   debug: {

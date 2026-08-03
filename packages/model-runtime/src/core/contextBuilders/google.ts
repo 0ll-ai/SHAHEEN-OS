@@ -510,7 +510,7 @@ export const buildGoogleTool = (tool: ChatCompletionTool): FunctionDeclaration =
   const functionDeclaration = tool.function;
   const parameters = functionDeclaration.parameters;
 
-  // refs: https://github.com/lobehub/lobe-chat/pull/5002
+  // refs: https://github.com/lobehub/shaheen-os/pull/5002
   const hasProperties = parameters?.properties && Object.keys(parameters.properties).length > 0;
 
   const jsonSchema = hasProperties

@@ -100,7 +100,7 @@ const DefaultFileItem = memo<DefaultFileItemProps>(
           {!isFolder && (
             <div
               style={{
-                color: 'var(--lobe-chat-text-tertiary)',
+                color: 'var(--shaheen-os-text-tertiary)',
                 fontSize: 12,
                 textAlign: 'center',
               }}

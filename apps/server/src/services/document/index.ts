@@ -36,7 +36,7 @@ import type {
   UpdateDocumentResult,
 } from './types';
 
-const log = debug('lobe-chat:service:document');
+const log = debug('shaheen-os:service:document');
 
 const normalizeParseFileError = (error: unknown) => {
   if (error instanceof UnsupportedFileTypeError) {

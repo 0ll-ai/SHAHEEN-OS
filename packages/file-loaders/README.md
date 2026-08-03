@@ -73,7 +73,7 @@ File formats and parsing requirements are constantly evolving. We welcome commun
 
 ### Contribution Process
 
-1. Fork the [LobeHub repository](https://github.com/lobehub/lobe-chat)
+1. Fork the [LobeHub repository](https://github.com/lobehub/shaheen-os)
 2. Add new format support or improve existing parsers
 3. Submit a Pull Request describing:
 
@@ -86,4 +86,4 @@ File formats and parsing requirements are constantly evolving. We welcome commun
 
 This is an internal module of LobeHub (`"private": true`), designed specifically for LobeHub and not published as a standalone package.
 
-If you're interested in our project, feel free to check it out, star it, or contribute code on [GitHub](https://github.com/lobehub/lobe-chat)!
+If you're interested in our project, feel free to check it out, star it, or contribute code on [GitHub](https://github.com/lobehub/shaheen-os)!

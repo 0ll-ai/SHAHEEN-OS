@@ -18,7 +18,7 @@ Web structures are diverse and complex. We welcome community contributions for s
 
 ### How to Contribute URL Rules
 
-1. Add new rules to the [urlRules.ts](https://github.com/lobehub/lobe-chat/blob/main/packages/web-crawler/src/urlRules.ts) file
+1. Add new rules to the [urlRules.ts](https://github.com/lobehub/shaheen-os/blob/main/packages/web-crawler/src/urlRules.ts) file
 2. Rule example:
 
 ```typescript
@@ -48,7 +48,7 @@ const url = [
 
 ### Rule Submission Process
 
-1. Fork the [LobeHub repository](https://github.com/lobehub/lobe-chat)
+1. Fork the [LobeHub repository](https://github.com/lobehub/shaheen-os)
 2. Add or modify URL rules
 3. Submit a Pull Request describing:
 

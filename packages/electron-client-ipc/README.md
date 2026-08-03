@@ -59,7 +59,7 @@ IPC communication needs vary across different use cases and platforms. We welcom
 
 ### Contribution Process
 
-1. Fork the [LobeHub repository](https://github.com/lobehub/lobe-chat)
+1. Fork the [LobeHub repository](https://github.com/lobehub/shaheen-os)
 2. Make your changes to the IPC client package
 3. Submit a Pull Request describing:
 

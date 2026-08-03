@@ -47,7 +47,7 @@ The following are considered **by design** or **out of scope** and will not be a
 
 #### 1. End-of-Life Versions
 
-Any issue that only affects 1.x or earlier versions. This includes but is not limited to the `X-lobe-chat-auth` header mechanism, `webapi` route authentication, and other 1.x-specific architectures that have been completely removed in 2.x.
+Any issue that only affects 1.x or earlier versions. This includes but is not limited to the `X-shaheen-os-auth` header mechanism, `webapi` route authentication, and other 1.x-specific architectures that have been completely removed in 2.x.
 
 #### 2. File Proxy Public Access (`/f/:id`)
 

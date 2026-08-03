@@ -59,7 +59,7 @@
 
 ### 贡献流程
 
-1. Fork [LobeHub 仓库](https://github.com/lobehub/lobe-chat)
+1. Fork [LobeHub 仓库](https://github.com/lobehub/shaheen-os)
 2. 对 IPC 客户端包进行修改
 3. 提交 Pull Request 并描述：
 
